@@ -17,17 +17,30 @@ class Table extends Indexable {
     private _oneToOneRelationships : OneToOneRelationships[];
     private _oneToManyRelationships : OneToManyRelationships[];
     private _manyToManyRelationships : ManyToManyRelationships[];
+    private _tableType : string;
+    private _tableComment : string;
 
-
-    constructor({TABLE_NAME}: {[p:string] : string}, index : number) {
+    constructor({TABLE_NAME, TABLE_TYPE, TABLE_COMMENT}: {[p:string] : string}, index : number) {
         super(index);
         this._tableName = TABLE_NAME;
         this._constraints = [];
+        this._tableType = TABLE_TYPE;
+        this._tableComment = TABLE_COMMENT;
     }
 
     @Indexable.ToJSON()
     get tableName() {
         return this._tableName; 
+    }
+
+    @Indexable.ToJSON()
+    get tableType(): string {
+        return this._tableType;
+    }
+
+    @Indexable.ToJSON()
+    get tableComment(): string {
+        return this._tableComment;
     }
 
     @Indexable.ToJSON()

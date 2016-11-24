@@ -17,9 +17,8 @@ class TablesService extends DbService {
     }
     getTables() {
         if (!this._getTablesSql) {
-            this._getTablesSql = `SELECT DISTINCT TABLE_NAME 
-                FROM INFORMATION_SCHEMA.COLUMNS
-                WHERE table_schema = '${this._dbConfig.database}';`;
+            this._getTablesSql = `SELECT * FROM INFORMATION_SCHEMA.TABLES 
+                where table_schema = '${this._dbConfig.database}';`;
         }
         return this.query(this._getTablesSql)
             .then(rows => rows.map((row, index) => new Table(row, index)));

@@ -9,13 +9,21 @@ const _ = require('lodash');
 const NamesHelper = require('../helpers/names.helper');
 const Indexable = require('./indexable.model');
 class Table extends Indexable {
-    constructor({ TABLE_NAME }, index) {
+    constructor({ TABLE_NAME, TABLE_TYPE, TABLE_COMMENT }, index) {
         super(index);
         this._tableName = TABLE_NAME;
         this._constraints = [];
+        this._tableType = TABLE_TYPE;
+        this._tableComment = TABLE_COMMENT;
     }
     get tableName() {
         return this._tableName;
+    }
+    get tableType() {
+        return this._tableType;
+    }
+    get tableComment() {
+        return this._tableComment;
     }
     get columns() {
         return this._columns;
@@ -159,6 +167,12 @@ class Table extends Indexable {
 __decorate([
     Indexable.ToJSON()
 ], Table.prototype, "tableName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "tableType", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "tableComment", null);
 __decorate([
     Indexable.ToJSON()
 ], Table.prototype, "columns", null);
