@@ -6,7 +6,6 @@ import OneToOneRelationships = require('./one_to_one_relationship.model');
 import OneToManyRelationships = require('./one_to_many_relationship.model');
 import ManyToManyRelationships = require('./many_to_many_relationship.model');
 import OneToXRelationship = require('./one_to_x_relationship.model');
-import Entity = require('./entity.model');
 import Indexable = require('./indexable.model');
 
 class Table extends Indexable {
@@ -18,7 +17,6 @@ class Table extends Indexable {
     private _oneToOneRelationships : OneToOneRelationships[];
     private _oneToManyRelationships : OneToManyRelationships[];
     private _manyToManyRelationships : ManyToManyRelationships[];
-    private _entity : Entity;
 
 
     constructor({TABLE_NAME}: {[p:string] : string}, index : number) {
@@ -232,15 +230,6 @@ class Table extends Indexable {
 
     set constraints(c) {
        this._constraints = c; 
-    }
-
-    @Indexable.ToJSON()
-    get entity(){
-        if (!this._entity) {
-            this._entity = new Entity(this, this.index);
-        }
-
-        return this._entity;
     }
 }
 

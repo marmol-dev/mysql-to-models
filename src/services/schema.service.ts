@@ -173,20 +173,16 @@ class SchemaService extends DbService {
                     }
                 });
 
-                const entities = tables.map(table => table.entity);
 
-                const schema: Schema = new Schema({
+                return new Schema({
                     oneToOneRelationships,
                     oneToManyRelationships,
                     manyToManyRelationships,
                     tables,
                     columns,
                     foreignKeys,
-                    constraints,
-                    entities
+                    constraints
                 });
-
-                return schema;
             });
     }
 }

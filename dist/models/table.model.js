@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const _ = require('lodash');
 const NamesHelper = require('../helpers/names.helper');
-const Entity = require('./entity.model');
 const Indexable = require('./indexable.model');
 class Table extends Indexable {
     constructor({ TABLE_NAME }, index) {
@@ -156,12 +155,6 @@ class Table extends Indexable {
     set constraints(c) {
         this._constraints = c;
     }
-    get entity() {
-        if (!this._entity) {
-            this._entity = new Entity(this, this.index);
-        }
-        return this._entity;
-    }
 }
 __decorate([
     Indexable.ToJSON()
@@ -247,8 +240,5 @@ __decorate([
 __decorate([
     Indexable.ToJSON()
 ], Table.prototype, "primaryKeyConstraints", null);
-__decorate([
-    Indexable.ToJSON()
-], Table.prototype, "entity", null);
 module.exports = Table;
 //# sourceMappingURL=table.model.js.map

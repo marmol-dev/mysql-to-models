@@ -9,7 +9,6 @@ class Schema {
         this._manyToManyRelationships = schema.manyToManyRelationships;
         this._constraints = schema.constraints;
         this._foreignKeys = schema.foreignKeys;
-        this._entities = schema.entities;
     }
     get columns() {
         return this._columns;
@@ -32,11 +31,8 @@ class Schema {
     get foreignKeys() {
         return this._foreignKeys;
     }
-    get entities() {
-        return this._entities;
-    }
     toJSON() {
-        return _.pick(this, 'entities', 'foreignKeys', 'constraints', 'manyToManyRelationships', 'oneToManyRelationships', 'oneToOneRelationships', 'tables', 'columns');
+        return _.pick(this, 'foreignKeys', 'constraints', 'manyToManyRelationships', 'oneToManyRelationships', 'oneToOneRelationships', 'tables', 'columns');
     }
 }
 module.exports = Schema;

@@ -6,7 +6,6 @@ import OneToManyRelationship = require('./one_to_many_relationship.model');
 import ManyToManyRelationship = require('./many_to_many_relationship.model');
 import Constraint = require('./constraint.model');
 import ForeignKey = require('./foreign_key.model');
-import Entity = require('./entity.model');
 import _ = require('lodash');
 
 
@@ -20,7 +19,6 @@ interface ISchema {
     manyToManyRelationships: ManyToManyRelationship[];
     constraints: Constraint[];
     foreignKeys: ForeignKey[];
-    entities: Entity[];
 }
 
 class Schema implements ISchema {
@@ -32,7 +30,6 @@ class Schema implements ISchema {
     private _manyToManyRelationships: ManyToManyRelationship[];
     private _constraints: Constraint[];
     private _foreignKeys: ForeignKey[];
-    private _entities: Entity[];
 
     constructor(schema: ISchema){
         this._columns = schema.columns;
@@ -42,7 +39,6 @@ class Schema implements ISchema {
         this._manyToManyRelationships = schema.manyToManyRelationships;
         this._constraints = schema.constraints;
         this._foreignKeys = schema.foreignKeys;
-        this._entities = schema.entities;
     }
 
     get columns(): Column[] {
@@ -73,13 +69,8 @@ class Schema implements ISchema {
         return this._foreignKeys;
     }
 
-    get entities(): Entity[] {
-        return this._entities;
-    }
-
     toJSON() {
         return _.pick(this,
-            'entities',
             'foreignKeys',
             'constraints',
             'manyToManyRelationships',
