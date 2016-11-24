@@ -1,5 +1,12 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 const OneToXRelationship = require('./one_to_x_relationship.model');
+const Indexable = require("./indexable.model");
 class OneToOneRelationship extends OneToXRelationship {
     /**
      * Creates an instance of OneToOneRelationship.
@@ -7,14 +14,12 @@ class OneToOneRelationship extends OneToXRelationship {
      * @param {string} name The name of the foreign key constraint involved
      *
      */
-    constructor(name) {
-        super(name);
+    constructor(name, index) {
+        super(name, index);
     }
-    //lado otro
     get anotherSideTable() {
         return this.foreignKeys[0].table;
     }
-    //lado uno
     get oneSideTable() {
         return this.foreignKeys[0].referencedTable;
     }
@@ -111,11 +116,32 @@ class OneToOneRelationship extends OneToXRelationship {
      * @param {OneToXRelationship} rel The OneToXRelationship instance
      * @returns {OneToOneRelationship} The relationship
      */
-    static createFromOneToXRelationship(rel) {
-        const toret = new OneToOneRelationship(rel.name);
+    static createFromOneToXRelationship(rel, index) {
+        const toret = new OneToOneRelationship(rel.name, index);
         toret.foreignKeys = [...rel.foreignKeys];
         return toret;
     }
 }
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "anotherSideTable", null);
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "oneSideTable", null);
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "relationshipNameFromAnotherSide", null);
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "relationshipNameFromOneSide", null);
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "pluralRelationshipNameFromAnotherSide", null);
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "pluralRelationshipNameFromOneSide", null);
+__decorate([
+    Indexable.ToJSON()
+], OneToOneRelationship.prototype, "isBetweenEntities", null);
 module.exports = OneToOneRelationship;
 //# sourceMappingURL=one_to_one_relationship.model.js.map

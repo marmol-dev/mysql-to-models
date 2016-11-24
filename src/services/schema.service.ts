@@ -1,7 +1,7 @@
 import DbService = require('./db.service');
 
-import Column = require('../models/column.model');
 import Table = require('../models/table.model');
+import Schema = require("../models/schema.model");
 
 import OneToXRelationship = require('../models/one_to_x_relationship.model');
 import OneToOneRelationship = require('../models/one_to_one_relationship.model');
@@ -12,44 +12,31 @@ import Relationship = require('../models/relationship.model');
 import ColumnsService = require('./columns.service');
 import ForeignKeysService = require('./foreign_keys.service');
 import ConstraintsService = require('./constraints.service');
+import TablesService = require('./tables.service');
 
 import mysql = require('mysql');
 
-class TablesService extends DbService {
+class SchemaService extends DbService {
 
     private _columnsService : ColumnsService;
     private _foreignKeysService : ForeignKeysService;
     private _constraintsService : ConstraintsService;
-    private _getTablesSql : string;
+    private _tablesService : TablesService;
 
     constructor(dbConnection: mysql.IConnection, dbConfig: any) {
         super(dbConnection, dbConfig);
         this._columnsService = new ColumnsService(dbConnection, dbConfig);
         this._foreignKeysService = new ForeignKeysService(dbConnection, dbConfig);
         this._constraintsService = new ConstraintsService(dbConnection, dbConfig);
+        this._tablesService = new TablesService(dbConnection, dbConfig);
     }
 
-    getTables() {
-        if (!this._getTablesSql) {
-            this._getTablesSql = `SELECT DISTINCT TABLE_NAME 
-                FROM INFORMATION_SCHEMA.COLUMNS
-                WHERE table_schema = '${this._dbConfig.database}';`;
-        }
-
-        return this.query(this._getTablesSql)
-            .then(rows =>
-                rows.map((row, index) =>
-                    new Table(row, index)
-                )
-            );
-    }
-
-    getTablesWithColumnsAndFKs() {
+    getSchema() : Promise<Schema>{
         
         return Promise.all([
             this._columnsService.getColumns(),
             this._foreignKeysService.getForeignKeys(),
-            this.getTables(),
+            this._tablesService.getTables(),
             this._constraintsService.getConstraints()
         ])
             .then(([columns, foreignKeys, tables, constraints]) => {
@@ -186,9 +173,22 @@ class TablesService extends DbService {
                     }
                 });
 
-                return tables;
+                const entities = tables.map(table => table.entity);
+
+                const schema: Schema = new Schema({
+                    oneToOneRelationships,
+                    oneToManyRelationships,
+                    manyToManyRelationships,
+                    tables,
+                    columns,
+                    foreignKeys,
+                    constraints,
+                    entities
+                });
+
+                return schema;
             });
     }
 }
 
-export = TablesService;
+export = SchemaService;

@@ -1,8 +1,9 @@
 import Column = require('./column.model');
+import Indexable = require('./indexable.model');
 
 type ConstraintType = "NOT NULL" | "UNIQUE" | "PRIMARY KEY" | "FOREIGN KEY" | "CHECK" | "DEFAULT";
 
-class Constraint {
+class Constraint extends Indexable {
     /**
      * Constraint type
      * 
@@ -23,7 +24,8 @@ class Constraint {
     private _columns : Column[];
     private _columnNames: string[];
 
-    constructor({CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }: {[prop : string] : string, CONSTRAINT_TYPE: ConstraintType}) {
+    constructor({CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }: {[prop : string] : string, CONSTRAINT_TYPE: ConstraintType}, index: number) {
+        super(index);
         this._constraintName = CONSTRAINT_NAME;
         this._tableName = TABLE_NAME;
         this._constraintType = CONSTRAINT_TYPE;
@@ -31,18 +33,22 @@ class Constraint {
         this._columnNames = [];
     }
 
+    @Indexable.ToJSON()
     get constraintName() {
         return this._constraintName;
     }
 
+    @Indexable.ToJSON()
     get constraintType() {
         return this._constraintType;
     }
 
+    @Indexable.ToJSON()
     get tableName() {
         return this._tableName;
     }
 
+    @Indexable.ToJSON()
     get columnNames() {
         return this._columnNames;
     }
@@ -51,34 +57,42 @@ class Constraint {
         this._columns = cols;
     }
 
+    @Indexable.ToJSON()
     get columns() {
         return this._columns;
     }
 
+    @Indexable.ToJSON()
     get areAllColumnsAutoIncrement() {
         return this._columns.every(col => col.isAutoIncrement);
     }
-    
+
+    @Indexable.ToJSON()
     get containsPrimaryKeyColumn() {
         return !!this.columns.find(col => col.isPrimaryKey);
     }
 
+    @Indexable.ToJSON()
     get nonAutoIncrementColumns() {
         return this._columns.filter(col => !col.isAutoIncrement);
     }
 
+    @Indexable.ToJSON()
     get isUniquenessType() {
         return this.isUniqueType || this.isPrimaryKeyType;
     }
 
+    @Indexable.ToJSON()
     get isUniqueType() {
         return this._constraintType === 'UNIQUE';
     }
 
+    @Indexable.ToJSON()
     get isPrimaryKeyType() {
         return this._constraintType === 'PRIMARY KEY';
     }
 
+    @Indexable.ToJSON()
     get table() {
         return this._columns[0].table;
     }

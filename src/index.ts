@@ -1,7 +1,8 @@
 import mysql = require('mysql');
-import TablesService = require('./services/tables.service');
+import SchemaService = require('./services/schema.service');
 import IProjectConfig = require('./config/i-project-config');
 import path = require('path');
+import fs = require('fs');
 
 let projectConfig : IProjectConfig;
 
@@ -13,14 +14,21 @@ try {
     process.exit();
 }
 
-let dbConnection = mysql.createConnection(projectConfig.database);
+const outFile = process.argv.length > 3 ? path.resolve(__dirname, "..", process.argv[3]) : null;
+
+const dbConnection = mysql.createConnection(projectConfig.database);
 
 dbConnection.connect();
 
-const tablesService = new TablesService(dbConnection, projectConfig.database);
+const schemaService = new SchemaService(dbConnection, projectConfig.database);
 
-tablesService.getTablesWithColumnsAndFKs().then(tables => {
-    console.log(JSON.stringify(tables));
+schemaService.getSchema().then(schema => {
+    const content = JSON.stringify(schema);
+    if (outFile !== null) {
+        fs.writeFileSync(outFile, content);
+    } else {
+        process.stdout.write(content);
+    }
 });
 
 process.on('unhandledRejection', (reason : any) => {

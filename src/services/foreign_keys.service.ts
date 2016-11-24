@@ -20,7 +20,7 @@ class ForeignKeysService extends DbService {
 
         return this.query(this._getTablesSql)
             .then(rows => {
-                return rows.map(row => new ForeignKey(row));
+                return rows.map((row, index) => new ForeignKey(row, index));
             });
     }
 }

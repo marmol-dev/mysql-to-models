@@ -1,11 +1,13 @@
 import Table = require('./table.model');
+import Indexable = require('./indexable.model');
 
-abstract class Relationship {
+abstract class Relationship extends Indexable {
 
     private _numberOfRelationshipsWithSameTables : number;
     private _indexInSameTablesRelationships : number;
 
-    constructor() {
+    constructor(index : number) {
+        super(index);
         this._numberOfRelationshipsWithSameTables = 1;
         this._indexInSameTablesRelationships = 0;
     }
@@ -15,6 +17,7 @@ abstract class Relationship {
      * 
      * @type {number}
      */
+    @Indexable.ToJSON()
     get numberOfRelationshipsWithSameTables() {
         return this._numberOfRelationshipsWithSameTables;
     }
@@ -29,6 +32,7 @@ abstract class Relationship {
      * @description There are another relationships that involve the same tables. Every relationship has an index.
      * @type {number}
      */
+    @Indexable.ToJSON()
     get indexInSameTablesRelationships() {
         return this._indexInSameTablesRelationships;
     }

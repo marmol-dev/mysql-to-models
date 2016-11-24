@@ -1,9 +1,17 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 const _ = require('lodash');
 const NamesHelper = require('../helpers/names.helper');
 const Entity = require('./entity.model');
-class Table {
-    constructor({ TABLE_NAME }) {
+const Indexable = require('./indexable.model');
+class Table extends Indexable {
+    constructor({ TABLE_NAME }, index) {
+        super(index);
         this._tableName = TABLE_NAME;
         this._constraints = [];
     }
@@ -150,10 +158,97 @@ class Table {
     }
     get entity() {
         if (!this._entity) {
-            this._entity = new Entity(this);
+            this._entity = new Entity(this, this.index);
         }
         return this._entity;
     }
 }
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "tableName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "columns", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "sortedColumns", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "pascalName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "pluralPascalName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "modelName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "camelName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "instanceName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "pluralCamelName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "pluralInstanceName", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "primaryKeyColumns", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "isEntity", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "oneToOneRelationships", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "oneToManyRelationships", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "oneToOneEntityRelationships", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "oneToManyEntityRelationships", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "manyToManyRelationships", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "manyToManyEntityRelationships", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "relatedTables", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "foreignKeysRelatedTables", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "relatedEntityTables", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "constraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "nonRepeatedConstraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "uniqueConstraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "nonRepeatedUniqueConstraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "uniquenessConstraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "nonRepeatedUniquenessConstraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "primaryKeyConstraints", null);
+__decorate([
+    Indexable.ToJSON()
+], Table.prototype, "entity", null);
 module.exports = Table;
 //# sourceMappingURL=table.model.js.map

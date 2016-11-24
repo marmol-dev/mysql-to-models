@@ -20,7 +20,7 @@ class ConstraintsService extends DbService {
                         && constraint.tableName === row.TABLE_NAME;
                 });
                 if (!constraint) {
-                    constraint = new Constraint(row);
+                    constraint = new Constraint(row, constraints.length);
                     constraints.push(constraint);
                 }
                 constraint.addColumnName(row.COLUMN_NAME);

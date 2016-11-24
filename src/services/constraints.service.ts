@@ -30,7 +30,7 @@ class ConstraintsService extends DbService {
                     });
 
                     if (!constraint) {
-                        constraint = new Constraint(row);
+                        constraint = new Constraint(row, constraints.length);
                         constraints.push(constraint);
                     } 
 

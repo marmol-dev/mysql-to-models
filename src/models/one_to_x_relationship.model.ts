@@ -2,18 +2,20 @@ import Relationship = require('./relationship.model');
 import ForeignKey = require('./foreign_key.model');
 import Table = require('./table.model');
 import Column = require('./column.model');
+import Indexable = require("./indexable.model");
 
 class OneToXRelationship extends Relationship {
 
     private _name : string;
     private _foreignKeys : ForeignKey[];
 
-    constructor(name : string) {
-        super();
+    constructor(name : string, index : number) {
+        super(index);
         this._name = name;
         this._foreignKeys = [];
     }
 
+    @Indexable.ToJSON()
     get foreignKeys() {
         return this._foreignKeys;
     }
@@ -26,6 +28,7 @@ class OneToXRelationship extends Relationship {
         this._foreignKeys.push(fk);
     }
 
+    @Indexable.ToJSON()
     get name() {
         return this._name;
     }
@@ -62,8 +65,9 @@ class OneToXRelationship extends Relationship {
         }
 
         return otherSideColumn;
-    } 
+    }
 
+    @Indexable.ToJSON()
     get foreignKeysContainPrimaryKey() {
         return !!this.foreignKeys.find(fk => fk.column.isPrimaryKey);
     }

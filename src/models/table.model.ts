@@ -7,12 +7,12 @@ import OneToManyRelationships = require('./one_to_many_relationship.model');
 import ManyToManyRelationships = require('./many_to_many_relationship.model');
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Entity = require('./entity.model');
+import Indexable = require('./indexable.model');
 
-
-class Table {
+class Table extends Indexable {
 
     private _tableName : string;
-    
+
     private _columns : Column[];
     private _constraints : Constraint[];
     private _oneToOneRelationships : OneToOneRelationships[];
@@ -21,47 +21,58 @@ class Table {
     private _entity : Entity;
 
 
-    constructor({TABLE_NAME}: {[p:string] : string}) {
+    constructor({TABLE_NAME}: {[p:string] : string}, index : number) {
+        super(index);
         this._tableName = TABLE_NAME;
         this._constraints = [];
     }
 
+    @Indexable.ToJSON()
     get tableName() {
         return this._tableName; 
     }
 
+    @Indexable.ToJSON()
     get columns() {
         return this._columns;
     }
 
+    @Indexable.ToJSON()
     get sortedColumns() {
         return this._columns;
     }
 
+    @Indexable.ToJSON()
     get pascalName() {
         return _.upperFirst(this.camelName);
     }
 
+    @Indexable.ToJSON()
     get pluralPascalName() {
         return NamesHelper.plural(this.pascalName);
     }
 
+    @Indexable.ToJSON()
     get modelName() {
         return this.pascalName;
     }
 
+    @Indexable.ToJSON()
     get camelName() {
         return _.camelCase(this.tableName);
     }
 
+    @Indexable.ToJSON()
     get instanceName() {
         return this.camelName;
     }
 
+    @Indexable.ToJSON()
     get pluralCamelName() {
         return NamesHelper.plural(this.camelName);
     }
 
+    @Indexable.ToJSON()
     get pluralInstanceName() {
        return this.pluralCamelName;
     }
@@ -77,15 +88,18 @@ class Table {
         });
     }
 
+    @Indexable.ToJSON()
     get primaryKeyColumns() {
         return this._columns.filter(column => column.isPrimaryKey);
     }
 
+    @Indexable.ToJSON()
     get isEntity() {
         return true;
         //return !this.columns.every(column => column.isForeignKey);
     }
 
+    @Indexable.ToJSON()
     get oneToOneRelationships() {
         return this._oneToOneRelationships;
     } 
@@ -94,10 +108,12 @@ class Table {
         this._oneToOneRelationships = relationships;
     }
 
+    @Indexable.ToJSON()
     get oneToManyRelationships() {
         return this._oneToManyRelationships;
-    } 
+    }
 
+    @Indexable.ToJSON()
     get oneToOneEntityRelationships() {
         return this.oneToOneRelationships.filter(rel => rel.isBetweenEntities);
     }
@@ -106,10 +122,12 @@ class Table {
         this._oneToManyRelationships = relationships;
     }
 
+    @Indexable.ToJSON()
     get oneToManyEntityRelationships() {
         return this.oneToManyRelationships.filter(rel => rel.isBetweenEntities);
     }
 
+    @Indexable.ToJSON()
     get manyToManyRelationships() {
         return this._manyToManyRelationships;
     } 
@@ -118,10 +136,12 @@ class Table {
         this._manyToManyRelationships = relationships;
     }
 
+    @Indexable.ToJSON()
     get manyToManyEntityRelationships() {
         return this.manyToManyRelationships.filter(rel => rel.isBetweenEntities);
     }
 
+    @Indexable.ToJSON()
     get relatedTables() {
         const relatedTables : Table[] = [];
 
@@ -146,6 +166,7 @@ class Table {
         return relatedTables;
     }
 
+    @Indexable.ToJSON()
     get foreignKeysRelatedTables(){
         const toret : Table[] = [];
 
@@ -160,10 +181,12 @@ class Table {
         return toret;
     }
 
+    @Indexable.ToJSON()
     get relatedEntityTables() {
         return this.relatedTables.filter(t => t.isEntity);
     }
 
+    @Indexable.ToJSON()
     get constraints() {
         return this._constraints;
     }
@@ -175,28 +198,34 @@ class Table {
      * 
      * @memberOf Table
      */
+    @Indexable.ToJSON()
     get nonRepeatedConstraints() {
         return this.constraints.filter(cons => {
             return !cons.isUniqueType || !this.primaryKeyConstraints.find(pkCons => pkCons.involvesColumns(cons.columns));
         });
     }
 
+    @Indexable.ToJSON()
     get uniqueConstraints() {
         return this._constraints.filter(cons => cons.isUniqueType);
     }
 
+    @Indexable.ToJSON()
     get nonRepeatedUniqueConstraints() {
         return this.nonRepeatedConstraints.filter(cons => cons.isUniqueType);
     }
 
+    @Indexable.ToJSON()
     get uniquenessConstraints() {
         return this._constraints.filter(cons => cons.isUniquenessType);
     }
 
+    @Indexable.ToJSON()
     get nonRepeatedUniquenessConstraints() {
         return this.nonRepeatedConstraints.filter(cons => cons.isUniquenessType);
     }
 
+    @Indexable.ToJSON()
     get primaryKeyConstraints() {
         return this._constraints.filter(cons => cons.isPrimaryKeyType);
     }
@@ -205,9 +234,10 @@ class Table {
        this._constraints = c; 
     }
 
+    @Indexable.ToJSON()
     get entity(){
         if (!this._entity) {
-            this._entity = new Entity(this);
+            this._entity = new Entity(this, this.index);
         }
 
         return this._entity;

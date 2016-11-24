@@ -1,7 +1,15 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 const _ = require('lodash');
-class Column {
-    constructor({ TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA }) {
+const Indexable = require('./indexable.model');
+class Column extends Indexable {
+    constructor({ TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA }, index) {
+        super(index);
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._ordinalPosition = ORDINAL_POSITION;
@@ -120,5 +128,83 @@ class Column {
         return this.isUniqueType || this.isPrimaryKey;
     }
 }
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "tableName", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "table", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "columnName", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "pascalName", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "camelName", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "phpName", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "ordinalPosition", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "columnDefault", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isNullable", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "hasDefaultValue", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isRequired", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isAutoIncrement", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "dataType", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "characterMaximumLength", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "columnType", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "columnKey", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "extra", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "foreignkey", null);
+__decorate([
+    Indexable.ToJSON(true)
+], Column.prototype, "referencedColumn", null);
+__decorate([
+    Indexable.ToJSON(true)
+], Column.prototype, "referencedTable", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "phpDataType", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isPrimaryKey", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isForeignKey", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isEditable", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isUniqueType", null);
+__decorate([
+    Indexable.ToJSON()
+], Column.prototype, "isUnique", null);
 module.exports = Column;
 //# sourceMappingURL=column.model.js.map

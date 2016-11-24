@@ -1,7 +1,9 @@
 import Table = require('./table.model');
 import Column = require('./column.model');
+import Indexable = require('./indexable.model');
 
-class ForeignKey {
+
+class ForeignKey extends Indexable {
     private _tableName : string;
     private _columnName : string;
     private _constraintName : string;
@@ -12,7 +14,8 @@ class ForeignKey {
     private _referencedTable : Table;
     private _referencedColumn : Column;
 
-    constructor({TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME}: {[p: string] : string}) {
+    constructor({TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME}: {[p: string] : string}, index : number) {
+        super(index);
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._constraintName = CONSTRAINT_NAME;
@@ -20,14 +23,17 @@ class ForeignKey {
         this._referencedColumnName = REFERENCED_COLUMN_NAME;
     }
 
+    @Indexable.ToJSON()
     get tableName() {
         return this._tableName;
     }
 
+    @Indexable.ToJSON()
     get columnName() {
         return this._columnName;
     }
 
+    @Indexable.ToJSON()
     get table() {
         return this._table;
     }
@@ -36,6 +42,7 @@ class ForeignKey {
         this._table = table;
     }
 
+    @Indexable.ToJSON()
     get column() {
         return this._column;
     }
@@ -44,18 +51,22 @@ class ForeignKey {
         this._column = column;
     }
 
+    @Indexable.ToJSON()
     get constraintName() {
         return this._constraintName;
     }
 
+    @Indexable.ToJSON()
     get referencedTableName() {
         return this._referencedTableName;
     }
 
+    @Indexable.ToJSON()
     get referencedColumnName() {
         return this._referencedColumnName;
     }
 
+    @Indexable.ToJSON()
     get referencedTable() {
         return this._referencedTable;
     }
@@ -64,6 +75,7 @@ class ForeignKey {
         this._referencedTable = table;
     }
 
+    @Indexable.ToJSON()
     get referencedColumn() {
         return this._referencedColumn;
     }

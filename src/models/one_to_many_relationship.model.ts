@@ -1,6 +1,7 @@
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import NamesHelper = require('../helpers/names.helper');
 import Table = require('./table.model');
+import Indexable = require("./indexable.model");
 
 class OneToManyRelationship extends OneToXRelationship {
 
@@ -10,8 +11,8 @@ class OneToManyRelationship extends OneToXRelationship {
      * @param {string} name The name of the fk involved
      * 
      */
-    constructor(name : string) {
-        super(name);
+    constructor(name : string, index : number) {
+        super(name, index);
     }
 
     /**
@@ -20,6 +21,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {Table}
      */
+    @Indexable.ToJSON()
     get manySideTable() {
         return this.foreignKeys[0].table;
     }
@@ -30,6 +32,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {Table}
      */
+    @Indexable.ToJSON()
     get oneSideTable() {
         return this.foreignKeys[0].referencedTable;
     }
@@ -40,6 +43,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
+    @Indexable.ToJSON()
     get relationshipNameFromManySide(){
         let sufix  = '';
 
@@ -56,6 +60,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
+    @Indexable.ToJSON()
     get relationshipNameFromOneSide() {
         let sufix  = '';
 
@@ -72,6 +77,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
+    @Indexable.ToJSON()
     get pluralRelationshipNameFromManySide(){
         let sufix  = '';
 
@@ -88,6 +94,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
+    @Indexable.ToJSON()
     get pluralRelationshipNameFromOneSide() {
         let sufix  = '';
 
@@ -119,6 +126,7 @@ class OneToManyRelationship extends OneToXRelationship {
             );
     }
 
+    @Indexable.ToJSON()
     get isBetweenEntities() {
         return this.oneSideTable.isEntity &&
             this.manySideTable.isEntity;
@@ -149,8 +157,8 @@ class OneToManyRelationship extends OneToXRelationship {
      * 
      * @memberOf OneToManyRelationship
      */
-    static createFromOneToXRelationship(rel: OneToXRelationship){
-        const toret = new OneToManyRelationship(rel.name);
+    static createFromOneToXRelationship(rel: OneToXRelationship, index: number){
+        const toret = new OneToManyRelationship(rel.name, index);
 
         toret.foreignKeys = [...rel.foreignKeys];
 

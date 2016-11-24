@@ -1,6 +1,14 @@
 "use strict";
-class ForeignKey {
-    constructor({ TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME }) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+const Indexable = require('./indexable.model');
+class ForeignKey extends Indexable {
+    constructor({ TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME }, index) {
+        super(index);
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._constraintName = CONSTRAINT_NAME;
@@ -47,5 +55,32 @@ class ForeignKey {
         this._referencedColumn = column;
     }
 }
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "tableName", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "columnName", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "table", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "column", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "constraintName", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "referencedTableName", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "referencedColumnName", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "referencedTable", null);
+__decorate([
+    Indexable.ToJSON()
+], ForeignKey.prototype, "referencedColumn", null);
 module.exports = ForeignKey;
 //# sourceMappingURL=foreign_key.model.js.map

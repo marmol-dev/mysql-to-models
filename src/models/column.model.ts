@@ -1,8 +1,9 @@
 import _ = require('lodash');
 import Table = require('./table.model');
 import ForeignKey = require('./foreign_key.model');
+import Indexable = require('./indexable.model');
 
-class Column {
+class Column extends Indexable {
 
     private _tableName : string;
     private _columnName : string;
@@ -19,7 +20,8 @@ class Column {
     private _foreignKey : ForeignKey;
     private _phpDataType : string;
 
-    constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA} : {[p:string] : string}){
+    constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA} : {[p:string] : string}, index: number){
+        super(index);
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._ordinalPosition = ORDINAL_POSITION;
@@ -32,10 +34,12 @@ class Column {
         this._extra = EXTRA;
     }
 
+    @Indexable.ToJSON()
     get tableName() {
         return this._tableName;
     }
 
+    @Indexable.ToJSON()
     get table() {
         return this._table;
     }
@@ -43,67 +47,83 @@ class Column {
     set table(table) {
         this._table = table;
     }
-    
+
+    @Indexable.ToJSON()
     get columnName() {
         return this._columnName;
     }
 
+    @Indexable.ToJSON()
     get pascalName() {
         return _.upperFirst(this.camelName);
     }
 
+    @Indexable.ToJSON()
     get camelName() {
         return _.camelCase(this.columnName);
     }
 
+    @Indexable.ToJSON()
     get phpName() {
         return this.camelName;
     }
 
+    @Indexable.ToJSON()
     get ordinalPosition() {
         return this._ordinalPosition;
     }
 
+    @Indexable.ToJSON()
     get columnDefault() {
         return this._columnDefault;
     }
 
+    @Indexable.ToJSON()
     get isNullable() {
         return this._isNullable !== 'NO';
     }
 
+    @Indexable.ToJSON()
     get hasDefaultValue() {
         return this._columnDefault !== null;
     }
 
+    @Indexable.ToJSON()
     get isRequired() {
         return !this.isNullable && !this.hasDefaultValue;
     }
 
+    @Indexable.ToJSON()
     get isAutoIncrement() {
         return this._extra.lastIndexOf('auto_increment') > -1;
     }
 
+    @Indexable.ToJSON()
     get dataType() {
         return this._dataType;
     }
 
+    @Indexable.ToJSON()
     get characterMaximumLength()  {
         return this._characterMaximumLength;
     }
 
+    @Indexable.ToJSON()
     get columnType() {
         return this._columnType;
     }
 
+    @Indexable.ToJSON()
     get columnKey() {
         return this._columnKey;
     }
 
+    @Indexable.ToJSON()
     get extra() {
         return this._extra;
     }
 
+    @Indexable.ToJSON()
     get foreignkey() {
         return this._foreignKey;
     }
@@ -112,10 +132,12 @@ class Column {
         this._foreignKey = fk;
     }
 
+    @Indexable.ToJSON(true)
     get referencedColumn() {
         return this._foreignKey.referencedColumn;
     }
 
+    @Indexable.ToJSON(true)
     get referencedTable() {
         return this._foreignKey.referencedTable;
     }
@@ -140,6 +162,7 @@ class Column {
         }
     }
 
+    @Indexable.ToJSON()
     get phpDataType() {
         if (!this._phpDataType) {
             return Column.getPhpDataType(this.dataType);
@@ -148,22 +171,27 @@ class Column {
         return this._phpDataType;
     }
 
+    @Indexable.ToJSON()
     get isPrimaryKey() {
         return this.columnKey === 'PRI';
     }
 
+    @Indexable.ToJSON()
     get isForeignKey() {
         return !!this.foreignkey;
     }
 
+    @Indexable.ToJSON()
     get isEditable() {
         return !this.isAutoIncrement;
     }
 
+    @Indexable.ToJSON()
     get isUniqueType() {
         return this.columnKey === 'UNI';
     }
 
+    @Indexable.ToJSON()
     get isUnique() {
         return this.isUniqueType || this.isPrimaryKey;
     }

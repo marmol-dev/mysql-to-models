@@ -12,7 +12,7 @@ class ColumnsService extends DbService {
                 WHERE table_schema = '${this._dbConfig.database}';`;
         }
         return this.query(this._getColumnsSql)
-            .then(rows => rows.map(row => new Column(row)));
+            .then(rows => rows.map((row, index) => new Column(row, index)));
     }
 }
 module.exports = ColumnsService;

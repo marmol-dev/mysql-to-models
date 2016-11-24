@@ -1,9 +1,16 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 const Relationship = require('./relationship.model');
 const _ = require('lodash');
+const Indexable = require("./indexable.model");
 class ManyToManyRelationship extends Relationship {
-    constructor(relationship1, relationship2) {
-        super();
+    constructor(relationship1, relationship2, index) {
+        super(index);
         this._relationship1 = relationship1;
         this._relationship2 = relationship2;
     }
@@ -149,5 +156,47 @@ class ManyToManyRelationship extends Relationship {
                         this.manySide2Table === rel.manySide1Table));
     }
 }
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "relationship1", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "relationship2", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "manySide1Table", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "manySide2Table", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "innerTable", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "relationshipNameFromManySide2", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "relationshipNameFromManySide1", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "pluralRelationshipNameFromManySide2", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "pluralRelationshipNameFromManySide1", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "innerRelationshipNameFromManySide2", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "innerRelationshipNameFromManySide1", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "pluralInnerRelationshipNameFromManySide2", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "pluralInnerRelationshipNameFromManySide1", null);
+__decorate([
+    Indexable.ToJSON()
+], ManyToManyRelationship.prototype, "isBetweenEntities", null);
 module.exports = ManyToManyRelationship;
 //# sourceMappingURL=many_to_many_relationship.model.js.map

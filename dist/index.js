@@ -1,7 +1,8 @@
 "use strict";
 const mysql = require('mysql');
-const TablesService = require('./services/tables.service');
+const SchemaService = require('./services/schema.service');
 const path = require('path');
+const fs = require('fs');
 let projectConfig;
 try {
     const file = path.resolve(__dirname, "..", process.argv[2]);
@@ -11,11 +12,18 @@ catch (e) {
     console.error("Error opening config file", e);
     process.exit();
 }
-let dbConnection = mysql.createConnection(projectConfig.database);
+const outFile = process.argv.length > 3 ? path.resolve(__dirname, "..", process.argv[3]) : null;
+const dbConnection = mysql.createConnection(projectConfig.database);
 dbConnection.connect();
-const tablesService = new TablesService(dbConnection, projectConfig.database);
-tablesService.getTablesWithColumnsAndFKs().then(tables => {
-    console.log(JSON.stringify(tables));
+const schemaService = new SchemaService(dbConnection, projectConfig.database);
+schemaService.getSchema().then(schema => {
+    const content = JSON.stringify(schema);
+    if (outFile !== null) {
+        fs.writeFileSync(outFile, content);
+    }
+    else {
+        process.stdout.write(content);
+    }
 });
 process.on('unhandledRejection', (reason) => {
     console.log('Reason: ' + reason);

@@ -1,6 +1,6 @@
 "use strict";
 const DbService = require('./db.service');
-const Table = require('../models/table.model');
+const Schema = require("../models/schema.model");
 const OneToXRelationship = require('../models/one_to_x_relationship.model');
 const OneToOneRelationship = require('../models/one_to_one_relationship.model');
 const OneToManyRelationship = require('../models/one_to_many_relationship.model');
@@ -8,27 +8,20 @@ const ManyToManyRelationship = require('../models/many_to_many_relationship.mode
 const ColumnsService = require('./columns.service');
 const ForeignKeysService = require('./foreign_keys.service');
 const ConstraintsService = require('./constraints.service');
-class TablesService extends DbService {
+const TablesService = require('./tables.service');
+class SchemaService extends DbService {
     constructor(dbConnection, dbConfig) {
         super(dbConnection, dbConfig);
         this._columnsService = new ColumnsService(dbConnection, dbConfig);
         this._foreignKeysService = new ForeignKeysService(dbConnection, dbConfig);
         this._constraintsService = new ConstraintsService(dbConnection, dbConfig);
+        this._tablesService = new TablesService(dbConnection, dbConfig);
     }
-    getTables() {
-        if (!this._getTablesSql) {
-            this._getTablesSql = `SELECT DISTINCT TABLE_NAME 
-                FROM INFORMATION_SCHEMA.COLUMNS
-                WHERE table_schema = '${this._dbConfig.database}';`;
-        }
-        return this.query(this._getTablesSql)
-            .then(rows => rows.map((row, index) => new Table(row, index)));
-    }
-    getTablesWithColumnsAndFKs() {
+    getSchema() {
         return Promise.all([
             this._columnsService.getColumns(),
             this._foreignKeysService.getForeignKeys(),
-            this.getTables(),
+            this._tablesService.getTables(),
             this._constraintsService.getConstraints()
         ])
             .then(([columns, foreignKeys, tables, constraints]) => {
@@ -136,9 +129,20 @@ class TablesService extends DbService {
                     });
                 }
             });
-            return tables;
+            const entities = tables.map(table => table.entity);
+            const schema = new Schema({
+                oneToOneRelationships,
+                oneToManyRelationships,
+                manyToManyRelationships,
+                tables,
+                columns,
+                foreignKeys,
+                constraints,
+                entities
+            });
+            return schema;
         });
     }
 }
-module.exports = TablesService;
-//# sourceMappingURL=tables.service.js.map
+module.exports = SchemaService;
+//# sourceMappingURL=schema.service.js.map

@@ -22,8 +22,8 @@ class ColumnsService extends DbService {
 
         return this.query(this._getColumnsSql)
             .then(rows => 
-                rows.map(row => 
-                    new Column(row)
+                rows.map((row, index) => 
+                    new Column(row, index)
                 )
             );
     }
