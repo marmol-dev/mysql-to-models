@@ -24,7 +24,7 @@ class Constraint extends Indexable {
     private _columns : Column[];
     private _columnNames: string[];
 
-    constructor({CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }: {[prop : string] : string, CONSTRAINT_TYPE: ConstraintType}, index: number) {
+    constructor({CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }: {[prop : string] : string; CONSTRAINT_TYPE: ConstraintType}, index: number) {
         super(index);
         this._constraintName = CONSTRAINT_NAME;
         this._tableName = TABLE_NAME;
