@@ -17,7 +17,7 @@ const dbConnection = mysql.createConnection(projectConfig.database);
 dbConnection.connect();
 const schemaService = new SchemaService(dbConnection, projectConfig.database);
 schemaService.getSchema().then(schema => {
-    const content = JSON.stringify(schema);
+    const content = JSON.stringify(schema, null, 4);
     if (outFile !== null) {
         fs.writeFileSync(outFile, content);
     }

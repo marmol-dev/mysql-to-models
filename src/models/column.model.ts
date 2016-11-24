@@ -15,12 +15,13 @@ class Column extends Indexable {
     private _columnType : string;
     private _columnKey : string;
     private _extra : string;
+    private _columnComment : string;
 
     private _table : Table;
     private _foreignKey : ForeignKey;
     private _phpDataType : string;
 
-    constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA} : {[p:string] : string}, index: number){
+    constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT} : {[p:string] : string}, index: number){
         super(index);
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
@@ -32,6 +33,7 @@ class Column extends Indexable {
         this._columnType = COLUMN_TYPE;
         this._columnKey = COLUMN_KEY;
         this._extra = EXTRA;
+        this._columnComment = COLUMN_COMMENT;
     }
 
     @Indexable.ToJSON()
@@ -140,6 +142,11 @@ class Column extends Indexable {
     @Indexable.ToJSON(true)
     get referencedTable() {
         return this._foreignKey.referencedTable;
+    }
+
+    @Indexable.ToJSON()
+    get columnComment() {
+        return this._columnComment;
     }
 
     static getPhpDataType(type : string) {
