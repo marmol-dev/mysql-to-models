@@ -1,0 +1,19 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "outDir": "dist/",
+        "sourceMap": true,
+        "target": "es6"
+    },
+    "include": [
+        "src/**/*",
+        "typings/index.d.ts",
+        "custom-typings/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

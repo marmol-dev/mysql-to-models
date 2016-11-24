@@ -1,0 +1,16 @@
+{
+  "name": "mysql-to-model",
+  "version": "0.0.1",
+  "description": "Generates a database JSON schema from an existing mysql database",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.16.6",
+    "mysql": "^2.11.1"
+  }
+}

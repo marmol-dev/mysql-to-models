@@ -1,0 +1,9 @@
+{
+    "min-version": "0.0.1",
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "password": "root",
+        "database": "example"
+    }
+}

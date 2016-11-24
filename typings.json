@@ -1,0 +1,14 @@
+{
+  "name": "mvcblog-generator",
+  "dependencies": {
+    "mysql": "registry:npm/mysql#2.11.1+20160922015152"
+  },
+  "globalDependencies": {
+    "commander": "registry:dt/commander#2.3.0+20160317120654",
+    "ejs": "registry:dt/ejs#0.0.0+20161003130526",
+    "fs-extra": "registry:dt/fs-extra#0.0.0+20161004190449",
+    "lodash": "registry:dt/lodash#4.14.0+20161004174455",
+    "mysql": "registry:dt/mysql#0.0.0+20160316155526",
+    "node": "registry:dt/node#6.0.0+20161019125345"
+  }
+}
