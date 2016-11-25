@@ -1,21 +1,34 @@
 import Table = require('./table.model');
 import Column = require('./column.model');
-import Indexable = require('./indexable.model');
+import {Serializable, Construct, Serialize, Id} from "../helpers/serializable";
 
-@Indexable.CollectionName("foreignKeys")
-class ForeignKey extends Indexable {
+@Serializable()
+class ForeignKey {
+    @Construct()
     private _tableName : string;
+    @Construct()
     private _columnName : string;
+    @Construct()
     private _constraintName : string;
+    @Construct()
     private _referencedTableName : string;
+    @Construct()
     private _referencedColumnName : string;
+    @Construct()
     private _table : Table;
+    @Construct()
     private _column : Column;
+    @Construct()
     private _referencedTable : Table;
+    @Construct()
     private _referencedColumn : Column;
 
+    @Construct()
+    @Id()
+    private _index : number;
+
     constructor({TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME}: {[p: string] : string}, index : number) {
-        super(index);
+        this._index = index;
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._constraintName = CONSTRAINT_NAME;
@@ -23,17 +36,17 @@ class ForeignKey extends Indexable {
         this._referencedColumnName = REFERENCED_COLUMN_NAME;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get tableName() {
         return this._tableName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnName() {
         return this._columnName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get table() {
         return this._table;
     }
@@ -42,7 +55,7 @@ class ForeignKey extends Indexable {
         this._table = table;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get column() {
         return this._column;
     }
@@ -51,22 +64,22 @@ class ForeignKey extends Indexable {
         this._column = column;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get constraintName() {
         return this._constraintName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get referencedTableName() {
         return this._referencedTableName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get referencedColumnName() {
         return this._referencedColumnName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get referencedTable() {
         return this._referencedTable;
     }
@@ -75,7 +88,7 @@ class ForeignKey extends Indexable {
         this._referencedTable = table;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get referencedColumn() {
         return this._referencedColumn;
     }

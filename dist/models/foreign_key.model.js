@@ -5,10 +5,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const Indexable = require('./indexable.model');
-let ForeignKey = class ForeignKey extends Indexable {
+const serializable_1 = require("../helpers/serializable");
+let ForeignKey = class ForeignKey {
     constructor({ TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME }, index) {
-        super(index);
+        this._index = index;
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._constraintName = CONSTRAINT_NAME;
@@ -56,34 +56,65 @@ let ForeignKey = class ForeignKey extends Indexable {
     }
 };
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Construct()
+], ForeignKey.prototype, "_tableName", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_columnName", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_constraintName", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_referencedTableName", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_referencedColumnName", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_table", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_column", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_referencedTable", void 0);
+__decorate([
+    serializable_1.Construct()
+], ForeignKey.prototype, "_referencedColumn", void 0);
+__decorate([
+    serializable_1.Construct(),
+    serializable_1.Id()
+], ForeignKey.prototype, "_index", void 0);
+__decorate([
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "tableName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "columnName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "table", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "column", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "constraintName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "referencedTableName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "referencedColumnName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "referencedTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ForeignKey.prototype, "referencedColumn", null);
 ForeignKey = __decorate([
-    Indexable.CollectionName("foreignKeys")
+    serializable_1.Serializable()
 ], ForeignKey);
 module.exports = ForeignKey;
 //# sourceMappingURL=foreign_key.model.js.map

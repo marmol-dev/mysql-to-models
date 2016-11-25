@@ -1,10 +1,10 @@
 import Column = require('./column.model');
-import Indexable = require('./indexable.model');
+import {Serializable, Serialize, Construct, Id} from "../helpers/serializable";
 
 type ConstraintType = "NOT NULL" | "UNIQUE" | "PRIMARY KEY" | "FOREIGN KEY" | "CHECK" | "DEFAULT";
 
-@Indexable.CollectionName("constraints")
-class Constraint extends Indexable {
+@Serializable()
+class Constraint {
     /**
      * Constraint type
      * 
@@ -19,14 +19,22 @@ class Constraint extends Indexable {
      * @type {string}
      * @memberOf Constraint
      */
+    @Construct()
     private _constraintName : string;
+    @Construct()
     private _tableName : string;
+    @Construct()
     private _constraintType : ConstraintType;
+    @Construct()
     private _columns : Column[];
+    @Construct()
     private _columnNames: string[];
+    @Construct()
+    @Id()
+    private _index : number;
 
     constructor({CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }: {[prop : string] : string; CONSTRAINT_TYPE: ConstraintType}, index: number) {
-        super(index);
+        this._index = index;
         this._constraintName = CONSTRAINT_NAME;
         this._tableName = TABLE_NAME;
         this._constraintType = CONSTRAINT_TYPE;
@@ -34,22 +42,22 @@ class Constraint extends Indexable {
         this._columnNames = [];
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get constraintName() {
         return this._constraintName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get constraintType() {
         return this._constraintType;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get tableName() {
         return this._tableName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnNames() {
         return this._columnNames;
     }
@@ -58,42 +66,42 @@ class Constraint extends Indexable {
         this._columns = cols;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columns() {
         return this._columns;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get areAllColumnsAutoIncrement() {
         return this._columns.every(col => col.isAutoIncrement);
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get containsPrimaryKeyColumn() {
         return !!this.columns.find(col => col.isPrimaryKey);
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get nonAutoIncrementColumns() {
         return this._columns.filter(col => !col.isAutoIncrement);
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isUniquenessType() {
         return this.isUniqueType || this.isPrimaryKeyType;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isUniqueType() {
         return this._constraintType === 'UNIQUE';
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isPrimaryKeyType() {
         return this._constraintType === 'PRIMARY KEY';
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get table() {
         return this._columns[0].table;
     }

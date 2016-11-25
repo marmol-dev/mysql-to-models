@@ -5,10 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const Indexable = require("./indexable.model");
-class Schema extends Indexable {
+const serializable_1 = require("../helpers/serializable");
+let Schema = class Schema {
     constructor(schema) {
-        super();
         this._columns = schema.columns;
         this._tables = schema.tables;
         this._oneToManyRelationships = schema.oneToManyRelationships;
@@ -42,30 +41,57 @@ class Schema extends Indexable {
     get annotations() {
         return this._annotations;
     }
-}
+};
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Construct()
+], Schema.prototype, "_columns", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_tables", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_oneToOneRelationships", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_oneToManyRelationships", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_manyToManyRelationships", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_constraints", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_foreignKeys", void 0);
+__decorate([
+    serializable_1.Construct()
+], Schema.prototype, "_annotations", void 0);
+__decorate([
+    serializable_1.Serialize(false)
 ], Schema.prototype, "columns", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "tables", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "oneToOneRelationships", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "oneToManyRelationships", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "manyToManyRelationships", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "constraints", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "foreignKeys", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    serializable_1.Serialize(false)
 ], Schema.prototype, "annotations", null);
+Schema = __decorate([
+    serializable_1.Serializable()
+], Schema);
 module.exports = Schema;
 //# sourceMappingURL=schema.model.js.map

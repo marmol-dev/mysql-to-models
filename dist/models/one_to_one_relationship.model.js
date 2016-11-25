@@ -6,14 +6,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const OneToXRelationship = require('./one_to_x_relationship.model');
-const Indexable = require("./indexable.model");
+const serializable_1 = require("../helpers/serializable");
 let OneToOneRelationship_1;
 let OneToOneRelationship = OneToOneRelationship_1 = class OneToOneRelationship extends OneToXRelationship {
     /**
      * Creates an instance of OneToOneRelationship.
      *
      * @param {string} name The name of the foreign key constraint involved
-     *
+     * @param {number} index The index to serialize
      */
     constructor(name, index) {
         super(name, index);
@@ -124,28 +124,28 @@ let OneToOneRelationship = OneToOneRelationship_1 = class OneToOneRelationship e
     }
 };
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "anotherSideTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "oneSideTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "relationshipNameFromAnotherSide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "relationshipNameFromOneSide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "pluralRelationshipNameFromAnotherSide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "pluralRelationshipNameFromOneSide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "isBetweenEntities", null);
 OneToOneRelationship = OneToOneRelationship_1 = __decorate([
-    Indexable.CollectionName("oneToOneRelationships")
+    serializable_1.Serializable()
 ], OneToOneRelationship);
 module.exports = OneToOneRelationship;
 //# sourceMappingURL=one_to_one_relationship.model.js.map

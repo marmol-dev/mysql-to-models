@@ -1,13 +1,20 @@
 import Table = require('./table.model');
-import Indexable = require('./indexable.model');
+import {Construct, Id, Serialize} from "../helpers/serializable";
 
-abstract class Relationship extends Indexable {
+abstract class Relationship {
 
+    @Construct()
     private _numberOfRelationshipsWithSameTables : number;
+
+    @Construct()
     private _indexInSameTablesRelationships : number;
 
+    @Id()
+    @Construct()
+    private _index : number;
+
     constructor(index : number) {
-        super(index);
+        this._index = index;
         this._numberOfRelationshipsWithSameTables = 1;
         this._indexInSameTablesRelationships = 0;
     }
@@ -17,7 +24,7 @@ abstract class Relationship extends Indexable {
      * 
      * @type {number}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get numberOfRelationshipsWithSameTables() {
         return this._numberOfRelationshipsWithSameTables;
     }
@@ -32,7 +39,7 @@ abstract class Relationship extends Indexable {
      * @description There are another relationships that involve the same tables. Every relationship has an index.
      * @type {number}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get indexInSameTablesRelationships() {
         return this._indexInSameTablesRelationships;
     }

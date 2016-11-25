@@ -7,7 +7,7 @@ import ManyToManyRelationship = require('./many_to_many_relationship.model');
 import Constraint = require('./constraint.model');
 import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
-import Indexable = require("./indexable.model");
+import {Serializable, Construct, Serialize} from "../helpers/serializable";
 
 
 interface ISchema {
@@ -23,19 +23,27 @@ interface ISchema {
     foreignKeys: ForeignKey[];
 }
 
-class Schema extends Indexable implements ISchema{
+@Serializable()
+class Schema implements ISchema {
 
+    @Construct()
     private _columns: Column[];
+    @Construct()
     private _tables: Table[];
+    @Construct()
     private _oneToOneRelationships: OneToOneRelationship[];
+    @Construct()
     private _oneToManyRelationships: OneToManyRelationship[];
+    @Construct()
     private _manyToManyRelationships: ManyToManyRelationship[];
+    @Construct()
     private _constraints: Constraint[];
+    @Construct()
     private _foreignKeys: ForeignKey[];
+    @Construct()
     private _annotations: Annotation[];
 
     constructor(schema: ISchema){
-        super();
         this._columns = schema.columns;
         this._tables = schema.tables;
         this._oneToManyRelationships = schema.oneToManyRelationships;
@@ -46,42 +54,42 @@ class Schema extends Indexable implements ISchema{
         this._annotations = schema.annotations;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get columns(): Column[] {
         return this._columns;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get tables(): Table[] {
         return this._tables;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get oneToOneRelationships() {
         return this._oneToOneRelationships;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get oneToManyRelationships() {
         return this._oneToManyRelationships;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get manyToManyRelationships() {
         return this._manyToManyRelationships;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get constraints(): Constraint[] {
         return this._constraints;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get foreignKeys(): ForeignKey[] {
         return this._foreignKeys;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Serialize(false)
     get annotations(): Annotation[] {
         return this._annotations;
     }

@@ -1,45 +1,54 @@
-import Indexable = require("./indexable.model");
 import Table = require("./table.model");
 import Column = require("./column.model");
 import ForeignKey = require("./foreign_key.model");
+import {Serializable, Construct, Id, Serialize} from "../helpers/serializable";
 
-@Indexable.CollectionName("annotations")
-class Annotation extends Indexable {
+@Serializable()
+class Annotation {
 
-
+    @Construct()
     private _table : Table;
+    @Construct()
     private _column: Column;
+    @Construct()
     private _foreignKey: ForeignKey;
+    @Construct()
+    private _name: string;
+    @Construct()
+    private _values : any;
+    @Construct()
+    @Id()
+    private _index: number;
 
-    constructor(private _name: string, private _values : any, index: number){
-        super(index);
+    constructor(_name: string, _values : any, _index: number){
+        Object.assign(this, {_name, _values, _index});
     }
 
     get hasValues() {
         return this._values !== null;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get table(): Table {
         return this._table;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get column(): Column {
         return this._column;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get foreignKey(): ForeignKey {
         return this._foreignKey;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get name(): string {
         return this._name;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get values(): any {
         return this._values;
     }

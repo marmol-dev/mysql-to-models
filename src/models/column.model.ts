@@ -1,31 +1,48 @@
 import _ = require('lodash');
 import Table = require('./table.model');
 import ForeignKey = require('./foreign_key.model');
-import Indexable = require('./indexable.model');
 import Annotation = require("./annotation.model");
+import {Serializable, Construct, Serialize, Id} from "../helpers/serializable";
 
-@Indexable.CollectionName("columns")
-class Column extends Indexable {
+@Serializable()
+class Column {
 
+    @Construct()
     private _tableName : string;
+    @Construct()
     private _columnName : string;
+    @Construct()
     private _ordinalPosition : string;
+    @Construct()
     private _columnDefault : string;
+    @Construct()
     private _isNullable : string;
+    @Construct()
     private _dataType : string;
+    @Construct()
     private _characterMaximumLength : string;
+    @Construct()
     private _columnType : string;
+    @Construct()
     private _columnKey : string;
+    @Construct()
     private _extra : string;
+    @Construct()
     private _columnComment : string;
-
+    @Construct()
     private _table : Table;
+    @Construct()
     private _foreignKey : ForeignKey;
+    @Construct()
     private _phpDataType : string;
+    @Construct()
     private _annotations : Annotation[];
+    @Construct()
+    @Id()
+    private _index : number;
 
     constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT} : {[p:string] : string}, index: number){
-        super(index);
+        this._index = index;
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._ordinalPosition = ORDINAL_POSITION;
@@ -39,12 +56,12 @@ class Column extends Indexable {
         this._columnComment = COLUMN_COMMENT;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get tableName() {
         return this._tableName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get table() {
         return this._table;
     }
@@ -53,82 +70,82 @@ class Column extends Indexable {
         this._table = table;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnName() {
         return this._columnName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get pascalName() {
         return _.upperFirst(this.camelName);
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get camelName() {
         return _.camelCase(this.columnName);
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get phpName() {
         return this.camelName;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get ordinalPosition() {
         return this._ordinalPosition;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnDefault() {
         return this._columnDefault;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isNullable() {
         return this._isNullable !== 'NO';
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get hasDefaultValue() {
         return this._columnDefault !== null;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isRequired() {
         return !this.isNullable && !this.hasDefaultValue;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isAutoIncrement() {
         return this._extra.lastIndexOf('auto_increment') > -1;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get dataType() {
         return this._dataType;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get characterMaximumLength()  {
         return this._characterMaximumLength;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnType() {
         return this._columnType;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnKey() {
         return this._columnKey;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get extra() {
         return this._extra;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get foreignkey() {
         return this._foreignKey;
     }
@@ -137,17 +154,17 @@ class Column extends Indexable {
         this._foreignKey = fk;
     }
 
-    @Indexable.ToJSON(true)
+    @Serialize(true)
     get referencedColumn() {
         return this._foreignKey.referencedColumn;
     }
 
-    @Indexable.ToJSON(true)
+    @Serialize(true)
     get referencedTable() {
         return this._foreignKey.referencedTable;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get columnComment() {
         return this._columnComment;
     }
@@ -172,7 +189,7 @@ class Column extends Indexable {
         }
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get phpDataType() {
         if (!this._phpDataType) {
             return Column.getPhpDataType(this.dataType);
@@ -181,32 +198,32 @@ class Column extends Indexable {
         return this._phpDataType;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isPrimaryKey() {
         return this.columnKey === 'PRI';
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isForeignKey() {
         return !!this.foreignkey;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isEditable() {
         return !this.isAutoIncrement;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isUniqueType() {
         return this.columnKey === 'UNI';
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isUnique() {
         return this.isUniqueType || this.isPrimaryKey;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get annotations() : Annotation[] {
         return this._annotations;
     }

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const Relationship = require('./relationship.model');
 const _ = require('lodash');
-const Indexable = require("./indexable.model");
+const serializable_1 = require("../helpers/serializable");
 let ManyToManyRelationship = class ManyToManyRelationship extends Relationship {
     constructor(relationship1, relationship2, index) {
         super(index);
@@ -157,49 +157,55 @@ let ManyToManyRelationship = class ManyToManyRelationship extends Relationship {
     }
 };
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Construct()
+], ManyToManyRelationship.prototype, "_relationship1", void 0);
+__decorate([
+    serializable_1.Construct()
+], ManyToManyRelationship.prototype, "_relationship2", void 0);
+__decorate([
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "relationship1", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "relationship2", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "manySide1Table", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "manySide2Table", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "innerTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "relationshipNameFromManySide2", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "relationshipNameFromManySide1", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "pluralRelationshipNameFromManySide2", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "pluralRelationshipNameFromManySide1", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "innerRelationshipNameFromManySide2", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "innerRelationshipNameFromManySide1", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "pluralInnerRelationshipNameFromManySide2", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "pluralInnerRelationshipNameFromManySide1", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "isBetweenEntities", null);
 ManyToManyRelationship = __decorate([
-    Indexable.CollectionName("manyToManyRelationships")
+    serializable_1.Serializable()
 ], ManyToManyRelationship);
 module.exports = ManyToManyRelationship;
 //# sourceMappingURL=many_to_many_relationship.model.js.map

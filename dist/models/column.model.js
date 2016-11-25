@@ -6,11 +6,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const _ = require('lodash');
-const Indexable = require('./indexable.model');
+const serializable_1 = require("../helpers/serializable");
 let Column_1;
-let Column = Column_1 = class Column extends Indexable {
+let Column = Column_1 = class Column {
     constructor({ TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT }, index) {
-        super(index);
+        this._index = index;
         this._tableName = TABLE_NAME;
         this._columnName = COLUMN_NAME;
         this._ordinalPosition = ORDINAL_POSITION;
@@ -140,91 +140,140 @@ let Column = Column_1 = class Column extends Indexable {
     }
 };
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Construct()
+], Column.prototype, "_tableName", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_columnName", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_ordinalPosition", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_columnDefault", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_isNullable", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_dataType", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_characterMaximumLength", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_columnType", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_columnKey", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_extra", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_columnComment", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_table", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_foreignKey", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_phpDataType", void 0);
+__decorate([
+    serializable_1.Construct()
+], Column.prototype, "_annotations", void 0);
+__decorate([
+    serializable_1.Construct(),
+    serializable_1.Id()
+], Column.prototype, "_index", void 0);
+__decorate([
+    serializable_1.Serialize()
 ], Column.prototype, "tableName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "table", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "columnName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "pascalName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "camelName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "phpName", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "ordinalPosition", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "columnDefault", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isNullable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "hasDefaultValue", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isRequired", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isAutoIncrement", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "dataType", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "characterMaximumLength", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "columnType", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "columnKey", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "extra", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "foreignkey", null);
 __decorate([
-    Indexable.ToJSON(true)
+    serializable_1.Serialize(true)
 ], Column.prototype, "referencedColumn", null);
 __decorate([
-    Indexable.ToJSON(true)
+    serializable_1.Serialize(true)
 ], Column.prototype, "referencedTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "columnComment", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "phpDataType", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isPrimaryKey", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isForeignKey", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isEditable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isUniqueType", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "isUnique", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], Column.prototype, "annotations", null);
 Column = Column_1 = __decorate([
-    Indexable.CollectionName("columns")
+    serializable_1.Serializable()
 ], Column);
 module.exports = Column;
 //# sourceMappingURL=column.model.js.map

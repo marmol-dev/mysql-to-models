@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const OneToXRelationship = require('./one_to_x_relationship.model');
-const Indexable = require("./indexable.model");
+const serializable_1 = require("../helpers/serializable");
 let OneToManyRelationship_1;
 let OneToManyRelationship = OneToManyRelationship_1 = class OneToManyRelationship extends OneToXRelationship {
     /**
@@ -138,28 +138,28 @@ let OneToManyRelationship = OneToManyRelationship_1 = class OneToManyRelationshi
     }
 };
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "manySideTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "oneSideTable", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "relationshipNameFromManySide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "relationshipNameFromOneSide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "pluralRelationshipNameFromManySide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "pluralRelationshipNameFromOneSide", null);
 __decorate([
-    Indexable.ToJSON()
+    serializable_1.Serialize()
 ], OneToManyRelationship.prototype, "isBetweenEntities", null);
 OneToManyRelationship = OneToManyRelationship_1 = __decorate([
-    Indexable.CollectionName("oneTomanyRelationships")
+    serializable_1.Serializable()
 ], OneToManyRelationship);
 module.exports = OneToManyRelationship;
 //# sourceMappingURL=one_to_many_relationship.model.js.map

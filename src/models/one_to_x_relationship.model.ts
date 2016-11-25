@@ -2,11 +2,13 @@ import Relationship = require('./relationship.model');
 import ForeignKey = require('./foreign_key.model');
 import Table = require('./table.model');
 import Column = require('./column.model');
-import Indexable = require("./indexable.model");
+import {Construct, Serialize} from "../helpers/serializable";
 
 class OneToXRelationship extends Relationship {
 
+    @Construct()
     private _name : string;
+    @Construct()
     private _foreignKeys : ForeignKey[];
 
     constructor(name : string, index : number) {
@@ -15,7 +17,7 @@ class OneToXRelationship extends Relationship {
         this._foreignKeys = [];
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get foreignKeys() {
         return this._foreignKeys;
     }
@@ -28,7 +30,7 @@ class OneToXRelationship extends Relationship {
         this._foreignKeys.push(fk);
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get name() {
         return this._name;
     }
@@ -67,7 +69,7 @@ class OneToXRelationship extends Relationship {
         return otherSideColumn;
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get foreignKeysContainPrimaryKey() {
         return !!this.foreignKeys.find(fk => fk.column.isPrimaryKey);
     }

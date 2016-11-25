@@ -1,9 +1,8 @@
 import OneToXRelationship = require('./one_to_x_relationship.model');
-import NamesHelper = require('../helpers/names.helper');
 import Table = require('./table.model');
-import Indexable = require("./indexable.model");
+import {Serializable, Serialize} from "../helpers/serializable";
 
-@Indexable.CollectionName("oneTomanyRelationships")
+@Serializable()
 class OneToManyRelationship extends OneToXRelationship {
 
     /**
@@ -22,7 +21,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {Table}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get manySideTable() {
         return this.foreignKeys[0].table;
     }
@@ -33,7 +32,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {Table}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get oneSideTable() {
         return this.foreignKeys[0].referencedTable;
     }
@@ -44,7 +43,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get relationshipNameFromManySide(){
         let sufix  = '';
 
@@ -61,7 +60,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get relationshipNameFromOneSide() {
         let sufix  = '';
 
@@ -78,7 +77,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get pluralRelationshipNameFromManySide(){
         let sufix  = '';
 
@@ -95,7 +94,7 @@ class OneToManyRelationship extends OneToXRelationship {
      * @readonly
      * @type {string}
      */
-    @Indexable.ToJSON()
+    @Serialize()
     get pluralRelationshipNameFromOneSide() {
         let sufix  = '';
 
@@ -127,7 +126,7 @@ class OneToManyRelationship extends OneToXRelationship {
             );
     }
 
-    @Indexable.ToJSON()
+    @Serialize()
     get isBetweenEntities() {
         return this.oneSideTable.isEntity &&
             this.manySideTable.isEntity;
