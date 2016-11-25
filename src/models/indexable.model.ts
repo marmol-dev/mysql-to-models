@@ -45,7 +45,7 @@ abstract class Indexable {
             return e.map(e2 => Indexable.getValue(e2));
         } else {
             if (e instanceof Indexable) {
-                const proto = e.constructor;
+                const proto = <any>e.constructor;
 
                 if ('_toJSONCollection' in proto === false){
                     throw new Error(`Indexable subclass ${proto.name} was not decorated with all required decorators: CollectionName`);

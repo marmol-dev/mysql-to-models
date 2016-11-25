@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const OneToXRelationship = require('./one_to_x_relationship.model');
 const Indexable = require("./indexable.model");
-let OneToManyRelationship_1 = class OneToManyRelationship extends OneToXRelationship {
+let OneToManyRelationship_1;
+let OneToManyRelationship = OneToManyRelationship_1 = class OneToManyRelationship extends OneToXRelationship {
     /**
      * Creates an instance of OneToManyRelationship.
      *
@@ -136,7 +137,6 @@ let OneToManyRelationship_1 = class OneToManyRelationship extends OneToXRelation
         return toret;
     }
 };
-let OneToManyRelationship = OneToManyRelationship_1;
 __decorate([
     Indexable.ToJSON()
 ], OneToManyRelationship.prototype, "manySideTable", null);

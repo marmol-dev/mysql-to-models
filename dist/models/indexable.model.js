@@ -54,7 +54,7 @@ class Indexable {
             if ('_toJSONProperties' in target === false) {
                 target['_toJSONProperties'] = {};
             }
-            target['_toJSONProperties'][propertyKey] = { throwsException, doNotIndex };
+            target['_toJSONProperties'][propertyKey] = { throwsException: throwsException, doNotIndex: doNotIndex };
         };
     }
     static CollectionName(name) {

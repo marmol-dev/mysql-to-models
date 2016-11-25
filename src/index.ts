@@ -1,8 +1,10 @@
+
 import mysql = require('mysql');
 import SchemaService = require('./services/schema.service');
 import IProjectConfig = require('./config/i-project-config');
 import path = require('path');
 import fs = require('fs');
+import {Serializable, Construct, Serialize, Id} from "./helpers/serializable";
 
 let projectConfig : IProjectConfig;
 

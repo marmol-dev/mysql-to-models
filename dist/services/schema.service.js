@@ -134,14 +134,14 @@ class SchemaService extends DbService {
             const annotationsService = new AnnotationsService(tables, this._projectConfig);
             const annotations = annotationsService.getAnnotations();
             return new Schema({
-                oneToOneRelationships,
-                oneToManyRelationships,
-                manyToManyRelationships,
-                tables,
-                columns,
-                foreignKeys,
-                constraints,
-                annotations
+                oneToOneRelationships: oneToOneRelationships,
+                oneToManyRelationships: oneToManyRelationships,
+                manyToManyRelationships: manyToManyRelationships,
+                tables: tables,
+                columns: columns,
+                foreignKeys: foreignKeys,
+                constraints: constraints,
+                annotations: annotations
             });
         });
     }

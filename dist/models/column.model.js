@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const _ = require('lodash');
 const Indexable = require('./indexable.model');
-let Column_1 = class Column extends Indexable {
+let Column_1;
+let Column = Column_1 = class Column extends Indexable {
     constructor({ TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT }, index) {
         super(index);
         this._tableName = TABLE_NAME;
@@ -138,7 +139,6 @@ let Column_1 = class Column extends Indexable {
         this._annotations = value;
     }
 };
-let Column = Column_1;
 __decorate([
     Indexable.ToJSON()
 ], Column.prototype, "tableName", null);
