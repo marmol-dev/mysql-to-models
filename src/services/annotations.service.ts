@@ -10,7 +10,7 @@ const matchAssignationParts = /(\w(?:\w|\d)*)=((?:true)|(?:false)|(?:\d+(?:\.\d+
 class AnnotationsService {
     constructor(private _tables : Table[], private _projectConfig: IProjectConfig){}
 
-    private parseAnnotations(str : string, index : number) : Annotation[] {
+    private static parseAnnotations(str : string, index : number) : Annotation[] {
 
         const annotations = str.match(matchAnnotationsRegexp) || [];
 
@@ -40,7 +40,7 @@ class AnnotationsService {
         let annotations : Annotation[] = [];
 
         this._tables.forEach(table => {
-            table.annotations = this.parseAnnotations(table.tableComment, annotations.length);
+            table.annotations = AnnotationsService.parseAnnotations(table.tableComment, annotations.length);
             table.annotations.forEach(a => {
                 a.table = table;
             });
@@ -48,7 +48,7 @@ class AnnotationsService {
             annotations = [...annotations, ...table.annotations];
 
             table.columns.forEach(column => {
-                column.annotations = this.parseAnnotations(column.columnComment, annotations.length);
+                column.annotations = AnnotationsService.parseAnnotations(column.columnComment, annotations.length);
                 column.annotations.forEach(a => {
                     a.table = table;
                     a.column = column;
