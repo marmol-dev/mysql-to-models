@@ -9,9 +9,11 @@ const ColumnsService = require('./columns.service');
 const ForeignKeysService = require('./foreign_keys.service');
 const ConstraintsService = require('./constraints.service');
 const TablesService = require('./tables.service');
+const AnnotationsService = require("./annotations.service");
 class SchemaService extends DbService {
-    constructor(dbConnection, dbConfig) {
+    constructor(dbConnection, dbConfig, _projectConfig) {
         super(dbConnection, dbConfig);
+        this._projectConfig = _projectConfig;
         this._columnsService = new ColumnsService(dbConnection, dbConfig);
         this._foreignKeysService = new ForeignKeysService(dbConnection, dbConfig);
         this._constraintsService = new ConstraintsService(dbConnection, dbConfig);
@@ -129,6 +131,8 @@ class SchemaService extends DbService {
                     });
                 }
             });
+            const annotationsService = new AnnotationsService(tables, this._projectConfig);
+            const annotations = annotationsService.getAnnotations();
             return new Schema({
                 oneToOneRelationships,
                 oneToManyRelationships,
@@ -136,7 +140,8 @@ class SchemaService extends DbService {
                 tables,
                 columns,
                 foreignKeys,
-                constraints
+                constraints,
+                annotations
             });
         });
     }

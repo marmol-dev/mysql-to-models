@@ -20,7 +20,7 @@ const dbConnection = mysql.createConnection(projectConfig.database);
 
 dbConnection.connect();
 
-const schemaService = new SchemaService(dbConnection, projectConfig.database);
+const schemaService = new SchemaService(dbConnection, projectConfig.database, projectConfig);
 
 schemaService.getSchema().then(schema => {
     const content = JSON.stringify(schema, null, 4);

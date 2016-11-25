@@ -247,16 +247,14 @@ class Table extends Indexable {
        this._constraints = c; 
     }
 
-    @Indexable.ToJSON(false, true)
+    @Indexable.ToJSON()
     get annotations() : Annotation[] {
-        if (!this._annotations) {
-            this._annotations = Annotation.parseAnnotations(this.tableComment, 0);
-
-            this._annotations.forEach(a => {
-                a.table = this;
-            });
-        }
         return this._annotations;
+    }
+
+
+    set annotations(value: Annotation[]) {
+        this._annotations = value;
     }
 }
 

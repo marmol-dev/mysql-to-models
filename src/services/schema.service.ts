@@ -15,6 +15,8 @@ import ConstraintsService = require('./constraints.service');
 import TablesService = require('./tables.service');
 
 import mysql = require('mysql');
+import AnnotationsService = require("./annotations.service");
+import IProjectConfig = require("../config/i-project-config");
 
 class SchemaService extends DbService {
 
@@ -23,7 +25,7 @@ class SchemaService extends DbService {
     private _constraintsService : ConstraintsService;
     private _tablesService : TablesService;
 
-    constructor(dbConnection: mysql.IConnection, dbConfig: any) {
+    constructor(dbConnection: mysql.IConnection, dbConfig: any, private _projectConfig: IProjectConfig) {
         super(dbConnection, dbConfig);
         this._columnsService = new ColumnsService(dbConnection, dbConfig);
         this._foreignKeysService = new ForeignKeysService(dbConnection, dbConfig);
@@ -173,6 +175,8 @@ class SchemaService extends DbService {
                     }
                 });
 
+                const annotationsService = new AnnotationsService(tables, this._projectConfig);
+                const annotations = annotationsService.getAnnotations();
 
                 return new Schema({
                     oneToOneRelationships,
@@ -181,7 +185,8 @@ class SchemaService extends DbService {
                     tables,
                     columns,
                     foreignKeys,
-                    constraints
+                    constraints,
+                    annotations
                 });
             });
     }

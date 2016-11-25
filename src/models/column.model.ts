@@ -205,17 +205,13 @@ class Column extends Indexable {
         return this.isUniqueType || this.isPrimaryKey;
     }
 
-    @Indexable.ToJSON(false, true)
+    @Indexable.ToJSON()
     get annotations() : Annotation[] {
-        if (!this._annotations){
-            this._annotations = Annotation.parseAnnotations(this.columnComment, 0);
-            this._annotations.forEach(a => {
-                a.column = this;
-                a.table = this.table;
-            });
-        }
-
         return this._annotations;
+    }
+
+    set annotations(value: Annotation[]) {
+        this._annotations = value;
     }
 }
 

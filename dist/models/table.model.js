@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 const _ = require('lodash');
 const NamesHelper = require('../helpers/names.helper');
 const Indexable = require('./indexable.model');
-const Annotation = require("./annotation.model");
 class Table extends Indexable {
     constructor({ TABLE_NAME, TABLE_TYPE, TABLE_COMMENT }, index) {
         super(index);
@@ -165,13 +164,10 @@ class Table extends Indexable {
         this._constraints = c;
     }
     get annotations() {
-        if (!this._annotations) {
-            this._annotations = Annotation.parseAnnotations(this.tableComment, 0);
-            this._annotations.forEach(a => {
-                a.table = this;
-            });
-        }
         return this._annotations;
+    }
+    set annotations(value) {
+        this._annotations = value;
     }
 }
 __decorate([
@@ -265,7 +261,7 @@ __decorate([
     Indexable.ToJSON()
 ], Table.prototype, "primaryKeyConstraints", null);
 __decorate([
-    Indexable.ToJSON(false, true)
+    Indexable.ToJSON()
 ], Table.prototype, "annotations", null);
 module.exports = Table;
 //# sourceMappingURL=table.model.js.map
