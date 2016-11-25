@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3226f1-ca45-46ff-8ed2-eb13c3670851" name="Default" comment="Add TABLE_COMMENT to table model">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/annotation.model.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/private/out.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/column.model.js" afterPath="$PROJECT_DIR$/dist/models/column.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/column.model.js.map" afterPath="$PROJECT_DIR$/dist/models/column.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/indexable.model.js" afterPath="$PROJECT_DIR$/dist/models/indexable.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/indexable.model.js.map" afterPath="$PROJECT_DIR$/dist/models/indexable.model.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/table.model.js" afterPath="$PROJECT_DIR$/dist/models/table.model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/table.model.js.map" afterPath="$PROJECT_DIR$/dist/models/table.model.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/tables.service.js" afterPath="$PROJECT_DIR$/dist/services/tables.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/tables.service.js.map" afterPath="$PROJECT_DIR$/dist/services/tables.service.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/private/out.json" afterPath="$PROJECT_DIR$/examples/private/out.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/column.model.ts" afterPath="$PROJECT_DIR$/src/models/column.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/indexable.model.ts" afterPath="$PROJECT_DIR$/src/models/indexable.model.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/table.model.ts" afterPath="$PROJECT_DIR$/src/models/table.model.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/tables.service.ts" afterPath="$PROJECT_DIR$/src/services/tables.service.ts" />
     </list>
     <ignored path="mysql-to-models.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +43,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/src/models/indexable.model.ts" />
         <option value="$PROJECT_DIR$/src/models/relationship.model.ts" />
         <option value="$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts" />
         <option value="$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts" />
@@ -50,11 +54,14 @@
         <option value="$PROJECT_DIR$/examples/.gitignore" />
         <option value="$PROJECT_DIR$/src/models/schema.model.ts" />
         <option value="$PROJECT_DIR$/src/services/schema.service.ts" />
-        <option value="$PROJECT_DIR$/src/models/column.model.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/src/services/tables.service.ts" />
-        <option value="$PROJECT_DIR$/src/models/table.model.ts" />
         <option value="$PROJECT_DIR$/src/models/foreign_key.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/indexable.model.ts" />
+        <option value="$PROJECT_DIR$/examples/private/out.json" />
+        <option value="$PROJECT_DIR$/src/models/column.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/annotation.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/table.model.ts" />
       </list>
     </option>
   </component>
@@ -74,7 +81,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1276" />
+    <option name="width" value="2560" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -130,6 +137,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -232,8 +241,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +319,8 @@
       <option name="presentableId" value="Default" />
       <updated>1479997696876</updated>
       <workItem from="1479997698047" duration="11416000" />
-      <workItem from="1480009121651" duration="1328000" />
+      <workItem from="1480009121651" duration="3615000" />
+      <workItem from="1480077470431" duration="5228000" />
     </task>
     <task id="LOCAL-00001" summary="Export models to JSON">
       <created>1480008772688</created>
@@ -342,22 +350,29 @@
       <option name="project" value="LOCAL" />
       <updated>1480009897937</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add TABLE_COMMENT to table model">
+      <created>1480010459614</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1480010459614</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12744000" />
+    <option name="totallyTimeSpent" value="20259000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1276" height="1040" extended-state="0" />
+    <frame x="0" y="0" width="2560" height="1040" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28211382" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13922037" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25179" sideWeight="0.50584304" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33958104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -388,7 +403,8 @@
     <MESSAGE value="Improve type of constraint constructor params" />
     <MESSAGE value="Remove Entity model&#10;&#10;Removed Entity because it was useless." />
     <MESSAGE value="Add COLUMN_COMMENT to column model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add COLUMN_COMMENT to column model" />
+    <MESSAGE value="Add TABLE_COMMENT to table model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add TABLE_COMMENT to table model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -403,6 +419,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/examples/private/out.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44846">
+          <caret line="2638" column="41" selection-start-line="2638" selection-start-column="30" selection-end-line="2638" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/annotation.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/example.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -429,14 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/indexable.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -481,13 +505,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/entity.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/entity.model.ts" />
     <entry file="file://$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-453">
@@ -514,26 +532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/example.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/schema.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-232">
-          <caret line="86" column="17" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -550,15 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/column.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,18 +595,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/schema.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="86" column="17" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/indexable.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="30" column="111" selection-start-line="30" selection-start-column="111" selection-end-line="30" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/example.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/annotation.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/examples/private/out.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="856" column="23" selection-start-line="856" selection-start-column="13" selection-end-line="856" selection-end-column="23" />
+        <state relative-caret-position="4386">
+          <caret line="258" column="34" selection-start-line="258" selection-start-column="34" selection-end-line="258" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/table.model.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="603">
+          <caret line="252" column="59" selection-start-line="252" selection-start-column="43" selection-end-line="252" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/column.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="213" column="16" selection-start-line="211" selection-start-column="12" selection-end-line="213" selection-end-column="16" />
           <folding />
         </state>
       </provider>

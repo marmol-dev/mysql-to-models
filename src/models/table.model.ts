@@ -7,6 +7,7 @@ import OneToManyRelationships = require('./one_to_many_relationship.model');
 import ManyToManyRelationships = require('./many_to_many_relationship.model');
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Indexable = require('./indexable.model');
+import Annotation = require("./annotation.model");
 
 class Table extends Indexable {
 
@@ -19,6 +20,7 @@ class Table extends Indexable {
     private _manyToManyRelationships : ManyToManyRelationships[];
     private _tableType : string;
     private _tableComment : string;
+    private _annotations : Annotation[];
 
     constructor({TABLE_NAME, TABLE_TYPE, TABLE_COMMENT}: {[p:string] : string}, index : number) {
         super(index);
@@ -243,6 +245,18 @@ class Table extends Indexable {
 
     set constraints(c) {
        this._constraints = c; 
+    }
+
+    @Indexable.ToJSON(false, true)
+    get annotations() : Annotation[] {
+        if (!this._annotations) {
+            this._annotations = Annotation.parseAnnotations(this.tableComment, 0);
+
+            this._annotations.forEach(a => {
+                a.table = this;
+            });
+        }
+        return this._annotations;
     }
 }
 

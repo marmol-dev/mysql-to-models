@@ -16,17 +16,20 @@ class Indexable {
         for (let prop in props) {
             if (proto['_toJSONProperties'][prop].throwsException) {
                 try {
-                    toret[prop] = Indexable.getValue(this[prop]);
+                    toret[prop] = Indexable.getValue(this[prop], proto['_toJSONProperties'][prop].doNotIndex);
                 }
                 catch (e) { }
             }
             else {
-                toret[prop] = Indexable.getValue(this[prop]);
+                toret[prop] = Indexable.getValue(this[prop], proto['_toJSONProperties'][prop].doNotIndex);
             }
         }
         return toret;
     }
-    static getValue(e) {
+    static getValue(e, doNotIndex = false) {
+        if (doNotIndex) {
+            return e;
+        }
         if (Array.isArray(e)) {
             return e.map(e2 => Indexable.getValue(e2));
         }
@@ -39,7 +42,7 @@ class Indexable {
             }
         }
     }
-    static ToJSON(throwsException = false) {
+    static ToJSON(throwsException = false, doNotIndex = false) {
         return function (target, propertyKey, descriptor) {
             if (target instanceof Indexable === false) {
                 throw new Error('ToJSON is only available for Indexable instances');
@@ -47,7 +50,7 @@ class Indexable {
             if ('_toJSONProperties' in target === false) {
                 target['_toJSONProperties'] = {};
             }
-            target['_toJSONProperties'][propertyKey] = { throwsException };
+            target['_toJSONProperties'][propertyKey] = { throwsException, doNotIndex };
         };
     }
 }

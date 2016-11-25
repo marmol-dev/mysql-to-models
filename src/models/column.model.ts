@@ -2,6 +2,7 @@ import _ = require('lodash');
 import Table = require('./table.model');
 import ForeignKey = require('./foreign_key.model');
 import Indexable = require('./indexable.model');
+import Annotation = require("./annotation.model");
 
 class Column extends Indexable {
 
@@ -20,6 +21,7 @@ class Column extends Indexable {
     private _table : Table;
     private _foreignKey : ForeignKey;
     private _phpDataType : string;
+    private _annotations : Annotation[];
 
     constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT} : {[p:string] : string}, index: number){
         super(index);
@@ -201,6 +203,19 @@ class Column extends Indexable {
     @Indexable.ToJSON()
     get isUnique() {
         return this.isUniqueType || this.isPrimaryKey;
+    }
+
+    @Indexable.ToJSON(false, true)
+    get annotations() : Annotation[] {
+        if (!this._annotations){
+            this._annotations = Annotation.parseAnnotations(this.columnComment, 0);
+            this._annotations.forEach(a => {
+                a.column = this;
+                a.table = this.table;
+            });
+        }
+
+        return this._annotations;
     }
 }
 
