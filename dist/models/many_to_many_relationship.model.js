@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 const Relationship = require('./relationship.model');
 const _ = require('lodash');
 const Indexable = require("./indexable.model");
-class ManyToManyRelationship extends Relationship {
+let ManyToManyRelationship = class ManyToManyRelationship extends Relationship {
     constructor(relationship1, relationship2, index) {
         super(index);
         this._relationship1 = relationship1;
@@ -155,7 +155,7 @@ class ManyToManyRelationship extends Relationship {
                     &&
                         this.manySide2Table === rel.manySide1Table));
     }
-}
+};
 __decorate([
     Indexable.ToJSON()
 ], ManyToManyRelationship.prototype, "relationship1", null);
@@ -198,5 +198,8 @@ __decorate([
 __decorate([
     Indexable.ToJSON()
 ], ManyToManyRelationship.prototype, "isBetweenEntities", null);
+ManyToManyRelationship = __decorate([
+    Indexable.CollectionName("manyToManyRelationships")
+], ManyToManyRelationship);
 module.exports = ManyToManyRelationship;
 //# sourceMappingURL=many_to_many_relationship.model.js.map

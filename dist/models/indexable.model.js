@@ -1,6 +1,6 @@
 "use strict";
 class Indexable {
-    constructor(_index) {
+    constructor(_index = null) {
         this._index = _index;
     }
     get index() {
@@ -35,7 +35,14 @@ class Indexable {
         }
         else {
             if (e instanceof Indexable) {
-                return e.index;
+                const proto = e.constructor;
+                if ('_toJSONCollection' in proto === false) {
+                    throw new Error(`Indexable subclass ${proto.name} was not decorated with all required decorators: CollectionName`);
+                }
+                return {
+                    $index: e.index,
+                    $referencedCollection: proto._toJSONCollection.name
+                };
             }
             else {
                 return e;
@@ -44,13 +51,22 @@ class Indexable {
     }
     static ToJSON(throwsException = false, doNotIndex = false) {
         return function (target, propertyKey, descriptor) {
-            if (target instanceof Indexable === false) {
-                throw new Error('ToJSON is only available for Indexable instances');
-            }
             if ('_toJSONProperties' in target === false) {
                 target['_toJSONProperties'] = {};
             }
             target['_toJSONProperties'][propertyKey] = { throwsException, doNotIndex };
+        };
+    }
+    static CollectionName(name) {
+        return function (target) {
+            if (!Indexable.isPrototypeOf(target)) {
+                console.error(target);
+                throw new Error('CollectionName is only available for Indexable');
+            }
+            if ('_toJSONCollection' in target === false) {
+                target['_toJSONCollection'] = {};
+            }
+            target['_toJSONCollection']['name'] = name;
         };
     }
 }

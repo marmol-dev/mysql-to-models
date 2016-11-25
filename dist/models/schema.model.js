@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 const Indexable = require("./indexable.model");
 class Schema extends Indexable {
     constructor(schema) {
-        super(0);
+        super();
         this._columns = schema.columns;
         this._tables = schema.tables;
         this._oneToManyRelationships = schema.oneToManyRelationships;

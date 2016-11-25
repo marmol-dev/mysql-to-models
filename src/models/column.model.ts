@@ -4,6 +4,7 @@ import ForeignKey = require('./foreign_key.model');
 import Indexable = require('./indexable.model');
 import Annotation = require("./annotation.model");
 
+@Indexable.CollectionName("columns")
 class Column extends Indexable {
 
     private _tableName : string;

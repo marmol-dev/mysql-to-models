@@ -4,7 +4,7 @@ interface PropertyMetadata {
 
 abstract class Indexable {
 
-    constructor(private _index : number){
+    constructor(private _index : number = null){
 
     }
 
@@ -45,7 +45,16 @@ abstract class Indexable {
             return e.map(e2 => Indexable.getValue(e2));
         } else {
             if (e instanceof Indexable) {
-                return e.index;
+                const proto = e.constructor;
+
+                if ('_toJSONCollection' in proto === false){
+                    throw new Error(`Indexable subclass ${proto.name} was not decorated with all required decorators: CollectionName`);
+                }
+
+                return {
+                    $index: e.index,
+                    $referencedCollection: proto._toJSONCollection.name
+                };
             } else {
                 return e;
             }
@@ -54,15 +63,28 @@ abstract class Indexable {
 
     public static ToJSON(throwsException: boolean = false, doNotIndex: boolean = false) {
         return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-            if (target instanceof Indexable === false) {
-                throw new Error('ToJSON is only available for Indexable instances');
-            }
-
             if ('_toJSONProperties' in target === false) {
                 target['_toJSONProperties'] = {};
             }
 
             target['_toJSONProperties'][propertyKey] = {throwsException, doNotIndex};
+        };
+    }
+
+    public static CollectionName(name: string){
+        return function (target: any) {
+            if (!Indexable.isPrototypeOf(target)) {
+                console.error(target);
+                throw new Error('CollectionName is only available for Indexable');
+            }
+
+
+            if ('_toJSONCollection' in target === false) {
+                target['_toJSONCollection'] = {};
+            }
+
+            target['_toJSONCollection']['name'] = name;
+
         };
     }
 }

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const _ = require('lodash');
 const Indexable = require('./indexable.model');
-class Column extends Indexable {
+let Column_1 = class Column extends Indexable {
     constructor({ TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT }, index) {
         super(index);
         this._tableName = TABLE_NAME;
@@ -112,7 +112,7 @@ class Column extends Indexable {
     }
     get phpDataType() {
         if (!this._phpDataType) {
-            return Column.getPhpDataType(this.dataType);
+            return Column_1.getPhpDataType(this.dataType);
         }
         return this._phpDataType;
     }
@@ -137,7 +137,8 @@ class Column extends Indexable {
     set annotations(value) {
         this._annotations = value;
     }
-}
+};
+let Column = Column_1;
 __decorate([
     Indexable.ToJSON()
 ], Column.prototype, "tableName", null);
@@ -222,5 +223,8 @@ __decorate([
 __decorate([
     Indexable.ToJSON()
 ], Column.prototype, "annotations", null);
+Column = Column_1 = __decorate([
+    Indexable.CollectionName("columns")
+], Column);
 module.exports = Column;
 //# sourceMappingURL=column.model.js.map

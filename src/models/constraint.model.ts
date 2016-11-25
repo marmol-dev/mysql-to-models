@@ -3,6 +3,7 @@ import Indexable = require('./indexable.model');
 
 type ConstraintType = "NOT NULL" | "UNIQUE" | "PRIMARY KEY" | "FOREIGN KEY" | "CHECK" | "DEFAULT";
 
+@Indexable.CollectionName("constraints")
 class Constraint extends Indexable {
     /**
      * Constraint type

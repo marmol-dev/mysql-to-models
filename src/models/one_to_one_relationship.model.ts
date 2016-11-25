@@ -2,6 +2,7 @@ import OneToXRelationship = require('./one_to_x_relationship.model');
 import Table = require('./table.model');
 import Indexable = require("./indexable.model");
 
+@Indexable.CollectionName("oneToOneRelationships")
 class OneToOneRelationship extends OneToXRelationship {
 
     /**

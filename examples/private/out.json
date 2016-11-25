@@ -2,7 +2,10 @@
     "columns": [
         {
             "tableName": "actividad",
-            "table": 0,
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -29,7 +32,10 @@
         },
         {
             "tableName": "actividad",
-            "table": 0,
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnName": "titulo",
             "pascalName": "Titulo",
             "camelName": "titulo",
@@ -56,7 +62,10 @@
         },
         {
             "tableName": "actividad",
-            "table": 0,
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnName": "descripcion",
             "pascalName": "Descripcion",
             "camelName": "descripcion",
@@ -83,7 +92,10 @@
         },
         {
             "tableName": "actividad",
-            "table": 0,
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnName": "imagen",
             "pascalName": "Imagen",
             "camelName": "imagen",
@@ -110,7 +122,10 @@
         },
         {
             "tableName": "actividad",
-            "table": 0,
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnName": "video",
             "pascalName": "Video",
             "camelName": "video",
@@ -137,7 +152,10 @@
         },
         {
             "tableName": "actividad",
-            "table": 0,
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnName": "limitePlazas",
             "pascalName": "LimitePlazas",
             "camelName": "limitePlazas",
@@ -164,7 +182,10 @@
         },
         {
             "tableName": "ejercicio",
-            "table": 1,
+            "table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -191,7 +212,10 @@
         },
         {
             "tableName": "ejercicio",
-            "table": 1,
+            "table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnName": "titulo",
             "pascalName": "Titulo",
             "camelName": "titulo",
@@ -218,7 +242,10 @@
         },
         {
             "tableName": "ejercicio",
-            "table": 1,
+            "table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnName": "descripcion",
             "pascalName": "Descripcion",
             "camelName": "descripcion",
@@ -245,7 +272,10 @@
         },
         {
             "tableName": "ejercicio",
-            "table": 1,
+            "table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnName": "imagen",
             "pascalName": "Imagen",
             "camelName": "imagen",
@@ -272,7 +302,10 @@
         },
         {
             "tableName": "ejercicio",
-            "table": 1,
+            "table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnName": "video",
             "pascalName": "Video",
             "camelName": "video",
@@ -299,7 +332,10 @@
         },
         {
             "tableName": "plaza",
-            "table": 2,
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -326,7 +362,10 @@
         },
         {
             "tableName": "plaza",
-            "table": 2,
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "columnName": "asistio",
             "pascalName": "Asistio",
             "camelName": "asistio",
@@ -353,7 +392,10 @@
         },
         {
             "tableName": "plaza",
-            "table": 2,
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "columnName": "usuarioId",
             "pascalName": "UsuarioId",
             "camelName": "usuarioId",
@@ -369,9 +411,18 @@
             "columnType": "int(10)",
             "columnKey": "MUL",
             "extra": "",
-            "foreignkey": 0,
-            "referencedColumn": 33,
-            "referencedTable": 8,
+            "foreignkey": {
+                "$index": 0,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 33,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": false,
@@ -383,7 +434,10 @@
         },
         {
             "tableName": "plaza",
-            "table": 2,
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "columnName": "sesionActividadId",
             "pascalName": "SesionActividadId",
             "camelName": "sesionActividadId",
@@ -399,9 +453,18 @@
             "columnType": "int(10)",
             "columnKey": "MUL",
             "extra": "",
-            "foreignkey": 1,
-            "referencedColumn": 18,
-            "referencedTable": 4,
+            "foreignkey": {
+                "$index": 1,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 18,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": false,
@@ -413,7 +476,10 @@
         },
         {
             "tableName": "realizacionEjercicio",
-            "table": 3,
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
             "columnName": "sesionEntrenamientoId",
             "pascalName": "SesionEntrenamientoId",
             "camelName": "sesionEntrenamientoId",
@@ -429,9 +495,18 @@
             "columnType": "int(10)",
             "columnKey": "PRI",
             "extra": "",
-            "foreignkey": 2,
-            "referencedColumn": 21,
-            "referencedTable": 5,
+            "foreignkey": {
+                "$index": 2,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 21,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": true,
@@ -443,7 +518,10 @@
         },
         {
             "tableName": "realizacionEjercicio",
-            "table": 3,
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
             "columnName": "ejercicioId",
             "pascalName": "EjercicioId",
             "camelName": "ejercicioId",
@@ -459,9 +537,18 @@
             "columnType": "int(10)",
             "columnKey": "PRI",
             "extra": "",
-            "foreignkey": 3,
-            "referencedColumn": 6,
-            "referencedTable": 1,
+            "foreignkey": {
+                "$index": 3,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 6,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": true,
@@ -473,7 +560,10 @@
         },
         {
             "tableName": "realizacionEjercicio",
-            "table": 3,
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
             "columnName": "comentario",
             "pascalName": "Comentario",
             "camelName": "comentario",
@@ -500,7 +590,10 @@
         },
         {
             "tableName": "sesionActividad",
-            "table": 4,
+            "table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -527,7 +620,10 @@
         },
         {
             "tableName": "sesionActividad",
-            "table": 4,
+            "table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
             "columnName": "fecha",
             "pascalName": "Fecha",
             "camelName": "fecha",
@@ -554,7 +650,10 @@
         },
         {
             "tableName": "sesionActividad",
-            "table": 4,
+            "table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
             "columnName": "actividadId",
             "pascalName": "ActividadId",
             "camelName": "actividadId",
@@ -570,9 +669,18 @@
             "columnType": "int(10)",
             "columnKey": "MUL",
             "extra": "",
-            "foreignkey": 4,
-            "referencedColumn": 0,
-            "referencedTable": 0,
+            "foreignkey": {
+                "$index": 4,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 0,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": false,
@@ -584,7 +692,10 @@
         },
         {
             "tableName": "sesionEntrenamiento",
-            "table": 5,
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -611,7 +722,10 @@
         },
         {
             "tableName": "sesionEntrenamiento",
-            "table": 5,
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "columnName": "fecha",
             "pascalName": "Fecha",
             "camelName": "fecha",
@@ -638,7 +752,10 @@
         },
         {
             "tableName": "sesionEntrenamiento",
-            "table": 5,
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "columnName": "tablaId",
             "pascalName": "TablaId",
             "camelName": "tablaId",
@@ -654,9 +771,18 @@
             "columnType": "int(10)",
             "columnKey": "MUL",
             "extra": "",
-            "foreignkey": 5,
-            "referencedColumn": 25,
-            "referencedTable": 6,
+            "foreignkey": {
+                "$index": 5,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 25,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": false,
@@ -668,7 +794,10 @@
         },
         {
             "tableName": "sesionEntrenamiento",
-            "table": 5,
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "columnName": "usuarioId",
             "pascalName": "UsuarioId",
             "camelName": "usuarioId",
@@ -684,9 +813,18 @@
             "columnType": "int(10)",
             "columnKey": "MUL",
             "extra": "",
-            "foreignkey": 6,
-            "referencedColumn": 33,
-            "referencedTable": 8,
+            "foreignkey": {
+                "$index": 6,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 33,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": false,
@@ -698,7 +836,10 @@
         },
         {
             "tableName": "tabla",
-            "table": 6,
+            "table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -725,7 +866,10 @@
         },
         {
             "tableName": "tabla",
-            "table": 6,
+            "table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnName": "nombre",
             "pascalName": "Nombre",
             "camelName": "nombre",
@@ -752,7 +896,10 @@
         },
         {
             "tableName": "tabla",
-            "table": 6,
+            "table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnName": "dificultad",
             "pascalName": "Dificultad",
             "camelName": "dificultad",
@@ -779,7 +926,10 @@
         },
         {
             "tableName": "tabla",
-            "table": 6,
+            "table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnName": "descripcion",
             "pascalName": "Descripcion",
             "camelName": "descripcion",
@@ -806,7 +956,10 @@
         },
         {
             "tableName": "tabla",
-            "table": 6,
+            "table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnName": "tipo",
             "pascalName": "Tipo",
             "camelName": "tipo",
@@ -833,7 +986,10 @@
         },
         {
             "tableName": "tablaEjercicio",
-            "table": 7,
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
             "columnName": "tablaId",
             "pascalName": "TablaId",
             "camelName": "tablaId",
@@ -849,9 +1005,18 @@
             "columnType": "int(10)",
             "columnKey": "PRI",
             "extra": "",
-            "foreignkey": 7,
-            "referencedColumn": 25,
-            "referencedTable": 6,
+            "foreignkey": {
+                "$index": 7,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 25,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": true,
@@ -863,7 +1028,10 @@
         },
         {
             "tableName": "tablaEjercicio",
-            "table": 7,
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
             "columnName": "ejercicioId",
             "pascalName": "EjercicioId",
             "camelName": "ejercicioId",
@@ -879,9 +1047,18 @@
             "columnType": "int(10)",
             "columnKey": "PRI",
             "extra": "",
-            "foreignkey": 8,
-            "referencedColumn": 6,
-            "referencedTable": 1,
+            "foreignkey": {
+                "$index": 8,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 6,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": true,
@@ -893,7 +1070,10 @@
         },
         {
             "tableName": "tablaEjercicio",
-            "table": 7,
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
             "columnName": "posicion",
             "pascalName": "Posicion",
             "camelName": "posicion",
@@ -920,7 +1100,10 @@
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "id",
             "pascalName": "Id",
             "camelName": "id",
@@ -947,7 +1130,10 @@
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "dni",
             "pascalName": "Dni",
             "camelName": "dni",
@@ -971,12 +1157,18 @@
             "isUniqueType": true,
             "isUnique": true,
             "annotations": [
-                2
+                {
+                    "$index": 2,
+                    "$referencedCollection": "annotations"
+                }
             ]
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "nombre",
             "pascalName": "Nombre",
             "camelName": "nombre",
@@ -1003,7 +1195,10 @@
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "apellidos",
             "pascalName": "Apellidos",
             "camelName": "apellidos",
@@ -1030,7 +1225,10 @@
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "email",
             "pascalName": "Email",
             "camelName": "email",
@@ -1054,12 +1252,18 @@
             "isUniqueType": true,
             "isUnique": true,
             "annotations": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "annotations"
+                }
             ]
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "fechaNacimiento",
             "pascalName": "FechaNacimiento",
             "camelName": "fechaNacimiento",
@@ -1086,7 +1290,10 @@
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "password",
             "pascalName": "Password",
             "camelName": "password",
@@ -1113,7 +1320,10 @@
         },
         {
             "tableName": "usuario",
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnName": "tipo",
             "pascalName": "Tipo",
             "camelName": "tipo",
@@ -1140,7 +1350,10 @@
         },
         {
             "tableName": "usuarioTabla",
-            "table": 9,
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
             "columnName": "usuarioId",
             "pascalName": "UsuarioId",
             "camelName": "usuarioId",
@@ -1156,9 +1369,18 @@
             "columnType": "int(10)",
             "columnKey": "PRI",
             "extra": "",
-            "foreignkey": 9,
-            "referencedColumn": 33,
-            "referencedTable": 8,
+            "foreignkey": {
+                "$index": 9,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 33,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": true,
@@ -1170,7 +1392,10 @@
         },
         {
             "tableName": "usuarioTabla",
-            "table": 9,
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
             "columnName": "tablaId",
             "pascalName": "TablaId",
             "camelName": "tablaId",
@@ -1186,9 +1411,18 @@
             "columnType": "int(10)",
             "columnKey": "PRI",
             "extra": "",
-            "foreignkey": 10,
-            "referencedColumn": 25,
-            "referencedTable": 6,
+            "foreignkey": {
+                "$index": 10,
+                "$referencedCollection": "foreignKeys"
+            },
+            "referencedColumn": {
+                "$index": 25,
+                "$referencedCollection": "columns"
+            },
+            "referencedTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "columnComment": "",
             "phpDataType": "int",
             "isPrimaryKey": true,
@@ -1205,20 +1439,56 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5
+                {
+                    "$index": 0,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 2,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5
+                {
+                    "$index": 0,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 2,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "Actividad",
             "pluralPascalName": "Actividades",
@@ -1228,42 +1498,72 @@
             "pluralCamelName": "actividades",
             "pluralInstanceName": "actividades",
             "primaryKeyColumns": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                4
+                {
+                    "$index": 4,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                4
+                {
+                    "$index": 4,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [],
             "manyToManyEntityRelationships": [],
             "relatedTables": [
-                4
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [],
             "relatedEntityTables": [
-                4
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1272,18 +1572,48 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                6,
-                7,
-                8,
-                9,
-                10
+                {
+                    "$index": 6,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 10,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                6,
-                7,
-                8,
-                9,
-                10
+                {
+                    "$index": 6,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 10,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "Ejercicio",
             "pluralPascalName": "Ejercicios",
@@ -1293,56 +1623,122 @@
             "pluralCamelName": "ejercicios",
             "pluralInstanceName": "ejercicios",
             "primaryKeyColumns": [
-                6
+                {
+                    "$index": 6,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                3,
-                8
+                {
+                    "$index": 3,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                3,
-                8
+                {
+                    "$index": 3,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [
-                1,
-                3
+                {
+                    "$index": 1,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "manyToManyEntityRelationships": [
-                1,
-                3
+                {
+                    "$index": 1,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "relatedTables": [
-                3,
-                7,
-                5,
-                6
+                {
+                    "$index": 3,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [],
             "relatedEntityTables": [
-                3,
-                7,
-                5,
-                6
+                {
+                    "$index": 3,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1351,16 +1747,40 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                11,
-                12,
-                13,
-                14
+                {
+                    "$index": 11,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 12,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 13,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 14,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                11,
-                12,
-                13,
-                14
+                {
+                    "$index": 11,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 12,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 13,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 14,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "Plaza",
             "pluralPascalName": "Plazas",
@@ -1370,53 +1790,113 @@
             "pluralCamelName": "plazas",
             "pluralInstanceName": "plazas",
             "primaryKeyColumns": [
-                11
+                {
+                    "$index": 11,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                0,
-                1
+                {
+                    "$index": 0,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                0,
-                1
+                {
+                    "$index": 0,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [],
             "manyToManyEntityRelationships": [],
             "relatedTables": [
-                8,
-                4
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [
-                8,
-                4
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                }
             ],
             "relatedEntityTables": [
-                8,
-                4
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                2,
-                3,
-                4
+                {
+                    "$index": 2,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                2,
-                3,
-                4
+                {
+                    "$index": 2,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                2
+                {
+                    "$index": 2,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                2
+                {
+                    "$index": 2,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                2
+                {
+                    "$index": 2,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1425,14 +1905,32 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                15,
-                16,
-                17
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 17,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                15,
-                16,
-                17
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 17,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "RealizacionEjercicio",
             "pluralPascalName": "RealizacionEjercicios",
@@ -1442,54 +1940,117 @@
             "pluralCamelName": "realizacionEjercicios",
             "pluralInstanceName": "realizacionEjercicios",
             "primaryKeyColumns": [
-                15,
-                16
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                2,
-                3
+                {
+                    "$index": 2,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                2,
-                3
+                {
+                    "$index": 2,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [],
             "manyToManyEntityRelationships": [],
             "relatedTables": [
-                5,
-                1
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [
-                5,
-                1
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "relatedEntityTables": [
-                5,
-                1
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                5,
-                6,
-                7
+                {
+                    "$index": 5,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                5,
-                6,
-                7
+                {
+                    "$index": 5,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                5
+                {
+                    "$index": 5,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                5
+                {
+                    "$index": 5,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                5
+                {
+                    "$index": 5,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1498,14 +2059,32 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                18,
-                19,
-                20
+                {
+                    "$index": 18,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 20,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                18,
-                19,
-                20
+                {
+                    "$index": 18,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 20,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "SesionActividad",
             "pluralPascalName": "SesionActividades",
@@ -1515,56 +2094,119 @@
             "pluralCamelName": "sesionActividades",
             "pluralInstanceName": "sesionActividades",
             "primaryKeyColumns": [
-                18
+                {
+                    "$index": 18,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                1,
-                4
+                {
+                    "$index": 1,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                1,
-                4
+                {
+                    "$index": 1,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "manyToManyEntityRelationships": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "relatedTables": [
-                2,
-                0,
-                8
+                {
+                    "$index": 2,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 0,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "tables"
+                }
             ],
             "relatedEntityTables": [
-                2,
-                0,
-                8
+                {
+                    "$index": 2,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 0,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                8,
-                9
+                {
+                    "$index": 8,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                8,
-                9
+                {
+                    "$index": 8,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                8
+                {
+                    "$index": 8,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                8
+                {
+                    "$index": 8,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                8
+                {
+                    "$index": 8,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1573,16 +2215,40 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                21,
-                22,
-                23,
-                24
+                {
+                    "$index": 21,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 22,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 23,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 24,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                21,
-                22,
-                23,
-                24
+                {
+                    "$index": 21,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 22,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 23,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 24,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "SesionEntrenamiento",
             "pluralPascalName": "SesionEntrenamientos",
@@ -1592,63 +2258,147 @@
             "pluralCamelName": "sesionEntrenamientos",
             "pluralInstanceName": "sesionEntrenamientos",
             "primaryKeyColumns": [
-                21
+                {
+                    "$index": 21,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                2,
-                5,
-                6
+                {
+                    "$index": 2,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                2,
-                5,
-                6
+                {
+                    "$index": 2,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "manyToManyEntityRelationships": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "relatedTables": [
-                3,
-                6,
-                8,
-                1
+                {
+                    "$index": 3,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [
-                6,
-                8
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                }
             ],
             "relatedEntityTables": [
-                3,
-                6,
-                8,
-                1
+                {
+                    "$index": 3,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                10,
-                11,
-                12
+                {
+                    "$index": 10,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 11,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 12,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                10,
-                11,
-                12
+                {
+                    "$index": 10,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 11,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 12,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                10
+                {
+                    "$index": 10,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                10
+                {
+                    "$index": 10,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                10
+                {
+                    "$index": 10,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1657,18 +2407,48 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                25,
-                26,
-                27,
-                28,
-                29
+                {
+                    "$index": 25,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 26,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 27,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 28,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 29,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                25,
-                26,
-                27,
-                28,
-                29
+                {
+                    "$index": 25,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 26,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 27,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 28,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 29,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "Tabla",
             "pluralPascalName": "Tablas",
@@ -1678,62 +2458,146 @@
             "pluralCamelName": "tablas",
             "pluralInstanceName": "tablas",
             "primaryKeyColumns": [
-                25
+                {
+                    "$index": 25,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                5,
-                7,
-                10
+                {
+                    "$index": 5,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 10,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                5,
-                7,
-                10
+                {
+                    "$index": 5,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 10,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [
-                2,
-                3,
-                4
+                {
+                    "$index": 2,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "manyToManyEntityRelationships": [
-                2,
-                3,
-                4
+                {
+                    "$index": 2,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 3,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "relatedTables": [
-                5,
-                7,
-                9,
-                8,
-                1
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [],
             "relatedEntityTables": [
-                5,
-                7,
-                9,
-                8,
-                1
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 7,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1742,14 +2606,32 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                30,
-                31,
-                32
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 32,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                30,
-                31,
-                32
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 32,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "TablaEjercicio",
             "pluralPascalName": "TablaEjercicios",
@@ -1759,54 +2641,117 @@
             "pluralCamelName": "tablaEjercicios",
             "pluralInstanceName": "tablaEjercicios",
             "primaryKeyColumns": [
-                30,
-                31
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                7,
-                8
+                {
+                    "$index": 7,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                7,
-                8
+                {
+                    "$index": 7,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 8,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [],
             "manyToManyEntityRelationships": [],
             "relatedTables": [
-                6,
-                1
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [
-                6,
-                1
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "relatedEntityTables": [
-                6,
-                1
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 1,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                14,
-                15,
-                16
+                {
+                    "$index": 14,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 15,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                14,
-                15,
-                16
+                {
+                    "$index": 14,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 15,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                14
+                {
+                    "$index": 14,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                14
+                {
+                    "$index": 14,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                14
+                {
+                    "$index": 14,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         },
@@ -1815,24 +2760,72 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                33,
-                34,
-                35,
-                36,
-                37,
-                38,
-                39,
-                40
+                {
+                    "$index": 33,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 34,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 35,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 36,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 37,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 38,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 39,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 40,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                33,
-                34,
-                35,
-                36,
-                37,
-                38,
-                39,
-                40
+                {
+                    "$index": 33,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 34,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 35,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 36,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 37,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 38,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 39,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 40,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "Usuario",
             "pluralPascalName": "Usuarios",
@@ -1842,79 +2835,202 @@
             "pluralCamelName": "usuarios",
             "pluralInstanceName": "usuarios",
             "primaryKeyColumns": [
-                33
+                {
+                    "$index": 33,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                0,
-                6,
-                9
+                {
+                    "$index": 0,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                0,
-                6,
-                9
+                {
+                    "$index": 0,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [
-                0,
-                2,
-                4
+                {
+                    "$index": 0,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 2,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "manyToManyEntityRelationships": [
-                0,
-                2,
-                4
+                {
+                    "$index": 0,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 2,
+                    "$referencedCollection": "manyToManyRelationships"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "manyToManyRelationships"
+                }
             ],
             "relatedTables": [
-                2,
-                5,
-                9,
-                4,
-                6
+                {
+                    "$index": 2,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [],
             "relatedEntityTables": [
-                2,
-                5,
-                9,
-                4,
-                6
+                {
+                    "$index": 2,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 5,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 9,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 4,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                17,
-                18,
-                19
+                {
+                    "$index": 17,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 18,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                17,
-                18,
-                19
+                {
+                    "$index": 17,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 18,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [
-                18,
-                19
+                {
+                    "$index": 18,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniqueConstraints": [
-                18,
-                19
+                {
+                    "$index": 18,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniquenessConstraints": [
-                17,
-                18,
-                19
+                {
+                    "$index": 17,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 18,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                17,
-                18,
-                19
+                {
+                    "$index": 17,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 18,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 19,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                17
+                {
+                    "$index": 17,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "annotations"
+                }
             ]
         },
         {
@@ -1922,12 +3038,24 @@
             "tableType": "BASE TABLE",
             "tableComment": "",
             "columns": [
-                41,
-                42
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "sortedColumns": [
-                41,
-                42
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "pascalName": "UsuarioTabla",
             "pluralPascalName": "UsuarioTablas",
@@ -1937,54 +3065,117 @@
             "pluralCamelName": "usuarioTablas",
             "pluralInstanceName": "usuarioTablas",
             "primaryKeyColumns": [
-                41,
-                42
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isEntity": true,
             "oneToOneRelationships": [],
             "oneToManyRelationships": [
-                9,
-                10
+                {
+                    "$index": 9,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 10,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "oneToOneEntityRelationships": [],
             "oneToManyEntityRelationships": [
-                9,
-                10
+                {
+                    "$index": 9,
+                    "$referencedCollection": "oneTomanyRelationships"
+                },
+                {
+                    "$index": 10,
+                    "$referencedCollection": "oneTomanyRelationships"
+                }
             ],
             "manyToManyRelationships": [],
             "manyToManyEntityRelationships": [],
             "relatedTables": [
-                8,
-                6
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "foreignKeysRelatedTables": [
-                8,
-                6
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "relatedEntityTables": [
-                8,
-                6
+                {
+                    "$index": 8,
+                    "$referencedCollection": "tables"
+                },
+                {
+                    "$index": 6,
+                    "$referencedCollection": "tables"
+                }
             ],
             "constraints": [
-                20,
-                21,
-                22
+                {
+                    "$index": 20,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 21,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 22,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedConstraints": [
-                20,
-                21,
-                22
+                {
+                    "$index": 20,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 21,
+                    "$referencedCollection": "constraints"
+                },
+                {
+                    "$index": 22,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "uniqueConstraints": [],
             "nonRepeatedUniqueConstraints": [],
             "uniquenessConstraints": [
-                20
+                {
+                    "$index": 20,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "nonRepeatedUniquenessConstraints": [
-                20
+                {
+                    "$index": 20,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "primaryKeyConstraints": [
-                20
+                {
+                    "$index": 20,
+                    "$referencedCollection": "constraints"
+                }
             ],
             "annotations": []
         }
@@ -1995,15 +3186,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKplaza121285",
             "foreignKeysContainPrimaryKey": false,
-            "oneSideTable": 8,
+            "oneSideTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "plaza",
             "pluralRelationshipNameFromOneSide": "plazas",
             "isBetweenEntities": true,
-            "manySideTable": 2,
+            "manySideTable": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "usuario",
             "pluralRelationshipNameFromManySide": "usuarios"
         },
@@ -2011,15 +3211,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                1
+                {
+                    "$index": 1,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKplaza753705",
             "foreignKeysContainPrimaryKey": false,
-            "oneSideTable": 4,
+            "oneSideTable": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "plaza",
             "pluralRelationshipNameFromOneSide": "plazas",
             "isBetweenEntities": true,
-            "manySideTable": 2,
+            "manySideTable": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "sesionActividad",
             "pluralRelationshipNameFromManySide": "sesionActividades"
         },
@@ -2027,15 +3236,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                2
+                {
+                    "$index": 2,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKrealizacio329804",
             "foreignKeysContainPrimaryKey": true,
-            "oneSideTable": 5,
+            "oneSideTable": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "realizacionEjercicio",
             "pluralRelationshipNameFromOneSide": "realizacionEjercicios",
             "isBetweenEntities": true,
-            "manySideTable": 3,
+            "manySideTable": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "sesionEntrenamiento",
             "pluralRelationshipNameFromManySide": "sesionEntrenamientos"
         },
@@ -2043,15 +3261,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                3
+                {
+                    "$index": 3,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKrealizacio487855",
             "foreignKeysContainPrimaryKey": true,
-            "oneSideTable": 1,
+            "oneSideTable": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "realizacionEjercicio",
             "pluralRelationshipNameFromOneSide": "realizacionEjercicios",
             "isBetweenEntities": true,
-            "manySideTable": 3,
+            "manySideTable": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "ejercicio",
             "pluralRelationshipNameFromManySide": "ejercicios"
         },
@@ -2059,15 +3286,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                4
+                {
+                    "$index": 4,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKsesionActi157668",
             "foreignKeysContainPrimaryKey": false,
-            "oneSideTable": 0,
+            "oneSideTable": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "sesionActividad",
             "pluralRelationshipNameFromOneSide": "sesionActividades",
             "isBetweenEntities": true,
-            "manySideTable": 4,
+            "manySideTable": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "actividad",
             "pluralRelationshipNameFromManySide": "actividades"
         },
@@ -2075,15 +3311,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                5
+                {
+                    "$index": 5,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKsesionEntr170458",
             "foreignKeysContainPrimaryKey": false,
-            "oneSideTable": 6,
+            "oneSideTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "sesionEntrenamiento",
             "pluralRelationshipNameFromOneSide": "sesionEntrenamientos",
             "isBetweenEntities": true,
-            "manySideTable": 5,
+            "manySideTable": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "tabla",
             "pluralRelationshipNameFromManySide": "tablas"
         },
@@ -2091,15 +3336,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                6
+                {
+                    "$index": 6,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKsesionEntr636837",
             "foreignKeysContainPrimaryKey": false,
-            "oneSideTable": 8,
+            "oneSideTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "sesionEntrenamiento",
             "pluralRelationshipNameFromOneSide": "sesionEntrenamientos",
             "isBetweenEntities": true,
-            "manySideTable": 5,
+            "manySideTable": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "usuario",
             "pluralRelationshipNameFromManySide": "usuarios"
         },
@@ -2107,15 +3361,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                7
+                {
+                    "$index": 7,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKtablaEjerc609573",
             "foreignKeysContainPrimaryKey": true,
-            "oneSideTable": 6,
+            "oneSideTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "tablaEjercicio",
             "pluralRelationshipNameFromOneSide": "tablaEjercicios",
             "isBetweenEntities": true,
-            "manySideTable": 7,
+            "manySideTable": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "tabla",
             "pluralRelationshipNameFromManySide": "tablas"
         },
@@ -2123,15 +3386,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                8
+                {
+                    "$index": 8,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKtablaEjerc772258",
             "foreignKeysContainPrimaryKey": true,
-            "oneSideTable": 1,
+            "oneSideTable": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "tablaEjercicio",
             "pluralRelationshipNameFromOneSide": "tablaEjercicios",
             "isBetweenEntities": true,
-            "manySideTable": 7,
+            "manySideTable": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "ejercicio",
             "pluralRelationshipNameFromManySide": "ejercicios"
         },
@@ -2139,15 +3411,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                9
+                {
+                    "$index": 9,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKusuarioTab424980",
             "foreignKeysContainPrimaryKey": true,
-            "oneSideTable": 8,
+            "oneSideTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "usuarioTabla",
             "pluralRelationshipNameFromOneSide": "usuarioTablas",
             "isBetweenEntities": true,
-            "manySideTable": 9,
+            "manySideTable": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "usuario",
             "pluralRelationshipNameFromManySide": "usuarios"
         },
@@ -2155,15 +3436,24 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "foreignKeys": [
-                10
+                {
+                    "$index": 10,
+                    "$referencedCollection": "foreignKeys"
+                }
             ],
             "name": "FKusuarioTab739314",
             "foreignKeysContainPrimaryKey": true,
-            "oneSideTable": 6,
+            "oneSideTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromOneSide": "usuarioTabla",
             "pluralRelationshipNameFromOneSide": "usuarioTablas",
             "isBetweenEntities": true,
-            "manySideTable": 9,
+            "manySideTable": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide": "tabla",
             "pluralRelationshipNameFromManySide": "tablas"
         }
@@ -2173,11 +3463,26 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "isBetweenEntities": true,
-            "relationship1": 0,
-            "relationship2": 1,
-            "manySide1Table": 8,
-            "manySide2Table": 4,
-            "innerTable": 2,
+            "relationship1": {
+                "$index": 0,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "relationship2": {
+                "$index": 1,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "manySide1Table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "manySide2Table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
+            "innerTable": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide2": "usuarioInPlaza",
             "relationshipNameFromManySide1": "sesionActividadInPlaza",
             "pluralRelationshipNameFromManySide2": "usuariosInPlaza",
@@ -2191,11 +3496,26 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "isBetweenEntities": true,
-            "relationship1": 2,
-            "relationship2": 3,
-            "manySide1Table": 5,
-            "manySide2Table": 1,
-            "innerTable": 3,
+            "relationship1": {
+                "$index": 2,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "relationship2": {
+                "$index": 3,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "manySide1Table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
+            "manySide2Table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
+            "innerTable": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide2": "sesionEntrenamientoInRealizacionEjercicio",
             "relationshipNameFromManySide1": "ejercicioInRealizacionEjercicio",
             "pluralRelationshipNameFromManySide2": "sesionEntrenamientosInRealizacionEjercicio",
@@ -2209,11 +3529,26 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "isBetweenEntities": true,
-            "relationship1": 5,
-            "relationship2": 6,
-            "manySide1Table": 6,
-            "manySide2Table": 8,
-            "innerTable": 5,
+            "relationship1": {
+                "$index": 5,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "relationship2": {
+                "$index": 6,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "manySide1Table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
+            "manySide2Table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "innerTable": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide2": "tablaInSesionEntrenamiento",
             "relationshipNameFromManySide1": "usuarioInSesionEntrenamiento",
             "pluralRelationshipNameFromManySide2": "tablasInSesionEntrenamiento",
@@ -2227,11 +3562,26 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "isBetweenEntities": true,
-            "relationship1": 7,
-            "relationship2": 8,
-            "manySide1Table": 6,
-            "manySide2Table": 1,
-            "innerTable": 7,
+            "relationship1": {
+                "$index": 7,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "relationship2": {
+                "$index": 8,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "manySide1Table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
+            "manySide2Table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
+            "innerTable": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide2": "tablaInTablaEjercicio",
             "relationshipNameFromManySide1": "ejercicioInTablaEjercicio",
             "pluralRelationshipNameFromManySide2": "tablasInTablaEjercicio",
@@ -2245,11 +3595,26 @@
             "numberOfRelationshipsWithSameTables": 1,
             "indexInSameTablesRelationships": 0,
             "isBetweenEntities": true,
-            "relationship1": 9,
-            "relationship2": 10,
-            "manySide1Table": 8,
-            "manySide2Table": 6,
-            "innerTable": 9,
+            "relationship1": {
+                "$index": 9,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "relationship2": {
+                "$index": 10,
+                "$referencedCollection": "oneTomanyRelationships"
+            },
+            "manySide1Table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "manySide2Table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
+            "innerTable": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
             "relationshipNameFromManySide2": "usuarioInUsuarioTabla",
             "relationshipNameFromManySide1": "tablaInUsuarioTabla",
             "pluralRelationshipNameFromManySide2": "usuariosInUsuarioTabla",
@@ -2269,7 +3634,10 @@
                 "id"
             ],
             "columns": [
-                0
+                {
+                    "$index": 0,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2277,7 +3645,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 0
+            "table": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2287,7 +3658,10 @@
                 "id"
             ],
             "columns": [
-                6
+                {
+                    "$index": 6,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2295,7 +3669,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 1
+            "table": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2305,7 +3682,10 @@
                 "id"
             ],
             "columns": [
-                11
+                {
+                    "$index": 11,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2313,7 +3693,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 2
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKplaza121285",
@@ -2323,17 +3706,26 @@
                 "usuarioId"
             ],
             "columns": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                13
+                {
+                    "$index": 13,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 2
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKplaza753705",
@@ -2343,17 +3735,26 @@
                 "sesionActividadId"
             ],
             "columns": [
-                14
+                {
+                    "$index": 14,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                14
+                {
+                    "$index": 14,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 2
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2364,19 +3765,34 @@
                 "ejercicioId"
             ],
             "columns": [
-                15,
-                16
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                15,
-                16
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 3
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKrealizacio329804",
@@ -2386,17 +3802,26 @@
                 "sesionEntrenamientoId"
             ],
             "columns": [
-                15
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                15
+                {
+                    "$index": 15,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 3
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKrealizacio487855",
@@ -2406,17 +3831,26 @@
                 "ejercicioId"
             ],
             "columns": [
-                16
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                16
+                {
+                    "$index": 16,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 3
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2426,7 +3860,10 @@
                 "id"
             ],
             "columns": [
-                18
+                {
+                    "$index": 18,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2434,7 +3871,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 4
+            "table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKsesionActi157668",
@@ -2444,17 +3884,26 @@
                 "actividadId"
             ],
             "columns": [
-                20
+                {
+                    "$index": 20,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                20
+                {
+                    "$index": 20,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 4
+            "table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2464,7 +3913,10 @@
                 "id"
             ],
             "columns": [
-                21
+                {
+                    "$index": 21,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2472,7 +3924,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 5
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKsesionEntr170458",
@@ -2482,17 +3937,26 @@
                 "tablaId"
             ],
             "columns": [
-                23
+                {
+                    "$index": 23,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                23
+                {
+                    "$index": 23,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 5
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKsesionEntr636837",
@@ -2502,17 +3966,26 @@
                 "usuarioId"
             ],
             "columns": [
-                24
+                {
+                    "$index": 24,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                24
+                {
+                    "$index": 24,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 5
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2522,7 +3995,10 @@
                 "id"
             ],
             "columns": [
-                25
+                {
+                    "$index": 25,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2530,7 +4006,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 6
+            "table": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2541,19 +4020,34 @@
                 "ejercicioId"
             ],
             "columns": [
-                30,
-                31
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                30,
-                31
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 7
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKtablaEjerc609573",
@@ -2563,17 +4057,26 @@
                 "tablaId"
             ],
             "columns": [
-                30
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                30
+                {
+                    "$index": 30,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 7
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKtablaEjerc772258",
@@ -2583,17 +4086,26 @@
                 "ejercicioId"
             ],
             "columns": [
-                31
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                31
+                {
+                    "$index": 31,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 7
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2603,7 +4115,10 @@
                 "id"
             ],
             "columns": [
-                33
+                {
+                    "$index": 33,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": true,
             "containsPrimaryKeyColumn": true,
@@ -2611,7 +4126,10 @@
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 8
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "dni",
@@ -2621,17 +4139,26 @@
                 "dni"
             ],
             "columns": [
-                34
+                {
+                    "$index": 34,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                34
+                {
+                    "$index": 34,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": true,
             "isUniqueType": true,
             "isPrimaryKeyType": false,
-            "table": 8
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "email",
@@ -2641,17 +4168,26 @@
                 "email"
             ],
             "columns": [
-                37
+                {
+                    "$index": 37,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": false,
             "nonAutoIncrementColumns": [
-                37
+                {
+                    "$index": 37,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": true,
             "isUniqueType": true,
             "isPrimaryKeyType": false,
-            "table": 8
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "PRIMARY",
@@ -2662,19 +4198,34 @@
                 "tablaId"
             ],
             "columns": [
-                41,
-                42
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                41,
-                42
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                },
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": true,
             "isUniqueType": false,
             "isPrimaryKeyType": true,
-            "table": 9
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKusuarioTab424980",
@@ -2684,17 +4235,26 @@
                 "usuarioId"
             ],
             "columns": [
-                41
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                41
+                {
+                    "$index": 41,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 9
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            }
         },
         {
             "constraintName": "FKusuarioTab739314",
@@ -2704,157 +4264,313 @@
                 "tablaId"
             ],
             "columns": [
-                42
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "areAllColumnsAutoIncrement": false,
             "containsPrimaryKeyColumn": true,
             "nonAutoIncrementColumns": [
-                42
+                {
+                    "$index": 42,
+                    "$referencedCollection": "columns"
+                }
             ],
             "isUniquenessType": false,
             "isUniqueType": false,
             "isPrimaryKeyType": false,
-            "table": 9
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            }
         }
     ],
     "foreignKeys": [
         {
             "tableName": "plaza",
             "columnName": "usuarioId",
-            "table": 2,
-            "column": 13,
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 13,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKplaza121285",
             "referencedTableName": "usuario",
             "referencedColumnName": "id",
-            "referencedTable": 8,
-            "referencedColumn": 33
+            "referencedTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 33,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "plaza",
             "columnName": "sesionActividadId",
-            "table": 2,
-            "column": 14,
+            "table": {
+                "$index": 2,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 14,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKplaza753705",
             "referencedTableName": "sesionActividad",
             "referencedColumnName": "id",
-            "referencedTable": 4,
-            "referencedColumn": 18
+            "referencedTable": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 18,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "realizacionEjercicio",
             "columnName": "sesionEntrenamientoId",
-            "table": 3,
-            "column": 15,
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 15,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKrealizacio329804",
             "referencedTableName": "sesionEntrenamiento",
             "referencedColumnName": "id",
-            "referencedTable": 5,
-            "referencedColumn": 21
+            "referencedTable": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 21,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "realizacionEjercicio",
             "columnName": "ejercicioId",
-            "table": 3,
-            "column": 16,
+            "table": {
+                "$index": 3,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 16,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKrealizacio487855",
             "referencedTableName": "ejercicio",
             "referencedColumnName": "id",
-            "referencedTable": 1,
-            "referencedColumn": 6
+            "referencedTable": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 6,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "sesionActividad",
             "columnName": "actividadId",
-            "table": 4,
-            "column": 20,
+            "table": {
+                "$index": 4,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 20,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKsesionActi157668",
             "referencedTableName": "actividad",
             "referencedColumnName": "id",
-            "referencedTable": 0,
-            "referencedColumn": 0
+            "referencedTable": {
+                "$index": 0,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 0,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "sesionEntrenamiento",
             "columnName": "tablaId",
-            "table": 5,
-            "column": 23,
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 23,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKsesionEntr170458",
             "referencedTableName": "tabla",
             "referencedColumnName": "id",
-            "referencedTable": 6,
-            "referencedColumn": 25
+            "referencedTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 25,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "sesionEntrenamiento",
             "columnName": "usuarioId",
-            "table": 5,
-            "column": 24,
+            "table": {
+                "$index": 5,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 24,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKsesionEntr636837",
             "referencedTableName": "usuario",
             "referencedColumnName": "id",
-            "referencedTable": 8,
-            "referencedColumn": 33
+            "referencedTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 33,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "tablaEjercicio",
             "columnName": "tablaId",
-            "table": 7,
-            "column": 30,
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 30,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKtablaEjerc609573",
             "referencedTableName": "tabla",
             "referencedColumnName": "id",
-            "referencedTable": 6,
-            "referencedColumn": 25
+            "referencedTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 25,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "tablaEjercicio",
             "columnName": "ejercicioId",
-            "table": 7,
-            "column": 31,
+            "table": {
+                "$index": 7,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 31,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKtablaEjerc772258",
             "referencedTableName": "ejercicio",
             "referencedColumnName": "id",
-            "referencedTable": 1,
-            "referencedColumn": 6
+            "referencedTable": {
+                "$index": 1,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 6,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "usuarioTabla",
             "columnName": "usuarioId",
-            "table": 9,
-            "column": 41,
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 41,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKusuarioTab424980",
             "referencedTableName": "usuario",
             "referencedColumnName": "id",
-            "referencedTable": 8,
-            "referencedColumn": 33
+            "referencedTable": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 33,
+                "$referencedCollection": "columns"
+            }
         },
         {
             "tableName": "usuarioTabla",
             "columnName": "tablaId",
-            "table": 9,
-            "column": 42,
+            "table": {
+                "$index": 9,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 42,
+                "$referencedCollection": "columns"
+            },
             "constraintName": "FKusuarioTab739314",
             "referencedTableName": "tabla",
             "referencedColumnName": "id",
-            "referencedTable": 6,
-            "referencedColumn": 25
+            "referencedTable": {
+                "$index": 6,
+                "$referencedCollection": "tables"
+            },
+            "referencedColumn": {
+                "$index": 25,
+                "$referencedCollection": "columns"
+            }
         }
     ],
     "annotations": [
         {
-            "table": 8,
-            "column": 37,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 37,
+                "$referencedCollection": "columns"
+            },
             "name": "Validation",
             "values": null
         },
         {
-            "table": 8,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
             "name": "UsersTable",
             "values": null
         },
         {
-            "table": 8,
-            "column": 34,
+            "table": {
+                "$index": 8,
+                "$referencedCollection": "tables"
+            },
+            "column": {
+                "$index": 34,
+                "$referencedCollection": "columns"
+            },
             "name": "Validation",
             "values": {
                 "type": "dni"

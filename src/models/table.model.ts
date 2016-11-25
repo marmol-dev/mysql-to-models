@@ -9,6 +9,8 @@ import OneToXRelationship = require('./one_to_x_relationship.model');
 import Indexable = require('./indexable.model');
 import Annotation = require("./annotation.model");
 
+
+@Indexable.CollectionName("tables")
 class Table extends Indexable {
 
     private _tableName : string;

@@ -3,6 +3,7 @@ import Table = require("./table.model");
 import Column = require("./column.model");
 import ForeignKey = require("./foreign_key.model");
 
+@Indexable.CollectionName("annotations")
 class Annotation extends Indexable {
 
 

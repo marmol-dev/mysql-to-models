@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const Indexable = require('./indexable.model');
-class ForeignKey extends Indexable {
+let ForeignKey = class ForeignKey extends Indexable {
     constructor({ TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME }, index) {
         super(index);
         this._tableName = TABLE_NAME;
@@ -54,7 +54,7 @@ class ForeignKey extends Indexable {
     set referencedColumn(column) {
         this._referencedColumn = column;
     }
-}
+};
 __decorate([
     Indexable.ToJSON()
 ], ForeignKey.prototype, "tableName", null);
@@ -82,5 +82,8 @@ __decorate([
 __decorate([
     Indexable.ToJSON()
 ], ForeignKey.prototype, "referencedColumn", null);
+ForeignKey = __decorate([
+    Indexable.CollectionName("foreignKeys")
+], ForeignKey);
 module.exports = ForeignKey;
 //# sourceMappingURL=foreign_key.model.js.map

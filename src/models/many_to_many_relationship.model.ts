@@ -4,6 +4,7 @@ import _ = require('lodash');
 import Table = require('./table.model');
 import Indexable = require("./indexable.model");
 
+@Indexable.CollectionName("manyToManyRelationships")
 class ManyToManyRelationship extends Relationship {
     
     private _relationship1 : OneToManyRelationship;

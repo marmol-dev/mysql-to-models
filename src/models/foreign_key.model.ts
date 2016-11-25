@@ -2,7 +2,7 @@ import Table = require('./table.model');
 import Column = require('./column.model');
 import Indexable = require('./indexable.model');
 
-
+@Indexable.CollectionName("foreignKeys")
 class ForeignKey extends Indexable {
     private _tableName : string;
     private _columnName : string;

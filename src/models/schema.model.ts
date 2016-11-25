@@ -6,7 +6,6 @@ import OneToManyRelationship = require('./one_to_many_relationship.model');
 import ManyToManyRelationship = require('./many_to_many_relationship.model');
 import Constraint = require('./constraint.model');
 import ForeignKey = require('./foreign_key.model');
-import _ = require('lodash');
 import Annotation = require("./annotation.model");
 import Indexable = require("./indexable.model");
 
@@ -24,7 +23,7 @@ interface ISchema {
     foreignKeys: ForeignKey[];
 }
 
-class Schema extends Indexable implements ISchema {
+class Schema extends Indexable implements ISchema{
 
     private _columns: Column[];
     private _tables: Table[];
@@ -36,7 +35,7 @@ class Schema extends Indexable implements ISchema {
     private _annotations: Annotation[];
 
     constructor(schema: ISchema){
-        super(0);
+        super();
         this._columns = schema.columns;
         this._tables = schema.tables;
         this._oneToManyRelationships = schema.oneToManyRelationships;

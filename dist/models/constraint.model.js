@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const Indexable = require('./indexable.model');
-class Constraint extends Indexable {
+let Constraint = class Constraint extends Indexable {
     constructor({ CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }, index) {
         super(index);
         this._constraintName = CONSTRAINT_NAME;
@@ -62,7 +62,7 @@ class Constraint extends Indexable {
             && cols.every(col => this._columns.lastIndexOf(col) > -1)
             && this._columns.every(col => cols.lastIndexOf(col) > -1);
     }
-}
+};
 __decorate([
     Indexable.ToJSON()
 ], Constraint.prototype, "constraintName", null);
@@ -99,5 +99,8 @@ __decorate([
 __decorate([
     Indexable.ToJSON()
 ], Constraint.prototype, "table", null);
+Constraint = __decorate([
+    Indexable.CollectionName("constraints")
+], Constraint);
 module.exports = Constraint;
 //# sourceMappingURL=constraint.model.js.map

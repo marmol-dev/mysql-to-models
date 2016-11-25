@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const OneToXRelationship = require('./one_to_x_relationship.model');
 const Indexable = require("./indexable.model");
-class OneToManyRelationship extends OneToXRelationship {
+let OneToManyRelationship_1 = class OneToManyRelationship extends OneToXRelationship {
     /**
      * Creates an instance of OneToManyRelationship.
      *
@@ -131,11 +131,12 @@ class OneToManyRelationship extends OneToXRelationship {
      * @memberOf OneToManyRelationship
      */
     static createFromOneToXRelationship(rel, index) {
-        const toret = new OneToManyRelationship(rel.name, index);
+        const toret = new OneToManyRelationship_1(rel.name, index);
         toret.foreignKeys = [...rel.foreignKeys];
         return toret;
     }
-}
+};
+let OneToManyRelationship = OneToManyRelationship_1;
 __decorate([
     Indexable.ToJSON()
 ], OneToManyRelationship.prototype, "manySideTable", null);
@@ -157,5 +158,8 @@ __decorate([
 __decorate([
     Indexable.ToJSON()
 ], OneToManyRelationship.prototype, "isBetweenEntities", null);
+OneToManyRelationship = OneToManyRelationship_1 = __decorate([
+    Indexable.CollectionName("oneTomanyRelationships")
+], OneToManyRelationship);
 module.exports = OneToManyRelationship;
 //# sourceMappingURL=one_to_many_relationship.model.js.map

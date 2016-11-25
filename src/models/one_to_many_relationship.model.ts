@@ -3,6 +3,7 @@ import NamesHelper = require('../helpers/names.helper');
 import Table = require('./table.model');
 import Indexable = require("./indexable.model");
 
+@Indexable.CollectionName("oneTomanyRelationships")
 class OneToManyRelationship extends OneToXRelationship {
 
     /**
