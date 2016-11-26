@@ -9,7 +9,35 @@ import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
 import {Serializable, Serialize} from "../helpers/serializable";
 import {Deserializable, Deserialize} from "../helpers/deserializable";
+import Deserializer from "../helpers/deserializer";
 
+function classProvider(name: string) : Function {
+    switch(name){
+        case null:
+        case 'Object':
+            return Object;
+        case 'Table':
+            return Table;
+        case 'Column':
+            return Column;
+        case 'Annotation':
+            return Annotation;
+        case 'Constraint':
+            return Constraint;
+        case 'ForeignKey':
+            return ForeignKey;
+        case 'ManyToManyRelationship':
+            return ManyToManyRelationship;
+        case 'OneToManyRelationship':
+            return OneToManyRelationship;
+        case 'OneToOneRelationship':
+            return OneToOneRelationship;
+        case 'Schema':
+            return Schema;
+        default:
+            throw new Error(`Provider doesn't found a class with name ${name}`);
+    }
+}
 
 interface ISchema {
     annotations: Annotation[];
@@ -56,44 +84,50 @@ class Schema implements ISchema {
         this._annotations = schema.annotations;
     }
 
-    @Serialize(false)
+    @Serialize()
     get columns(): Column[] {
         return this._columns;
     }
 
-    @Serialize(false)
+    @Serialize()
     get tables(): Table[] {
         return this._tables;
     }
 
-    @Serialize(false)
+    @Serialize()
     get oneToOneRelationships() {
         return this._oneToOneRelationships;
     }
 
-    @Serialize(false)
+    @Serialize()
     get oneToManyRelationships() {
         return this._oneToManyRelationships;
     }
 
-    @Serialize(false)
+    @Serialize()
     get manyToManyRelationships() {
         return this._manyToManyRelationships;
     }
 
-    @Serialize(false)
+    @Serialize()
     get constraints(): Constraint[] {
         return this._constraints;
     }
 
-    @Serialize(false)
+    @Serialize()
     get foreignKeys(): ForeignKey[] {
         return this._foreignKeys;
     }
 
-    @Serialize(false)
+    @Serialize()
     get annotations(): Annotation[] {
         return this._annotations;
+    }
+
+    static fromJSON(obj : any) : Schema {
+        const deserializer = new Deserializer(obj);
+        deserializer.constructorProvider = classProvider;
+        return deserializer.deserialize();
     }
 }
 

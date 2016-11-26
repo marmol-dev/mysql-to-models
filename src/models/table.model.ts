@@ -7,7 +7,7 @@ import OneToManyRelationships = require('./one_to_many_relationship.model');
 import ManyToManyRelationships = require('./many_to_many_relationship.model');
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Annotation = require("./annotation.model");
-import {Id, Serializable, Serialize} from '../helpers/serializable';
+import {Serializable, Serialize} from '../helpers/serializable';
 import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 
@@ -34,7 +34,7 @@ class Table {
     @Deserialize()
     private _annotations : Annotation[];
 
-    @Id()
+
     @Deserialize()
     private _index: number;
 

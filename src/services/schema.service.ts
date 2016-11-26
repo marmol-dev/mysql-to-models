@@ -16,43 +16,13 @@ import TablesService = require('./tables.service');
 import mysql = require('mysql');
 import AnnotationsService = require("./annotations.service");
 import IProjectConfig = require("../config/i-project-config");
+
 import Column = require("../models/column.model");
 import ForeignKey = require("../models/foreign_key.model");
 import Constraint = require("../models/constraint.model");
 import Table = require("../models/table.model");
-
-
-import Table = require("../models/table.model");
-import Column = require("../models/column.model");
 import Annotation = require("../models/annotation.model");
-import Constraint = require("../models/constraint.model");
-import ForeignKey = require("../models/foreign_key.model");
 import Deserializer from "../helpers/deserializer";
-
-function classProvider(name: string) : Function {
-    switch(name){
-        case 'Table':
-            return Table;
-        case 'Column':
-            return Column;
-        case 'Annotation':
-            return Annotation;
-        case 'Constraint':
-            return Constraint;
-        case 'ForeignKey':
-            return ForeignKey;
-        case 'ManyToManyRelationship':
-            return ManyToManyRelationship;
-        case 'OneToManyRelationship':
-            return OneToManyRelationship;
-        case 'OneToOneRelationship':
-            return OneToOneRelationship;
-        case 'Schema':
-            return Schema;
-        default:
-            throw new Error(`Provider doesn't found a class with name ${name}`);
-    }
-}
 
 class SchemaService extends DbService {
 
@@ -227,12 +197,6 @@ class SchemaService extends DbService {
                     annotations
                 });
             });
-    }
-
-    constructSchema(jsonObject: any) : Schema {
-        const serializer = new Deserializer(jsonObject);
-        serializer.constructorProvider = classProvider;
-        return <Schema>serializer.deserialize();
     }
 }
 

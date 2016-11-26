@@ -199,7 +199,6 @@ __decorate([
     deserializable_1.Deserialize()
 ], Table.prototype, "_annotations", void 0);
 __decorate([
-    serializable_1.Id(),
     deserializable_1.Deserialize()
 ], Table.prototype, "_index", void 0);
 __decorate([

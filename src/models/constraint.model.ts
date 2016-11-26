@@ -1,5 +1,5 @@
 import Column = require('./column.model');
-import {Serializable, Serialize, Construct, Id} from "../helpers/serializable";
+import {Serializable, Serialize} from "../helpers/serializable";
 import {Deserializable, Deserialize} from "../helpers/deserializable";
 
 type ConstraintType = "NOT NULL" | "UNIQUE" | "PRIMARY KEY" | "FOREIGN KEY" | "CHECK" | "DEFAULT";
@@ -32,7 +32,6 @@ class Constraint {
     @Deserialize()
     private _columnNames: string[];
     @Deserialize()
-    @Id()
     private _index : number;
 
     constructor({CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }: {[prop : string] : string; CONSTRAINT_TYPE: ConstraintType}, index: number) {

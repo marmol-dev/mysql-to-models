@@ -2,7 +2,7 @@ import _ = require('lodash');
 import Table = require('./table.model');
 import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
-import {Serializable, Serialize, Id} from "../helpers/serializable";
+import {Serializable, Serialize} from "../helpers/serializable";
 import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 @Serializable()
@@ -40,7 +40,6 @@ class Column {
     @Deserialize()
     private _annotations : Annotation[];
     @Deserialize()
-    @Id()
     private _index : number;
 
     constructor({TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT} : {[p:string] : string}, index: number){

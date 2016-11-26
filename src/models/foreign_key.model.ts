@@ -1,6 +1,6 @@
 import Table = require('./table.model');
 import Column = require('./column.model');
-import {Serializable, Construct, Serialize, Id} from "../helpers/serializable";
+import {Serializable, Serialize} from "../helpers/serializable";
 import {Deserializable, Deserialize} from "../helpers/deserializable";
 
 @Serializable()
@@ -26,7 +26,7 @@ class ForeignKey {
     private _referencedColumn : Column;
 
     @Deserialize()
-    @Id()
+
     private _index : number;
 
     constructor({TABLE_NAME, COLUMN_NAME, CONSTRAINT_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME}: {[p: string] : string}, index : number) {

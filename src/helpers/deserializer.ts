@@ -1,59 +1,22 @@
-import * as util from 'util';
 
-import {
-    SerializableWithId, getDefaults, SerializableDefaults, SerializableId,
-    SerializableReference
-} from "./serializable";
-export type ConstructorProvider = (name : string) => Function;
+import {JSONId, JSONReference, JSONWithId, SerializerSettings, getDefaultSettings} from './serializer';
+import JSONObjectStore from "./json-object-store";
 
 function isObject(e: any) : boolean {
     return e !== null && !Array.isArray(e) && typeof e === 'object';
 }
 
-class ObjectStore {
-    private _map: {
-        [className : string]: {
-            [id: string]: SerializableWithId;
-        };
-    }
-
-    constructor(){
-        this._map = {};
-    }
-
-    add(obj: SerializableWithId){
-        const id = obj[getDefaults().idPropertyName];
-        if (id[0] in this._map === false){
-            this._map[id[0]] = {};
-        }
-
-        this._map[id[0]][id[1]] = obj;
-    }
-
-    get(id: SerializableId) : SerializableWithId {
-        if (id[0] in this._map === false || id[1] in this._map[id[0]] === false){
-            return undefined;
-        }
-
-        return this._map[id[0]][id[1]];
-    }
-
-
-    get objects() {
-        return this._map;
-    }
-}
+export type ConstructorProvider = (name : string) => Function;
 
 export default class Deserializer {
     private _base : any;
     private _constructorProvider : ConstructorProvider;
-    private _objectStore: ObjectStore;
-    private _defaults: SerializableDefaults;
+    private _objectStore: JSONObjectStore;
+    private _settings: SerializerSettings;
 
-    constructor(_base: any){
-        this._objectStore = new ObjectStore();
-        this._base = _base;
-        this._defaults = getDefaults();
+    constructor(_base: any, _settings: SerializerSettings = getDefaultSettings()){
+        Object.assign(this, {_settings, _base});
+        this._objectStore = new JSONObjectStore(_settings);
     }
 
     get constructorProvider(): ConstructorProvider {
@@ -71,26 +34,26 @@ export default class Deserializer {
 
     private isReference(obj: any) : boolean {
         return isObject(obj) &&
-            this._defaults.referencePropertyName in obj &&
-                this.isId(obj[this._defaults.referencePropertyName]);
+            this._settings.referencePropertyName in obj &&
+                this.isId(obj[this._settings.referencePropertyName]);
     }
 
     private isWithId(obj: any){
         return isObject(obj) &&
-                this._defaults.idPropertyName in obj &&
-                this.isId(obj[this._defaults.idPropertyName]);
+                this._settings.idPropertyName in obj &&
+                this.isId(obj[this._settings.idPropertyName]);
     }
 
-    private getInternal(obj: SerializableWithId) : Object {
-       return obj[this._defaults.internalPropertyName] || {};
+    private getInternal(obj: JSONWithId) : Object {
+       return obj[this._settings.internalPropertyName] || {};
     }
 
-    private getId(obj: SerializableWithId){
-        return obj[this._defaults.idPropertyName];
+    private getId(obj: JSONWithId){
+        return obj[this._settings.idPropertyName];
     }
 
-    private getReferenceId(obj: SerializableReference){
-        return obj[this._defaults.referencePropertyName];
+    private getReferenceId(obj: JSONReference){
+        return obj[this._settings.referencePropertyName];
     }
 
     private addToStorePart(obj: any){
@@ -109,12 +72,12 @@ export default class Deserializer {
         }
     }
 
-    private constructObject(jsonObj: SerializableWithId) : SerializableWithId {
+    private constructObject(jsonObj: JSONWithId) : JSONWithId {
         const className = this.getId(jsonObj)[0];
         const constructor = this._constructorProvider(className);
         const object = Object.create(constructor.prototype);
         Object.assign(object, this.getInternal(jsonObj));
-        delete object[this._defaults.idPropertyName];
+        delete object[this._settings.idPropertyName];
         return object;
     }
 
@@ -151,7 +114,7 @@ export default class Deserializer {
         }
     }
 
-    public getLinkedObject(part : any) {
+    private getLinkedObject(part : any) {
         if (Array.isArray(part)){
             return part.map((e: any) => this.getLinkedObject(e));
         } else if (isObject(part)) {
@@ -173,7 +136,7 @@ export default class Deserializer {
         }
     }
 
-    public deserialize() : Object {
+    public deserialize() : any {
         this.addToStorePart(this._base);
         this.deserializeStore();
         this.updateStoreReferences();
@@ -181,5 +144,3 @@ export default class Deserializer {
     }
 
 }
-
-const doneSymbol = Symbol('done');

@@ -44,7 +44,6 @@ __decorate([
     deserializable_1.Deserialize()
 ], Relationship.prototype, "_indexInSameTablesRelationships", void 0);
 __decorate([
-    serializable_1.Id(),
     deserializable_1.Deserialize()
 ], Relationship.prototype, "_index", void 0);
 __decorate([

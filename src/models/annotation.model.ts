@@ -1,7 +1,7 @@
 import Table = require("./table.model");
 import Column = require("./column.model");
 import ForeignKey = require("./foreign_key.model");
-import {Serializable, Id, Serialize} from "../helpers/serializable";
+import {Serializable, Serialize} from "../helpers/serializable";
 import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 @Serializable()
@@ -19,7 +19,6 @@ class Annotation {
     @Deserialize()
     private _values : any;
     @Deserialize()
-    @Id()
     private _index: number;
 
     constructor(_name: string, _values : any, _index: number){

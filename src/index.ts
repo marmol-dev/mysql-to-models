@@ -4,7 +4,8 @@ import SchemaService = require('./services/schema.service');
 import IProjectConfig = require('./config/i-project-config');
 import path = require('path');
 import fs = require('fs');
-import {Serializable, Construct, Serialize, Id} from "./helpers/serializable";
+import Serializer from "./helpers/serializer";
+import Schema = require("./models/schema.model");
 
 let projectConfig : IProjectConfig;
 
@@ -25,12 +26,14 @@ dbConnection.connect();
 const schemaService = new SchemaService(dbConnection, projectConfig.database, projectConfig);
 
 schemaService.getSchema().then(schema => {
-    const content = JSON.stringify(schema, null, 4);
+    const serializer = new Serializer(schema);
+    const serializedSchema = serializer.serialize();
+    const content = JSON.stringify(serializedSchema, null, 4);
     if (outFile !== null) {
         fs.writeFileSync(outFile, content);
         const jsonObj = require(outFile);
-        const schema = schemaService.constructSchema(jsonObj);
-        console.log(schema.tables[0].columns[0].table);
+        const schema = Schema.fromJSON(jsonObj);
+        console.log(schema.tables[0].columns[0].table.tableName);
     } else {
         process.stdout.write(content);
     }
