@@ -28,6 +28,9 @@ schemaService.getSchema().then(schema => {
     const content = JSON.stringify(schema, null, 4);
     if (outFile !== null) {
         fs.writeFileSync(outFile, content);
+        const jsonObj = require(outFile);
+        const schema = schemaService.constructSchema(jsonObj);
+        console.log(schema.tables[0].columns[0].table);
     } else {
         process.stdout.write(content);
     }

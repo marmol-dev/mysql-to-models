@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const serializable_1 = require("../helpers/serializable");
+const deserializable_1 = require("../helpers/deserializable");
 let Constraint = class Constraint {
     constructor({ CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }, index) {
         this._index = index;
@@ -64,22 +65,22 @@ let Constraint = class Constraint {
     }
 };
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Constraint.prototype, "_constraintName", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Constraint.prototype, "_tableName", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Constraint.prototype, "_constraintType", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Constraint.prototype, "_columns", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Constraint.prototype, "_columnNames", void 0);
 __decorate([
-    serializable_1.Construct(),
+    deserializable_1.Deserialize(),
     serializable_1.Id()
 ], Constraint.prototype, "_index", void 0);
 __decorate([
@@ -119,7 +120,8 @@ __decorate([
     serializable_1.Serialize()
 ], Constraint.prototype, "table", null);
 Constraint = __decorate([
-    serializable_1.Serializable()
+    serializable_1.Serializable(),
+    deserializable_1.Deserializable()
 ], Constraint);
 module.exports = Constraint;
 //# sourceMappingURL=constraint.model.js.map

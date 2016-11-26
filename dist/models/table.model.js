@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 const _ = require('lodash');
 const NamesHelper = require('../helpers/names.helper');
 const serializable_1 = require('../helpers/serializable');
+const deserializable_1 = require("../helpers/deserializable");
 let Table = class Table {
     constructor({ TABLE_NAME, TABLE_TYPE, TABLE_COMMENT }, index) {
         this._index = index;
@@ -171,34 +172,35 @@ let Table = class Table {
     }
 };
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_tableName", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_columns", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_constraints", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_oneToOneRelationships", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_oneToManyRelationships", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_manyToManyRelationships", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_tableType", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_tableComment", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Table.prototype, "_annotations", void 0);
 __decorate([
-    serializable_1.Id()
+    serializable_1.Id(),
+    deserializable_1.Deserialize()
 ], Table.prototype, "_index", void 0);
 __decorate([
     serializable_1.Serialize()
@@ -294,7 +296,8 @@ __decorate([
     serializable_1.Serialize()
 ], Table.prototype, "annotations", null);
 Table = __decorate([
-    serializable_1.Serializable()
+    serializable_1.Serializable(),
+    deserializable_1.Deserializable()
 ], Table);
 module.exports = Table;
 //# sourceMappingURL=table.model.js.map

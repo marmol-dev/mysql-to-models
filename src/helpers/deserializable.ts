@@ -10,15 +10,15 @@ export function Deserializable() {
     };
 }
 
-export function Deserialize(){
+export function Deserialize(replaceWithId: boolean = true){
     return function (target: Object, propertyKey: string) {
-        let deserializeProperties: string[] = Reflect.getMetadata('serializedProperties', target.constructor);
+        let deserializeProperties: string[] = Reflect.getMetadata('deserializeProperties', target.constructor);
         if (!deserializeProperties){
             deserializeProperties = [];
             Reflect.defineMetadata('deserializeProperties', deserializeProperties, target.constructor);
         }
         deserializeProperties.push(propertyKey);
-        Reflect.defineMetadata('deserialize', true, target, propertyKey);
+        Reflect.defineMetadata('deserialize', {replaceWithId}, target, propertyKey);
     };
 }
 

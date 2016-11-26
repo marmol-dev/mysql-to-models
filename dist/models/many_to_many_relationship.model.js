@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 const Relationship = require('./relationship.model');
 const _ = require('lodash');
 const serializable_1 = require("../helpers/serializable");
+const deserializable_1 = require("../helpers/deserializable");
 let ManyToManyRelationship = class ManyToManyRelationship extends Relationship {
     constructor(relationship1, relationship2, index) {
         super(index);
@@ -157,10 +158,10 @@ let ManyToManyRelationship = class ManyToManyRelationship extends Relationship {
     }
 };
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], ManyToManyRelationship.prototype, "_relationship1", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], ManyToManyRelationship.prototype, "_relationship2", void 0);
 __decorate([
     serializable_1.Serialize()
@@ -205,7 +206,8 @@ __decorate([
     serializable_1.Serialize()
 ], ManyToManyRelationship.prototype, "isBetweenEntities", null);
 ManyToManyRelationship = __decorate([
-    serializable_1.Serializable()
+    serializable_1.Serializable(),
+    deserializable_1.Deserializable()
 ], ManyToManyRelationship);
 module.exports = ManyToManyRelationship;
 //# sourceMappingURL=many_to_many_relationship.model.js.map

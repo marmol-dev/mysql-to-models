@@ -1,22 +1,24 @@
 import Table = require("./table.model");
 import Column = require("./column.model");
 import ForeignKey = require("./foreign_key.model");
-import {Serializable, Construct, Id, Serialize} from "../helpers/serializable";
+import {Serializable, Id, Serialize} from "../helpers/serializable";
+import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 @Serializable()
+@Deserializable()
 class Annotation {
 
-    @Construct()
+    @Deserialize()
     private _table : Table;
-    @Construct()
+    @Deserialize()
     private _column: Column;
-    @Construct()
+    @Deserialize()
     private _foreignKey: ForeignKey;
-    @Construct()
+    @Deserialize()
     private _name: string;
-    @Construct()
+    @Deserialize()
     private _values : any;
-    @Construct()
+    @Deserialize()
     @Id()
     private _index: number;
 

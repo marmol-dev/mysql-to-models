@@ -1,8 +1,10 @@
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Table = require('./table.model');
 import {Serializable, Serialize} from "../helpers/serializable";
+import {Deserializable} from "../helpers/deserializable";
 
 @Serializable()
+@Deserializable()
 class OneToManyRelationship extends OneToXRelationship {
 
     /**

@@ -1,9 +1,11 @@
 import Column = require('./column.model');
 import {Serializable, Serialize, Construct, Id} from "../helpers/serializable";
+import {Deserializable, Deserialize} from "../helpers/deserializable";
 
 type ConstraintType = "NOT NULL" | "UNIQUE" | "PRIMARY KEY" | "FOREIGN KEY" | "CHECK" | "DEFAULT";
 
 @Serializable()
+@Deserializable()
 class Constraint {
     /**
      * Constraint type
@@ -19,17 +21,17 @@ class Constraint {
      * @type {string}
      * @memberOf Constraint
      */
-    @Construct()
+    @Deserialize()
     private _constraintName : string;
-    @Construct()
+    @Deserialize()
     private _tableName : string;
-    @Construct()
+    @Deserialize()
     private _constraintType : ConstraintType;
-    @Construct()
+    @Deserialize()
     private _columns : Column[];
-    @Construct()
+    @Deserialize()
     private _columnNames: string[];
-    @Construct()
+    @Deserialize()
     @Id()
     private _index : number;
 

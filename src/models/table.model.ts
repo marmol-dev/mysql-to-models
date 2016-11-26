@@ -7,32 +7,35 @@ import OneToManyRelationships = require('./one_to_many_relationship.model');
 import ManyToManyRelationships = require('./many_to_many_relationship.model');
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Annotation = require("./annotation.model");
-import {Construct, Id, Serializable, Serialize} from '../helpers/serializable';
+import {Id, Serializable, Serialize} from '../helpers/serializable';
+import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 
 @Serializable()
+@Deserializable()
 class Table {
 
-    @Construct()
+    @Deserialize()
     private _tableName : string;
-    @Construct()
+    @Deserialize()
     private _columns : Column[];
-    @Construct()
+    @Deserialize()
     private _constraints : Constraint[];
-    @Construct()
+    @Deserialize()
     private _oneToOneRelationships : OneToOneRelationships[];
-    @Construct()
+    @Deserialize()
     private _oneToManyRelationships : OneToManyRelationships[];
-    @Construct()
+    @Deserialize()
     private _manyToManyRelationships : ManyToManyRelationships[];
-    @Construct()
+    @Deserialize()
     private _tableType : string;
-    @Construct()
+    @Deserialize()
     private _tableComment : string;
-    @Construct()
+    @Deserialize()
     private _annotations : Annotation[];
 
     @Id()
+    @Deserialize()
     private _index: number;
 
     constructor({TABLE_NAME, TABLE_TYPE, TABLE_COMMENT}: {[p:string] : string}, index : number) {

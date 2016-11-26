@@ -1,29 +1,31 @@
 import Table = require('./table.model');
 import Column = require('./column.model');
 import {Serializable, Construct, Serialize, Id} from "../helpers/serializable";
+import {Deserializable, Deserialize} from "../helpers/deserializable";
 
 @Serializable()
+@Deserializable()
 class ForeignKey {
-    @Construct()
+    @Deserialize()
     private _tableName : string;
-    @Construct()
+    @Deserialize()
     private _columnName : string;
-    @Construct()
+    @Deserialize()
     private _constraintName : string;
-    @Construct()
+    @Deserialize()
     private _referencedTableName : string;
-    @Construct()
+    @Deserialize()
     private _referencedColumnName : string;
-    @Construct()
+    @Deserialize()
     private _table : Table;
-    @Construct()
+    @Deserialize()
     private _column : Column;
-    @Construct()
+    @Deserialize()
     private _referencedTable : Table;
-    @Construct()
+    @Deserialize()
     private _referencedColumn : Column;
 
-    @Construct()
+    @Deserialize()
     @Id()
     private _index : number;
 

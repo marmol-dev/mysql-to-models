@@ -2,42 +2,44 @@ import _ = require('lodash');
 import Table = require('./table.model');
 import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
-import {Serializable, Construct, Serialize, Id} from "../helpers/serializable";
+import {Serializable, Serialize, Id} from "../helpers/serializable";
+import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 @Serializable()
+@Deserializable()
 class Column {
 
-    @Construct()
+    @Deserialize()
     private _tableName : string;
-    @Construct()
+    @Deserialize()
     private _columnName : string;
-    @Construct()
+    @Deserialize()
     private _ordinalPosition : string;
-    @Construct()
+    @Deserialize()
     private _columnDefault : string;
-    @Construct()
+    @Deserialize()
     private _isNullable : string;
-    @Construct()
+    @Deserialize()
     private _dataType : string;
-    @Construct()
+    @Deserialize()
     private _characterMaximumLength : string;
-    @Construct()
+    @Deserialize()
     private _columnType : string;
-    @Construct()
+    @Deserialize()
     private _columnKey : string;
-    @Construct()
+    @Deserialize()
     private _extra : string;
-    @Construct()
+    @Deserialize()
     private _columnComment : string;
-    @Construct()
+    @Deserialize()
     private _table : Table;
-    @Construct()
+    @Deserialize()
     private _foreignKey : ForeignKey;
-    @Construct()
+    @Deserialize()
     private _phpDataType : string;
-    @Construct()
+    @Deserialize()
     private _annotations : Annotation[];
-    @Construct()
+    @Deserialize()
     @Id()
     private _index : number;
 

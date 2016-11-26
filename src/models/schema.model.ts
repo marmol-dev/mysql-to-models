@@ -7,7 +7,8 @@ import ManyToManyRelationship = require('./many_to_many_relationship.model');
 import Constraint = require('./constraint.model');
 import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
-import {Serializable, Construct, Serialize} from "../helpers/serializable";
+import {Serializable, Serialize} from "../helpers/serializable";
+import {Deserializable, Deserialize} from "../helpers/deserializable";
 
 
 interface ISchema {
@@ -23,24 +24,25 @@ interface ISchema {
     foreignKeys: ForeignKey[];
 }
 
+@Deserializable()
 @Serializable()
 class Schema implements ISchema {
 
-    @Construct()
+    @Deserialize()
     private _columns: Column[];
-    @Construct()
+    @Deserialize()
     private _tables: Table[];
-    @Construct()
+    @Deserialize()
     private _oneToOneRelationships: OneToOneRelationship[];
-    @Construct()
+    @Deserialize()
     private _oneToManyRelationships: OneToManyRelationship[];
-    @Construct()
+    @Deserialize()
     private _manyToManyRelationships: ManyToManyRelationship[];
-    @Construct()
+    @Deserialize()
     private _constraints: Constraint[];
-    @Construct()
+    @Deserialize()
     private _foreignKeys: ForeignKey[];
-    @Construct()
+    @Deserialize()
     private _annotations: Annotation[];
 
     constructor(schema: ISchema){

@@ -1,8 +1,10 @@
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Table = require('./table.model');
 import {Serialize, Serializable} from "../helpers/serializable";
+import {Deserializable} from "../helpers/deserializable";
 
 @Serializable()
+@Deserializable()
 class OneToOneRelationship extends OneToXRelationship {
 
     /**

@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const serializable_1 = require("../helpers/serializable");
+const deserializable_1 = require("../helpers/deserializable");
 let Schema = class Schema {
     constructor(schema) {
         this._columns = schema.columns;
@@ -43,28 +44,28 @@ let Schema = class Schema {
     }
 };
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_columns", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_tables", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_oneToOneRelationships", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_oneToManyRelationships", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_manyToManyRelationships", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_constraints", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_foreignKeys", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Schema.prototype, "_annotations", void 0);
 __decorate([
     serializable_1.Serialize(false)
@@ -91,6 +92,7 @@ __decorate([
     serializable_1.Serialize(false)
 ], Schema.prototype, "annotations", null);
 Schema = __decorate([
+    deserializable_1.Deserializable(),
     serializable_1.Serializable()
 ], Schema);
 module.exports = Schema;

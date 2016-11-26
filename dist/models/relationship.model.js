@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const serializable_1 = require("../helpers/serializable");
+const deserializable_1 = require("../helpers/deserializable");
 class Relationship {
     constructor(index) {
         this._index = index;
@@ -37,14 +38,14 @@ class Relationship {
     }
 }
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Relationship.prototype, "_numberOfRelationshipsWithSameTables", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Relationship.prototype, "_indexInSameTablesRelationships", void 0);
 __decorate([
     serializable_1.Id(),
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Relationship.prototype, "_index", void 0);
 __decorate([
     serializable_1.Serialize()

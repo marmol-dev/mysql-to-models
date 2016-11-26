@@ -9,6 +9,7 @@
     "fs-extra": "registry:dt/fs-extra#0.0.0+20161004190449",
     "lodash": "registry:dt/lodash#4.14.0+20161004174455",
     "mysql": "registry:dt/mysql#0.0.0+20160316155526",
-    "node": "registry:dt/node#6.0.0+20161019125345"
+    "node": "registry:dt/node#6.0.0+20161019125345",
+    "reflect-metadata": "registry:dt/reflect-metadata#0.0.0+20160630155503"
   }
 }

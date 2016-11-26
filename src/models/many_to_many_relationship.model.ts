@@ -2,13 +2,15 @@ import Relationship = require('./relationship.model');
 import OneToManyRelationship = require('./one_to_many_relationship.model');
 import _ = require('lodash');
 import Table = require('./table.model');
-import {Construct, Serialize, Serializable} from "../helpers/serializable";
+import {Serialize, Serializable} from "../helpers/serializable";
+import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 @Serializable()
+@Deserializable()
 class ManyToManyRelationship extends Relationship {
-    @Construct()
+    @Deserialize()
     private _relationship1 : OneToManyRelationship;
-    @Construct()
+    @Deserialize()
     private _relationship2 : OneToManyRelationship;
 
     constructor(relationship1 : OneToManyRelationship, relationship2: OneToManyRelationship, index : number) {

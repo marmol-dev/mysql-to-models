@@ -1,18 +1,20 @@
-interface PropertySettings {
-    replaceWithId: boolean;
+import 'reflect-metadata';
+import {isDeserializable} from './deserializable';
+
+export interface SerializableDefaults {
+    idPropertyName: string;
+    referencePropertyName: string;
+    internalPropertyName: string;
 }
 
+const DEFAULTS : SerializableDefaults = {
+    idPropertyName: '#',
+    referencePropertyName: '@',
+    internalPropertyName: '_'
+};
 
-interface SerializableSettings {
-    publicProperties: {
-        [name: string]: PropertySettings;
-    };
-
-    constructProperties: {
-        [name: string]: PropertySettings;
-    };
-
-    idProperty: string;
+interface PropertySettings {
+    replaceWithId: boolean;
 }
 
 function guid() {
@@ -25,61 +27,54 @@ function guid() {
         s4() + '-' + s4() + s4() + s4();
 }
 
-interface SerializableConstructor extends Function {
-    __serializableSettings: SerializableSettings;
-}
-
 interface SerializableInstance extends Function {
     getSerializableId(): any;
     [prop: string]: any;
 }
 
-interface SerializableJSON {
-    __constructProperties: {
-        [prop : string]: any;
-    };
-    [prop: string]: any;
+export type SerializableId = [string, string];
+
+export interface SerializableReference {
+    [prop : string]: SerializableId;
 }
 
-interface SerializableReference {
-    __serializableClass: string;
-    __serializableId: any;
+export interface SerializableWithId {
+    [prop : string]: SerializableId;
 }
 
-function toJSON() : SerializableJSON {
-    const self : SerializableInstance = <SerializableInstance>this;
+function toJSON() {
+    const self : SerializableInstance = this;
 
-    const toret : SerializableJSON = {
-        __constructProperties: {}
-    };
+    const toret : any = getIdObject(self);
 
-    const proto = <SerializableConstructor>Object.getPrototypeOf(this);
+    const publicProperties : string[] = Reflect.getMetadata('serializeProperties', self.constructor);
 
-    if ('__serializableSettings' in proto === false) {
-        return toret;
-    }
-
-    const publicProperties = proto.__serializableSettings.publicProperties;
-
-    for(let propName in publicProperties) {
+    for(let propName of publicProperties) {
 
         try {
             toret[propName] = getValue(
                 self[propName],
-                proto.__serializableSettings.publicProperties[propName]
+                Reflect.getMetadata('serialize', self, propName)
             );
         } catch(e){ }
     }
 
-    const constructProperties = proto.__serializableSettings.constructProperties;
+    if (isDeserializable(self)) {
+        Object.assign(toret, {
+            [DEFAULTS.internalPropertyName]: {}
+        });
 
-    for (let propName in constructProperties){
-        try {
-            toret.__constructProperties[propName] = getValue(
-                self[propName],
-                proto.__serializableSettings.constructProperties[propName]
-            );
-        } catch(e) {}
+        const deserializableProperties: string[] = Reflect.getMetadata('deserializeProperties', self.constructor);
+
+        for(let propName of deserializableProperties) {
+
+            try {
+                toret[DEFAULTS.internalPropertyName][propName] = getValue(
+                    self[propName],
+                    Reflect.getMetadata('deserialize', self, propName)
+                );
+            } catch(e){ }
+        }
     }
 
     return toret;
@@ -89,10 +84,15 @@ function isSerializable(obj : SerializableInstance | any) : boolean {
     return obj instanceof Object && 'getSerializableId' in obj && typeof obj.getSerializableId === 'function';
 }
 
-function getReference(obj: SerializableInstance, propertySettings: PropertySettings) : SerializableReference {
+function getIdObject(obj: SerializableInstance) {
     return {
-        __serializableClass: obj.constructor.name,
-        __serializableId: obj.getSerializableId()
+        [DEFAULTS.idPropertyName]: [obj.constructor.name, obj.getSerializableId()]
+    };
+}
+
+function getReferenceObject(obj: SerializableInstance, propertySettings: PropertySettings) : SerializableReference {
+    return {
+        [DEFAULTS.referencePropertyName]: [obj.constructor.name, obj.getSerializableId()]
     };
 }
 
@@ -102,7 +102,7 @@ function getValue(val: any, propertySettings: PropertySettings) : any {
         return val.map((e2: any) => getValue(e2, propertySettings));
     } else {
         if (isSerializable(val) && propertySettings.replaceWithId) {
-            return getReference(val, propertySettings);
+            return getReferenceObject(val, propertySettings);
         } else {
             return val;
         }
@@ -110,12 +110,10 @@ function getValue(val: any, propertySettings: PropertySettings) : any {
 }
 
 function getSerializableId() {
-    const proto = <SerializableConstructor>Object.getPrototypeOf(this);
-
-    let idProperty = '__serializableId';
-
-    if ('__serializableSettings' in proto) {
-        idProperty = proto.__serializableSettings.idProperty;
+    let idProperty = DEFAULTS.idPropertyName;
+    let idMetadata = Reflect.getMetadata('id', this);
+    if (idMetadata) {
+        idProperty = idMetadata;
     }
 
     if (idProperty in <any>this === false) {
@@ -125,49 +123,47 @@ function getSerializableId() {
     return (<any>this)[idProperty];
 }
 
-function initConstructor(constructor : SerializableConstructor) {
-    if ('__serializableSettings' in constructor === false) {
+export function setDefaults(defaults: SerializableDefaults){
+    Object.assign(DEFAULTS, defaults);
+}
 
-        constructor.__serializableSettings = {
-            'publicProperties': {},
-            'constructProperties': {},
-            'idProperty': '__serializableId'
-        };
-    }
+export function getDefaults() : SerializableDefaults {
+    return Object.assign({}, DEFAULTS);
 }
 
 export function Serialize(replaceWithId: boolean = true){
-    return function (constructor: any, propertyKey: string, descriptor: PropertyDescriptor) {
-
-        initConstructor(<SerializableConstructor>constructor);
-
-        (<SerializableConstructor>constructor).__serializableSettings.publicProperties[propertyKey] = {
-            replaceWithId
-        };
+    return function (target: Object, propertyKey: string) {
+        let serializeProperties: string[] = Reflect.getMetadata('serializeProperties', target.constructor);
+        if (!serializeProperties){
+            serializeProperties = [];
+            Reflect.defineMetadata('serializeProperties', serializeProperties, target.constructor);
+        }
+        serializeProperties.push(propertyKey);
+        Reflect.defineMetadata('serialize', {replaceWithId}, target, propertyKey);
     };
 }
 
 export function Construct(replaceWithId: boolean = true){
     return function (constructor: any, propertyKey: string) {
 
-        initConstructor(<SerializableConstructor>constructor);
-
-        (<SerializableConstructor>constructor).__serializableSettings.constructProperties[propertyKey] = {
-            replaceWithId
-        };
     };
 }
 
 export function Id(){
     return function (constructor: any, propertyKey: string) {
-        initConstructor(<SerializableConstructor>constructor);
-        (<SerializableConstructor>constructor).__serializableSettings.idProperty = propertyKey;
+        Reflect.defineMetadata('id', propertyKey, constructor);
     };
 }
 
 
 export function Serializable(){
-    return function (constructor: any) : void {
+    return function (constructor: Function) : void {
+        let serializeProperties: string[] = Reflect.getMetadata('serializeProperties', constructor);
+        if (!serializeProperties){
+            serializeProperties = [];
+            Reflect.defineMetadata('serializeProperties', serializeProperties, constructor);
+        }
+
         constructor.prototype.toJSON = toJSON;
         constructor.prototype.getSerializableId = getSerializableId;
     };

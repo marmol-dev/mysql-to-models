@@ -1,16 +1,17 @@
 import Table = require('./table.model');
 import {Construct, Id, Serialize} from "../helpers/serializable";
+import {Deserialize, Deserializable} from "../helpers/deserializable";
 
 abstract class Relationship {
 
-    @Construct()
+    @Deserialize()
     private _numberOfRelationshipsWithSameTables : number;
 
-    @Construct()
+    @Deserialize()
     private _indexInSameTablesRelationships : number;
 
     @Id()
-    @Construct()
+    @Deserialize()
     private _index : number;
 
     constructor(index : number) {

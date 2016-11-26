@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const _ = require('lodash');
 const serializable_1 = require("../helpers/serializable");
+const deserializable_1 = require("../helpers/deserializable");
 let Column_1;
 let Column = Column_1 = class Column {
     constructor({ TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION, COLUMN_DEFAULT, IS_NULLABLE, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, COLUMN_TYPE, COLUMN_KEY, EXTRA, COLUMN_COMMENT }, index) {
@@ -140,52 +141,52 @@ let Column = Column_1 = class Column {
     }
 };
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_tableName", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_columnName", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_ordinalPosition", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_columnDefault", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_isNullable", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_dataType", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_characterMaximumLength", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_columnType", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_columnKey", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_extra", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_columnComment", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_table", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_foreignKey", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_phpDataType", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], Column.prototype, "_annotations", void 0);
 __decorate([
-    serializable_1.Construct(),
+    deserializable_1.Deserialize(),
     serializable_1.Id()
 ], Column.prototype, "_index", void 0);
 __decorate([
@@ -273,7 +274,8 @@ __decorate([
     serializable_1.Serialize()
 ], Column.prototype, "annotations", null);
 Column = Column_1 = __decorate([
-    serializable_1.Serializable()
+    serializable_1.Serializable(),
+    deserializable_1.Deserializable()
 ], Column);
 module.exports = Column;
 //# sourceMappingURL=column.model.js.map

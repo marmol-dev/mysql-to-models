@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const Relationship = require('./relationship.model');
 const serializable_1 = require("../helpers/serializable");
-class OneToXRelationship extends Relationship {
+const deserializable_1 = require("../helpers/deserializable");
+let OneToXRelationship = class OneToXRelationship extends Relationship {
     constructor(name, index) {
         super(index);
         this._name = name;
@@ -54,12 +55,12 @@ class OneToXRelationship extends Relationship {
     get foreignKeysContainPrimaryKey() {
         return !!this.foreignKeys.find(fk => fk.column.isPrimaryKey);
     }
-}
+};
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], OneToXRelationship.prototype, "_name", void 0);
 __decorate([
-    serializable_1.Construct()
+    deserializable_1.Deserialize()
 ], OneToXRelationship.prototype, "_foreignKeys", void 0);
 __decorate([
     serializable_1.Serialize()
@@ -70,5 +71,9 @@ __decorate([
 __decorate([
     serializable_1.Serialize()
 ], OneToXRelationship.prototype, "foreignKeysContainPrimaryKey", null);
+OneToXRelationship = __decorate([
+    deserializable_1.Deserializable(),
+    serializable_1.Serializable()
+], OneToXRelationship);
 module.exports = OneToXRelationship;
 //# sourceMappingURL=one_to_x_relationship.model.js.map

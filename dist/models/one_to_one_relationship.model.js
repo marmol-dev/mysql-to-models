@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const OneToXRelationship = require('./one_to_x_relationship.model');
 const serializable_1 = require("../helpers/serializable");
+const deserializable_1 = require("../helpers/deserializable");
 let OneToOneRelationship_1;
 let OneToOneRelationship = OneToOneRelationship_1 = class OneToOneRelationship extends OneToXRelationship {
     /**
@@ -145,7 +146,8 @@ __decorate([
     serializable_1.Serialize()
 ], OneToOneRelationship.prototype, "isBetweenEntities", null);
 OneToOneRelationship = OneToOneRelationship_1 = __decorate([
-    serializable_1.Serializable()
+    serializable_1.Serializable(),
+    deserializable_1.Deserializable()
 ], OneToOneRelationship);
 module.exports = OneToOneRelationship;
 //# sourceMappingURL=one_to_one_relationship.model.js.map

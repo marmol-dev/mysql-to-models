@@ -2,13 +2,16 @@ import Relationship = require('./relationship.model');
 import ForeignKey = require('./foreign_key.model');
 import Table = require('./table.model');
 import Column = require('./column.model');
-import {Construct, Serialize} from "../helpers/serializable";
+import {Serialize, Serializable} from "../helpers/serializable";
+import {Deserialize, Deserializable} from "../helpers/deserializable";
 
+@Deserializable()
+@Serializable()
 class OneToXRelationship extends Relationship {
 
-    @Construct()
+    @Deserialize()
     private _name : string;
-    @Construct()
+    @Deserialize()
     private _foreignKeys : ForeignKey[];
 
     constructor(name : string, index : number) {
