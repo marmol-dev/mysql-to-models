@@ -2,8 +2,7 @@ import _ = require('lodash');
 import Table = require('./table.model');
 import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
-import {Serializable, Serialize} from "../helpers/serializable";
-import {Deserialize, Deserializable} from "../helpers/deserializable";
+import {Serializable, Deserializable, Deserialize, Serialize} from "xserializer";
 
 @Serializable()
 @Deserializable()

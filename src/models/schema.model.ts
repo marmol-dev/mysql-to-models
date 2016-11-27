@@ -7,13 +7,17 @@ import ManyToManyRelationship = require('./many_to_many_relationship.model');
 import Constraint = require('./constraint.model');
 import ForeignKey = require('./foreign_key.model');
 import Annotation = require("./annotation.model");
-import {Serializable, Serialize} from "../helpers/serializable";
-import {Deserializable, Deserialize} from "../helpers/deserializable";
-import Deserializer from "../helpers/deserializer";
+
+import {Deserializer, Deserializable, Deserialize, Serialize, Serializable} from "xserializer";
 
 function classProvider(name: string) : Function {
+
+    function NullClass() {}
+    NullClass.prototype = null;
+
     switch(name){
         case null:
+            return NullClass;
         case 'Object':
             return Object;
         case 'Table':

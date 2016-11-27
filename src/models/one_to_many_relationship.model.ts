@@ -1,7 +1,6 @@
 import OneToXRelationship = require('./one_to_x_relationship.model');
 import Table = require('./table.model');
-import {Serializable, Serialize} from "../helpers/serializable";
-import {Deserializable} from "../helpers/deserializable";
+import {Serializable, Deserializable, Serialize} from "xserializer";
 
 @Serializable()
 @Deserializable()

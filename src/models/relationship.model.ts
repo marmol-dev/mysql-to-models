@@ -1,6 +1,6 @@
 import Table = require('./table.model');
-import {Serialize} from "../helpers/serializable";
-import {Deserialize} from "../helpers/deserializable";
+import {Deserialize, Serialize} from "xserializer";
+
 
 abstract class Relationship {
 

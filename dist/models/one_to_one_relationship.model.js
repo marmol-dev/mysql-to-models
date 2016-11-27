@@ -6,8 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const OneToXRelationship = require('./one_to_x_relationship.model');
-const serializable_1 = require("../helpers/serializable");
-const deserializable_1 = require("../helpers/deserializable");
+const xserializer_1 = require("xserializer");
 let OneToOneRelationship_1;
 let OneToOneRelationship = OneToOneRelationship_1 = class OneToOneRelationship extends OneToXRelationship {
     /**
@@ -125,29 +124,29 @@ let OneToOneRelationship = OneToOneRelationship_1 = class OneToOneRelationship e
     }
 };
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "anotherSideTable", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "oneSideTable", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "relationshipNameFromAnotherSide", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "relationshipNameFromOneSide", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "pluralRelationshipNameFromAnotherSide", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "pluralRelationshipNameFromOneSide", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToOneRelationship.prototype, "isBetweenEntities", null);
 OneToOneRelationship = OneToOneRelationship_1 = __decorate([
-    serializable_1.Serializable(),
-    deserializable_1.Deserializable()
+    xserializer_1.Serializable(),
+    xserializer_1.Deserializable()
 ], OneToOneRelationship);
 module.exports = OneToOneRelationship;
 //# sourceMappingURL=one_to_one_relationship.model.js.map

@@ -5,8 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const serializable_1 = require("../helpers/serializable");
-const deserializable_1 = require("../helpers/deserializable");
+const xserializer_1 = require("xserializer");
 class Relationship {
     constructor(index) {
         this._index = index;
@@ -38,19 +37,19 @@ class Relationship {
     }
 }
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Relationship.prototype, "_numberOfRelationshipsWithSameTables", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Relationship.prototype, "_indexInSameTablesRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Relationship.prototype, "_index", void 0);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Relationship.prototype, "numberOfRelationshipsWithSameTables", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Relationship.prototype, "indexInSameTablesRelationships", null);
 module.exports = Relationship;
 //# sourceMappingURL=relationship.model.js.map

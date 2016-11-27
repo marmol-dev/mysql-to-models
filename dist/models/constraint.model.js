@@ -5,8 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-const serializable_1 = require("../helpers/serializable");
-const deserializable_1 = require("../helpers/deserializable");
+const xserializer_1 = require("xserializer");
 let Constraint = class Constraint {
     constructor({ CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE }, index) {
         this._index = index;
@@ -65,62 +64,62 @@ let Constraint = class Constraint {
     }
 };
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Constraint.prototype, "_constraintName", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Constraint.prototype, "_tableName", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Constraint.prototype, "_constraintType", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Constraint.prototype, "_columns", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Constraint.prototype, "_columnNames", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Constraint.prototype, "_index", void 0);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "constraintName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "constraintType", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "tableName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "columnNames", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "columns", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "areAllColumnsAutoIncrement", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "containsPrimaryKeyColumn", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "nonAutoIncrementColumns", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "isUniquenessType", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "isUniqueType", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "isPrimaryKeyType", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Constraint.prototype, "table", null);
 Constraint = __decorate([
-    serializable_1.Serializable(),
-    deserializable_1.Deserializable()
+    xserializer_1.Serializable(),
+    xserializer_1.Deserializable()
 ], Constraint);
 module.exports = Constraint;
 //# sourceMappingURL=constraint.model.js.map

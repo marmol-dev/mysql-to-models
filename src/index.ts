@@ -5,7 +5,7 @@ import IProjectConfig = require('./config/i-project-config');
 import path = require('path');
 import fs = require('fs');
 import Schema = require("./models/schema.model");
-import Serializer from "./helpers/serializer";
+import {Serializer} from "xserializer";
 
 let projectConfig : IProjectConfig;
 

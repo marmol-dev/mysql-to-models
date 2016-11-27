@@ -7,8 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const _ = require('lodash');
 const NamesHelper = require('../helpers/names.helper');
-const serializable_1 = require('../helpers/serializable');
-const deserializable_1 = require("../helpers/deserializable");
+const xserializer_1 = require("xserializer");
 let Table = class Table {
     constructor({ TABLE_NAME, TABLE_TYPE, TABLE_COMMENT }, index) {
         this._index = index;
@@ -172,131 +171,131 @@ let Table = class Table {
     }
 };
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_tableName", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_columns", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_constraints", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_oneToOneRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_oneToManyRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_manyToManyRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_tableType", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_tableComment", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_annotations", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Table.prototype, "_index", void 0);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "tableName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "tableType", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "tableComment", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "columns", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "sortedColumns", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "pascalName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "pluralPascalName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "modelName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "camelName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "instanceName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "pluralCamelName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "pluralInstanceName", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "primaryKeyColumns", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "isEntity", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "oneToOneRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "oneToManyRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "oneToOneEntityRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "oneToManyEntityRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "manyToManyRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "manyToManyEntityRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "relatedTables", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "foreignKeysRelatedTables", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "relatedEntityTables", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "constraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "nonRepeatedConstraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "uniqueConstraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "nonRepeatedUniqueConstraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "uniquenessConstraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "nonRepeatedUniquenessConstraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "primaryKeyConstraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Table.prototype, "annotations", null);
 Table = __decorate([
-    serializable_1.Serializable(),
-    deserializable_1.Deserializable()
+    xserializer_1.Serializable(),
+    xserializer_1.Deserializable()
 ], Table);
 module.exports = Table;
 //# sourceMappingURL=table.model.js.map

@@ -4,7 +4,7 @@ const SchemaService = require('./services/schema.service');
 const path = require('path');
 const fs = require('fs');
 const Schema = require("./models/schema.model");
-const serializer_1 = require("./helpers/serializer");
+const xserializer_1 = require("xserializer");
 let projectConfig;
 try {
     const file = path.resolve(__dirname, "..", process.argv[2]);
@@ -19,7 +19,7 @@ const dbConnection = mysql.createConnection(projectConfig.database);
 dbConnection.connect();
 const schemaService = new SchemaService(dbConnection, projectConfig.database, projectConfig);
 schemaService.getSchema().then(schema => {
-    const serializer = new serializer_1.default(schema);
+    const serializer = new xserializer_1.Serializer(schema);
     const serializedSchema = serializer.serialize();
     const content = JSON.stringify(serializedSchema, null, 4);
     if (outFile !== null) {

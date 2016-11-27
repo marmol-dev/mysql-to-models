@@ -22,7 +22,6 @@ import ForeignKey = require("../models/foreign_key.model");
 import Constraint = require("../models/constraint.model");
 import Table = require("../models/table.model");
 import Annotation = require("../models/annotation.model");
-import Deserializer from "../helpers/deserializer";
 
 class SchemaService extends DbService {
 

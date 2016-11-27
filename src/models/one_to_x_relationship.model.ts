@@ -2,8 +2,8 @@ import Relationship = require('./relationship.model');
 import ForeignKey = require('./foreign_key.model');
 import Table = require('./table.model');
 import Column = require('./column.model');
-import {Serialize, Serializable} from "../helpers/serializable";
-import {Deserialize, Deserializable} from "../helpers/deserializable";
+import {Deserializable, Serializable, Deserialize, Serialize} from "xserializer";
+
 
 @Deserializable()
 @Serializable()

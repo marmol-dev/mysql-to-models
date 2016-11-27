@@ -13,12 +13,13 @@ const ManyToManyRelationship = require('./many_to_many_relationship.model');
 const Constraint = require('./constraint.model');
 const ForeignKey = require('./foreign_key.model');
 const Annotation = require("./annotation.model");
-const serializable_1 = require("../helpers/serializable");
-const deserializable_1 = require("../helpers/deserializable");
-const deserializer_1 = require("../helpers/deserializer");
+const xserializer_1 = require("xserializer");
 function classProvider(name) {
+    function NullClass() { }
+    NullClass.prototype = null;
     switch (name) {
         case null:
+            return NullClass;
         case 'Object':
             return Object;
         case 'Table':
@@ -79,62 +80,62 @@ let Schema = class Schema {
         return this._annotations;
     }
     static fromJSON(obj) {
-        const deserializer = new deserializer_1.default(obj);
+        const deserializer = new xserializer_1.Deserializer(obj);
         deserializer.constructorProvider = classProvider;
         return deserializer.deserialize();
     }
 };
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_columns", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_tables", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_oneToOneRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_oneToManyRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_manyToManyRelationships", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_constraints", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_foreignKeys", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], Schema.prototype, "_annotations", void 0);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "columns", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "tables", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "oneToOneRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "oneToManyRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "manyToManyRelationships", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "constraints", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "foreignKeys", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], Schema.prototype, "annotations", null);
 Schema = __decorate([
-    deserializable_1.Deserializable(),
-    serializable_1.Serializable()
+    xserializer_1.Deserializable(),
+    xserializer_1.Serializable()
 ], Schema);
 module.exports = Schema;
 //# sourceMappingURL=schema.model.js.map

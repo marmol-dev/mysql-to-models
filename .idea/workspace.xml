@@ -1,30 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c3226f1-ca45-46ff-8ed2-eb13c3670851" name="Default" comment="Serializer and Deserializer fully functional">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/deserializable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/deserializable.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/deserializer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/deserializer.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/json-object-store.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/json-object-store.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/object-store.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/object-store.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/serializable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/serializable.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/serializer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/helpers/serializer.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/models/annotation.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/models/annotation.model.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/models/interfaces/i-annotation.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/models/interfaces/i-annotation.model.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/services/annotations.service.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/services/annotations.service.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/globals/reflect-metadata/index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/globals/reflect-metadata/typings.json" />
+    <list default="true" id="7c3226f1-ca45-46ff-8ed2-eb13c3670851" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/helpers/deserializable.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/helpers/deserializer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/helpers/json-object-store.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/helpers/serializable.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/helpers/serializer.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/config/i-project-config.js" afterPath="$PROJECT_DIR$/dist/config/i-project-config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers/deserializable.js" afterPath="$PROJECT_DIR$/dist/helpers/deserializable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers/deserializer.js" afterPath="$PROJECT_DIR$/dist/helpers/deserializer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers/json-object-store.js" afterPath="$PROJECT_DIR$/dist/helpers/json-object-store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers/names.helper.js" afterPath="$PROJECT_DIR$/dist/helpers/names.helper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers/serializable.js" afterPath="$PROJECT_DIR$/dist/helpers/serializable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/helpers/serializer.js" afterPath="$PROJECT_DIR$/dist/helpers/serializer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.js" afterPath="$PROJECT_DIR$/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.js.map" afterPath="$PROJECT_DIR$/dist/index.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/annotation.model.js" afterPath="$PROJECT_DIR$/dist/models/annotation.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/annotation.model.js.map" afterPath="$PROJECT_DIR$/dist/models/annotation.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/column.model.js" afterPath="$PROJECT_DIR$/dist/models/column.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/column.model.js.map" afterPath="$PROJECT_DIR$/dist/models/column.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/constraint.model.js" afterPath="$PROJECT_DIR$/dist/models/constraint.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/constraint.model.js.map" afterPath="$PROJECT_DIR$/dist/models/constraint.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/foreign_key.model.js" afterPath="$PROJECT_DIR$/dist/models/foreign_key.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/foreign_key.model.js.map" afterPath="$PROJECT_DIR$/dist/models/foreign_key.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/interfaces/i-annotation.model.js" afterPath="$PROJECT_DIR$/dist/models/interfaces/i-annotation.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js" afterPath="$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js.map" afterPath="$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/one_to_many_relationship.model.js" afterPath="$PROJECT_DIR$/dist/models/one_to_many_relationship.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/one_to_many_relationship.model.js.map" afterPath="$PROJECT_DIR$/dist/models/one_to_many_relationship.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/one_to_one_relationship.model.js" afterPath="$PROJECT_DIR$/dist/models/one_to_one_relationship.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/one_to_one_relationship.model.js.map" afterPath="$PROJECT_DIR$/dist/models/one_to_one_relationship.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/one_to_x_relationship.model.js" afterPath="$PROJECT_DIR$/dist/models/one_to_x_relationship.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/one_to_x_relationship.model.js.map" afterPath="$PROJECT_DIR$/dist/models/one_to_x_relationship.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/relationship.model.js" afterPath="$PROJECT_DIR$/dist/models/relationship.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/relationship.model.js.map" afterPath="$PROJECT_DIR$/dist/models/relationship.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/schema.model.js" afterPath="$PROJECT_DIR$/dist/models/schema.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/schema.model.js.map" afterPath="$PROJECT_DIR$/dist/models/schema.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/table.model.js" afterPath="$PROJECT_DIR$/dist/models/table.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/models/table.model.js.map" afterPath="$PROJECT_DIR$/dist/models/table.model.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/annotations.service.js" afterPath="$PROJECT_DIR$/dist/services/annotations.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/annotations.service.js.map" afterPath="$PROJECT_DIR$/dist/services/annotations.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/columns.service.js" afterPath="$PROJECT_DIR$/dist/services/columns.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/constraints.service.js" afterPath="$PROJECT_DIR$/dist/services/constraints.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/db.service.js" afterPath="$PROJECT_DIR$/dist/services/db.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/foreign_keys.service.js" afterPath="$PROJECT_DIR$/dist/services/foreign_keys.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/schema.service.js" afterPath="$PROJECT_DIR$/dist/services/schema.service.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/schema.service.js.map" afterPath="$PROJECT_DIR$/dist/services/schema.service.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/services/tables.service.js" afterPath="$PROJECT_DIR$/dist/services/tables.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/private/out.json" afterPath="$PROJECT_DIR$/examples/private/out.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/helpers/serializer.ts" afterPath="$PROJECT_DIR$/src/helpers/serializer.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="$PROJECT_DIR$/src/index.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/annotation.model.ts" afterPath="$PROJECT_DIR$/src/models/annotation.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/column.model.ts" afterPath="$PROJECT_DIR$/src/models/column.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/constraint.model.ts" afterPath="$PROJECT_DIR$/src/models/constraint.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/foreign_key.model.ts" afterPath="$PROJECT_DIR$/src/models/foreign_key.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts" afterPath="$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts" afterPath="$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts" afterPath="$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts" afterPath="$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/relationship.model.ts" afterPath="$PROJECT_DIR$/src/models/relationship.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/schema.model.ts" afterPath="$PROJECT_DIR$/src/models/schema.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/table.model.ts" afterPath="$PROJECT_DIR$/src/models/table.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/schema.service.ts" afterPath="$PROJECT_DIR$/src/services/schema.service.ts" />
     </list>
     <ignored path="mysql-to-models.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="serializer.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/helpers/serializer.ts">
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+            <state relative-caret-position="135">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,25 +120,26 @@
         <option value="$PROJECT_DIR$/examples/private/trainit.json" />
         <option value="$PROJECT_DIR$/src/services/annotations.service.ts" />
         <option value="$PROJECT_DIR$/src/models/indexable.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts" />
         <option value="$PROJECT_DIR$/src/helpers/deserializable.ts" />
         <option value="$PROJECT_DIR$/src/helpers/object-store.ts" />
         <option value="$PROJECT_DIR$/src/helpers/deserializer.ts" />
         <option value="$PROJECT_DIR$/examples/private/out.json" />
         <option value="$PROJECT_DIR$/src/helpers/serializable.ts" />
-        <option value="$PROJECT_DIR$/src/models/annotation.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/column.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/constraint.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/foreign_key.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/relationship.model.ts" />
-        <option value="$PROJECT_DIR$/src/models/table.model.ts" />
-        <option value="$PROJECT_DIR$/src/services/schema.service.ts" />
-        <option value="$PROJECT_DIR$/src/index.ts" />
-        <option value="$PROJECT_DIR$/src/models/schema.model.ts" />
         <option value="$PROJECT_DIR$/src/helpers/serializer.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/models/schema.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/table.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/relationship.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts" />
+        <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/foreign_key.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/constraint.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/column.model.ts" />
+        <option value="$PROJECT_DIR$/src/models/annotation.model.ts" />
+        <option value="$PROJECT_DIR$/src/services/schema.service.ts" />
       </list>
     </option>
   </component>
@@ -207,96 +247,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql-to-models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="examples" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="private" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +342,10 @@
       <workItem from="1480177635366" duration="52000" />
       <workItem from="1480193889893" duration="114000" />
       <workItem from="1480190412542" duration="8396000" />
-      <workItem from="1480246420318" duration="953000" />
+      <workItem from="1480246420318" duration="982000" />
+      <workItem from="1480247453996" duration="94000" />
+      <workItem from="1480248284386" duration="6594000" />
+      <workItem from="1480258256143" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="Export models to JSON">
       <created>1480008772688</created>
@@ -495,22 +452,28 @@
       <option name="project" value="LOCAL" />
       <updated>1480198800801</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Serializer make annotations optional">
+      <created>1480247390052</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1480247390052</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76967000" />
+    <option name="totallyTimeSpent" value="84733000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1040" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18522602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15354018" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15712012" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25179" sideWeight="0.50584304" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -523,6 +486,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -555,7 +519,8 @@
     <MESSAGE value="Deserialize and Serialize functional" />
     <MESSAGE value="Fully functional deserialization" />
     <MESSAGE value="Serializer and Deserializer fully functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="Serializer and Deserializer fully functional" />
+    <MESSAGE value="Serializer make annotations optional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Serializer make annotations optional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -574,46 +539,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helpers/serializable.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="138" column="17" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helpers/serializable.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="120" column="58" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/helpers/serializable.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -731,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/interfaces/i-annotation.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/services/annotations.service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="678">
@@ -774,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/typings/globals/node/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -802,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12097" column="8" selection-start-line="12097" selection-start-column="8" selection-end-line="12097" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,72 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/annotation.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/column.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/constraint.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/foreign_key.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/relationship.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/table.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,9 +728,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
           <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -896,37 +739,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/schema.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="180" column="31" selection-start-line="180" selection-start-column="31" selection-end-line="180" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/schema.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
-          <folding>
-            <element signature="e#467#531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/deserializable.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,16 +750,159 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1895">
           <caret line="136" column="5" selection-start-line="136" selection-start-column="5" selection-end-line="136" selection-end-column="5" />
-          <folding>
-            <element signature="e#1#104#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="186">
+            <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="36" selection-end-column="30" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/serializer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+        <state relative-caret-position="755">
+          <caret line="130" column="13" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/xserializer/dist/deserializer.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/xserializer/dist/serializable.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/schema.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/table.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4053">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/relationship.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2053">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2533">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/foreign_key.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/constraint.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/column.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/annotation.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/interfaces/i-annotation.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/schema.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -13,6 +13,7 @@
     "lodash": "^4.16.6",
     "mysql": "^2.11.1",
     "pcre-to-regexp": "0.0.4",
-    "reflect-metadata": "^0.1.8"
+    "reflect-metadata": "^0.1.8",
+    "xserializer": "0.0.5"
   }
 }

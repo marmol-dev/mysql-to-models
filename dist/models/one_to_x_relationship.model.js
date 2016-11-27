@@ -6,8 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const Relationship = require('./relationship.model');
-const serializable_1 = require("../helpers/serializable");
-const deserializable_1 = require("../helpers/deserializable");
+const xserializer_1 = require("xserializer");
 let OneToXRelationship = class OneToXRelationship extends Relationship {
     constructor(name, index) {
         super(index);
@@ -57,23 +56,23 @@ let OneToXRelationship = class OneToXRelationship extends Relationship {
     }
 };
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], OneToXRelationship.prototype, "_name", void 0);
 __decorate([
-    deserializable_1.Deserialize()
+    xserializer_1.Deserialize()
 ], OneToXRelationship.prototype, "_foreignKeys", void 0);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToXRelationship.prototype, "foreignKeys", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToXRelationship.prototype, "name", null);
 __decorate([
-    serializable_1.Serialize()
+    xserializer_1.Serialize()
 ], OneToXRelationship.prototype, "foreignKeysContainPrimaryKey", null);
 OneToXRelationship = __decorate([
-    deserializable_1.Deserializable(),
-    serializable_1.Serializable()
+    xserializer_1.Deserializable(),
+    xserializer_1.Serializable()
 ], OneToXRelationship);
 module.exports = OneToXRelationship;
 //# sourceMappingURL=one_to_x_relationship.model.js.map

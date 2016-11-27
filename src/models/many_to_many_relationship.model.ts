@@ -1,9 +1,10 @@
+///<reference path="../../node_modules/xserializer/dist/deserializable.d.ts"/>
 import Relationship = require('./relationship.model');
 import OneToManyRelationship = require('./one_to_many_relationship.model');
 import _ = require('lodash');
 import Table = require('./table.model');
-import {Serialize, Serializable} from "../helpers/serializable";
-import {Deserialize, Deserializable} from "../helpers/deserializable";
+import {Serializable, Deserializable, Deserialize, Serialize} from "xserializer";
+
 
 @Serializable()
 @Deserializable()

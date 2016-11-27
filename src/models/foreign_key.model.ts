@@ -1,7 +1,6 @@
 import Table = require('./table.model');
 import Column = require('./column.model');
-import {Serializable, Serialize} from "../helpers/serializable";
-import {Deserializable, Deserialize} from "../helpers/deserializable";
+import {Serializable, Deserializable, Deserialize, Serialize} from "xserializer";
 
 @Serializable()
 @Deserializable()
