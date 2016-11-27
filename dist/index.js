@@ -3,8 +3,8 @@ const mysql = require('mysql');
 const SchemaService = require('./services/schema.service');
 const path = require('path');
 const fs = require('fs');
-const serializer_1 = require("./helpers/serializer");
 const Schema = require("./models/schema.model");
+const serializer_1 = require("./helpers/serializer");
 let projectConfig;
 try {
     const file = path.resolve(__dirname, "..", process.argv[2]);

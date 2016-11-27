@@ -12,7 +12,7 @@ class AnnotationsService {
 
     private static parseAnnotations(str : string, index : number) : Annotation[] {
 
-        const annotations = str.match(matchAnnotationsRegexp) || [];
+        const annotations : RegExpMatchArray | string[]  = str.match(matchAnnotationsRegexp) || [];
 
         return annotations.map(annotation => {
             try {
