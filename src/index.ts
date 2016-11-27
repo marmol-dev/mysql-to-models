@@ -4,8 +4,8 @@ import SchemaService = require('./services/schema.service');
 import IProjectConfig = require('./config/i-project-config');
 import path = require('path');
 import fs = require('fs');
-import Serializer from "./helpers/serializer";
 import Schema = require("./models/schema.model");
+import Serializer from "./helpers/serializer";
 
 let projectConfig : IProjectConfig;
 
