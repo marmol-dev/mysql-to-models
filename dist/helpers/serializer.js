@@ -1,38 +1,22 @@
-function isObject(e: any) : boolean {
+"use strict";
+function isObject(e) {
     return e !== null && !Array.isArray(e) && typeof e === 'object';
 }
-
-export interface SerializerSettings {
-    idPropertyName: string;
-    referencePropertyName: string;
-    internalPropertyName: string;
-}
-
-export type JSONId = [string, string];
-
-export interface JSONReference {
-    [prop : string]: JSONId;
-}
-
-export interface JSONWithId {
-    [prop: string]: JSONId;
-}
-
-const DEFAULT_SETTINGS : SerializerSettings = {
+const DEFAULT_SETTINGS = {
     idPropertyName: '#',
     referencePropertyName: '@',
     internalPropertyName: '_'
 };
-
-export function getDefaultSettings() : SerializerSettings {
+function getDefaultSettings() {
     return Object.assign({}, DEFAULT_SETTINGS);
 }
-
+exports.getDefaultSettings = getDefaultSettings;
 const serializedSymbol = Symbol();
-
-export default class Serializer {
-
-    public static guid() {
+class Serializer {
+    constructor(_base, _settings = getDefaultSettings()) {
+        Object.assign(this, { _base: _base, _settings: _settings });
+    }
+    static guid() {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000)
                 .toString(16)
@@ -41,22 +25,13 @@ export default class Serializer {
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
             s4() + '-' + s4() + s4() + s4();
     }
-
-    private _base : any;
-    private _settings: SerializerSettings;
-
-    constructor(_base: any, _settings: SerializerSettings = getDefaultSettings()){
-        Object.assign(this, {_base, _settings});
-    }
-
-    private getIdPropertyName(part: any) : string {
+    getIdPropertyName(part) {
         const idPropertyName = '__serializeId__';
         return idPropertyName;
     }
-
-    private getJSONId(part: any) : JSONId {
+    getJSONId(part) {
         const idPropertyName = this.getIdPropertyName(part);
-        if (idPropertyName in part === false){
+        if (idPropertyName in part === false) {
             Object.defineProperty(part, idPropertyName, {
                 value: Serializer.guid(),
                 enumerable: false
@@ -64,77 +39,66 @@ export default class Serializer {
         }
         return [part.constructor.name || null, part[idPropertyName]];
     }
-
-    private getJSONReference(obj: any) : JSONReference {
+    getJSONReference(obj) {
         return {
             [this._settings.referencePropertyName]: this.getJSONId(obj)
         };
     }
-
-    private getSerializeProperties(part: any) : string[] {
+    getSerializeProperties(part) {
         let properties = Reflect.getMetadata('serializeProperties', part.constructor);
-
-        if (!properties){
+        if (!properties) {
             //if (part.constructor === Object || !part.constructor){
-                properties = Object.keys(part);
-            /*} else {
-                properties = [];
-            }*/
+            properties = Object.keys(part);
         }
-
         return properties;
     }
-
-    private getDeserializeProperties(part: any): string[] {
+    getDeserializeProperties(part) {
         let properties = Reflect.getMetadata('deserializeProperties', part.constructor);
-
-        if (!properties){
+        if (!properties) {
             //if (part.constructor === Object || !part.constructor){
-                properties = Object.keys(part);
-            /*} else {
-                properties = [];
-            }*/
+            properties = Object.keys(part);
         }
-
         return properties;
     }
-
-    private serializePart(part: any) : any {
-        if (Array.isArray(part)){
-            return part.map((e: any) => this.serializePart(e));
-        } else if (isObject(part)){
-            if (serializedSymbol in part === false){
+    serializePart(part) {
+        if (Array.isArray(part)) {
+            return part.map((e) => this.serializePart(e));
+        }
+        else if (isObject(part)) {
+            if (serializedSymbol in part === false) {
                 part[serializedSymbol] = true;
-
-                const toret : any = {
-                    [this._settings.idPropertyName] : this.getJSONId(part),
+                const toret = {
+                    [this._settings.idPropertyName]: this.getJSONId(part),
                 };
-
                 const serializeProperties = this.getSerializeProperties(part);
                 serializeProperties.forEach(key => {
                     try {
                         toret[key] = this.serializePart(part[key]);
-                    } catch(e) {}
+                    }
+                    catch (e) { }
                 });
-
                 let deserializeProperties = this.getDeserializeProperties(part);
                 toret[this._settings.internalPropertyName] = {};
                 deserializeProperties.forEach(key => {
                     try {
                         toret[this._settings.internalPropertyName][key] = this.serializePart(part[key]);
-                    } catch(e) {}
+                    }
+                    catch (e) { }
                 });
-
                 return toret;
-            } else {
+            }
+            else {
                 return this.getJSONReference(part);
             }
-        } else {
+        }
+        else {
             return part;
         }
     }
-
-    public serialize() : any {
-       return this.serializePart(this._base);
+    serialize() {
+        return this.serializePart(this._base);
     }
 }
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Serializer;
+//# sourceMappingURL=serializer.js.map
