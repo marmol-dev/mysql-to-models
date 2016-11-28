@@ -1,91 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c3226f1-ca45-46ff-8ed2-eb13c3670851" name="Default" comment="Move">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/config/i-project-config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/config/i-project-config.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/deserializable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/deserializable.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/deserializer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/deserializer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/json-object-store.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/json-object-store.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/names.helper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/names.helper.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/object-store.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/object-store.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/serializable.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/serializable.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/serializer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/helpers/serializer.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/annotation.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/annotation.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/column.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/column.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/constraint.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/constraint.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/entity.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/entity.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/foreign_key.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/foreign_key.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/indexable.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/indexable.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/interfaces/i-annotation.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/interfaces/i-annotation.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/one_to_many_relationship.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/one_to_many_relationship.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/one_to_one_relationship.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/one_to_one_relationship.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/one_to_x_relationship.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/one_to_x_relationship.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/relationship.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/relationship.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/schema.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/schema.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/table.model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/models/table.model.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/annotations.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/annotations.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/columns.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/columns.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/constraints.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/constraints.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/db.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/db.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/foreign_keys.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/foreign_keys.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/schema.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/schema.service.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/tables.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/services/tables.service.js.map" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/config/i-project-config.ts" afterPath="$PROJECT_DIR$/src/lib/config/i-project-config.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/helpers/names.helper.ts" afterPath="$PROJECT_DIR$/src/lib/helpers/names.helper.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/annotation.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/annotation.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/column.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/column.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/constraint.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/constraint.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/foreign_key.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/foreign_key.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/interfaces/i-annotation.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/interfaces/i-annotation.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/many_to_many_relationship.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/many_to_many_relationship.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/one_to_many_relationship.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/one_to_many_relationship.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/one_to_one_relationship.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/one_to_one_relationship.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/one_to_x_relationship.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/one_to_x_relationship.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/relationship.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/relationship.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/schema.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/schema.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/models/table.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/table.model.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/annotations.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/annotations.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/columns.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/columns.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/constraints.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/constraints.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/db.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/db.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/foreign_keys.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/foreign_keys.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/schema.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/schema.service.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/services/tables.service.ts" afterPath="$PROJECT_DIR$/src/lib/services/tables.service.ts" />
+    <list default="true" id="7c3226f1-ca45-46ff-8ed2-eb13c3670851" name="Default" comment="Move library files to lib folder">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/cli/generate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/cli/generate.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/cli/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/cli/index.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/cli/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/cli/init.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/config/i-project-config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/config/i-project-config.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/helpers/names.helper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/helpers/names.helper.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/annotation.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/annotation.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/column.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/column.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/constraint.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/constraint.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/foreign_key.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/foreign_key.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/interfaces/i-annotation.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/interfaces/i-annotation.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/many_to_many_relationship.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/many_to_many_relationship.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/one_to_many_relationship.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/one_to_many_relationship.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/one_to_one_relationship.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/one_to_one_relationship.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/one_to_x_relationship.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/one_to_x_relationship.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/relationship.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/relationship.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/schema.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/schema.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/table.model.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/models/table.model.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/annotations.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/annotations.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/columns.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/columns.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/constraints.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/constraints.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/db.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/db.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/foreign_keys.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/foreign_keys.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/schema.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/schema.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/tables.service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/lib/services/tables.service.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cli/generate.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cli/index.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cli/init.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/globals/yargs/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/globals/yargs/typings.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/modules/inquirer/index.d.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/typings/modules/inquirer/typings.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.js" afterPath="$PROJECT_DIR$/dist/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.js.map" afterPath="$PROJECT_DIR$/dist/index.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="$PROJECT_DIR$/src/index.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/models/many_to_many_relationship.model.ts" afterPath="$PROJECT_DIR$/src/lib/models/many_to_many_relationship.model.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings.json" afterPath="$PROJECT_DIR$/typings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/index.d.ts" afterPath="$PROJECT_DIR$/typings/index.d.ts" />
     </list>
     <ignored path="mysql-to-models.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,13 +84,26 @@
     <favorites_list name="mysql-to-models" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cli/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -154,7 +146,12 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dist/cli/index.js" />
         <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/src/lib/models/many_to_many_relationship.model.ts" />
+        <option value="$PROJECT_DIR$/src/cli/generate.ts" />
+        <option value="$PROJECT_DIR$/src/cli/init.ts" />
+        <option value="$PROJECT_DIR$/src/cli/index.ts" />
       </list>
     </option>
   </component>
@@ -276,7 +273,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="cli" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -290,7 +287,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
+              <option name="myItemId" value="examples" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,6 +308,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/cli" />
       <recent name="$PROJECT_DIR$/src/bin" />
       <recent name="$PROJECT_DIR$/examples/private" />
     </key>
@@ -396,7 +394,7 @@
       <workItem from="1480258256143" duration="3838000" />
       <workItem from="1480282251575" duration="949000" />
       <workItem from="1480283883318" duration="2606000" />
-      <workItem from="1480339422073" duration="1707000" />
+      <workItem from="1480339422073" duration="5370000" />
     </task>
     <task id="LOCAL-00001" summary="Export models to JSON">
       <created>1480008772688</created>
@@ -538,25 +536,32 @@
       <option name="project" value="LOCAL" />
       <updated>1480340822176</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Move library files to lib folder">
+      <created>1480341148039</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1480341148039</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92784000" />
+    <option name="totallyTimeSpent" value="96447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1040" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18522602" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15791567" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15791567" sideWeight="0.49415693" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25179" sideWeight="0.50584304" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980111" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31863284" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31863284" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -603,7 +608,8 @@
     <MESSAGE value="Configure global package" />
     <MESSAGE value="Remove &quot;private&quot; examples folder" />
     <MESSAGE value="Update binary name and docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update binary name and docs" />
+    <MESSAGE value="Move library files to lib folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move library files to lib folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -618,49 +624,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/examples/private/out.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44846">
-          <caret line="2638" column="41" selection-start-line="2638" selection-start-column="30" selection-end-line="2638" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/models/annotation.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/entity.model.ts" />
     <entry file="file://$PROJECT_DIR$/dist/models/many_to_many_relationship.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-453">
@@ -836,14 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/models/many_to_many_relationship.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/models/foreign_key.model.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -914,25 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="200">
-            <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -949,11 +885,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/typings/globals/yargs/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="176" column="8" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/typings/globals/commander/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/cli/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="200">
+            <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/models/many_to_many_relationship.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cli/init.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cli/generate.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cli/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,7 @@
 {
   "name": "mvcblog-generator",
   "dependencies": {
+    "inquirer": "registry:npm/inquirer#1.0.0+20160723033700",
     "mysql": "registry:npm/mysql#2.11.1+20160922015152"
   },
   "globalDependencies": {
@@ -10,6 +11,7 @@
     "lodash": "registry:dt/lodash#4.14.0+20161004174455",
     "mysql": "registry:dt/mysql#0.0.0+20160316155526",
     "node": "registry:dt/node#6.0.0+20161019125345",
-    "reflect-metadata": "registry:dt/reflect-metadata#0.0.0+20160630155503"
+    "reflect-metadata": "registry:dt/reflect-metadata#0.0.0+20160630155503",
+    "yargs": "registry:dt/yargs#0.0.0+20161006150200"
   }
 }

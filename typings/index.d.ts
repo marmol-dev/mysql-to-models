@@ -5,4 +5,6 @@
 /// <reference path="globals/mysql/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />
 /// <reference path="globals/reflect-metadata/index.d.ts" />
+/// <reference path="globals/yargs/index.d.ts" />
+/// <reference path="modules/inquirer/index.d.ts" />
 /// <reference path="modules/mysql/index.d.ts" />
