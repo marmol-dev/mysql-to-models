@@ -7,17 +7,22 @@ import fs = require('fs');
 import Schema = require("./models/schema.model");
 import {Serializer} from "xserializer";
 
+if (process.argv.length < 3){
+    console.error(`Usage: mysqltomodels <config>.json [<models>.json]`);
+    process.exit();
+}
+
 let projectConfig : IProjectConfig;
 
 try {
-    const file = path.resolve(__dirname, "..", process.argv[2]);
+    const file = path.resolve(process.cwd(), process.argv[2]);
     projectConfig = require(file);
 } catch(e) {
     console.error("Error opening config file", e);
     process.exit();
 }
 
-const outFile = process.argv.length > 3 ? path.resolve(__dirname, "..", process.argv[3]) : null;
+const outFile = process.argv.length > 3 ? path.resolve(process.cwd(), process.argv[3]) : null;
 
 const dbConnection = mysql.createConnection(projectConfig.database);
 
@@ -31,6 +36,7 @@ schemaService.getSchema().then(schema => {
     const content = JSON.stringify(serializedSchema, null, 4);
     if (outFile !== null) {
         fs.writeFileSync(outFile, content);
+        console.info(`Output file successfully saved in "${outFile}"`);
     } else {
         process.stdout.write(content);
     }

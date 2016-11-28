@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index"
   },
+  "bin": {
+    "mysqltomodels": "bin/mysqltomodels.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
