@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/index"
   },
+  "preferGlobal": true,
   "bin": {
     "mysql-to-models": "bin/mysql-to-models.js"
   },
