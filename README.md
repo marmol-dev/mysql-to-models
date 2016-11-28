@@ -14,8 +14,10 @@ This app generates a full schema of a database with tables, columns, constraints
 
 ## Usage
 
-1. Create a config file with the database connection settings (see examples/config.json).
-2. Do `mysql-to-models <config>.json [<models>.json]`.
+1. Do `mysql-to-models init` to create a database config file (only the first time).
+2. Do `mysql-to-models generate [<config.json>] [<models.json>]` to generate the models file of the database.
+
+More info is provided using `mysql-to-models --help`.
 
 ## License
 
