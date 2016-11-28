@@ -1,11 +1,11 @@
 "use strict";
 const mysql = require('mysql');
-const SchemaService = require('./services/schema.service');
+const SchemaService = require('./lib/services/schema.service');
 const path = require('path');
 const fs = require('fs');
 const xserializer_1 = require("xserializer");
 if (process.argv.length < 3) {
-    console.error(`Usage: mysqltomodels <config>.json [<models>.json]`);
+    console.error(`Usage: mysql-to-models <config>.json [<models>.json]`);
     process.exit();
 }
 let projectConfig;

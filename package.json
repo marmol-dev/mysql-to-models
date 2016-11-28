@@ -1,5 +1,5 @@
 {
-  "name": "mysql-to-model",
+  "name": "mysql-to-models",
   "version": "0.0.1",
   "description": "Generates a database JSON schema from an existing mysql database",
   "main": "dist/index.js",

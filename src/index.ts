@@ -1,14 +1,14 @@
 
 import mysql = require('mysql');
-import SchemaService = require('./services/schema.service');
-import IProjectConfig = require('./config/i-project-config');
+import SchemaService = require('./lib/services/schema.service');
+import IProjectConfig = require('./lib/config/i-project-config');
 import path = require('path');
 import fs = require('fs');
-import Schema = require("./models/schema.model");
+import Schema = require("./lib/models/schema.model");
 import {Serializer} from "xserializer";
 
 if (process.argv.length < 3){
-    console.error(`Usage: mysqltomodels <config>.json [<models>.json]`);
+    console.error(`Usage: mysql-to-models <config>.json [<models>.json]`);
     process.exit();
 }
 
