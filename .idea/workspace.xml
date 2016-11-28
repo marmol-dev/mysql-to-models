@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3226f1-ca45-46ff-8ed2-eb13c3670851" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/private/out.json" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bin/mysqltomodels.js" afterPath="$PROJECT_DIR$/bin/mysql-to-models.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/examples/example.json" afterPath="$PROJECT_DIR$/examples/config.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="mysql-to-models.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +72,8 @@
         <option value="$PROJECT_DIR$/src/models/annotation.model.ts" />
         <option value="$PROJECT_DIR$/src/services/schema.service.ts" />
         <option value="$PROJECT_DIR$/bin/mysqltomodels.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -194,6 +196,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql-to-models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql-to-models" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -295,7 +311,7 @@
       <workItem from="1480258256143" duration="3838000" />
       <workItem from="1480282251575" duration="949000" />
       <workItem from="1480283883318" duration="2606000" />
-      <workItem from="1480339422073" duration="1150000" />
+      <workItem from="1480339422073" duration="1387000" />
     </task>
     <task id="LOCAL-00001" summary="Export models to JSON">
       <created>1480008772688</created>
@@ -423,11 +439,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480340377970</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Remove &quot;private&quot; examples folder">
+      <created>1480340587395</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1480340587395</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92227000" />
+    <option name="totallyTimeSpent" value="92464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1040" extended-state="6" />
@@ -486,7 +509,8 @@
     <MESSAGE value="Serializer make annotations optional" />
     <MESSAGE value="Use xserialize" />
     <MESSAGE value="Configure global package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configure global package" />
+    <MESSAGE value="Remove &quot;private&quot; examples folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove &quot;private&quot; examples folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -515,7 +539,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/example.json">
+    <entry file="file://$PROJECT_DIR$/examples/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -778,15 +802,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/mysqltomodels.js">
+    <entry file="file://$PROJECT_DIR$/bin/mysql-to-models.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
@@ -810,22 +826,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="320">
-            <caret line="16" column="52" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="52" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/example.json">
+    <entry file="file://$PROJECT_DIR$/examples/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="200">
+            <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

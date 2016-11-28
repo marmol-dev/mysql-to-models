@@ -8,7 +8,7 @@
     "start": "node dist/index"
   },
   "bin": {
-    "mysqltomodels": "bin/mysqltomodels.js"
+    "mysql-to-models": "bin/mysql-to-models.js"
   },
   "author": "",
   "license": "ISC",

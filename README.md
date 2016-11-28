@@ -9,14 +9,13 @@ This app generates a full schema of a database with tables, columns, constraints
 
 ## Installation
 
-1. Install Node.JS v6 or greater.
-4. Do `npm install -g mysqltomodels`.
+1. Install nodejs v6 or greater.
+4. Do `npm install -g mysql-to-models`.
 
 ## Usage
 
-1. Create a config file with the database connection settings (see examples/example.json).
-2. Do `npm start /path/to/my/settings.json` in a terminal inside this app folder. 
-3. You will see the result schema in the stdout.
+1. Create a config file with the database connection settings (see examples/config.json).
+2. Do `mysql-to-models <config>.json [<models>.json]`.
 
 ## License
 
