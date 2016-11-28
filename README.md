@@ -10,9 +10,7 @@ This app generates a full schema of a database with tables, columns, constraints
 ## Installation
 
 1. Install Node.JS v6 or greater.
-2. Clone this project.
-3. Open a terminal in the folder cloned.
-4. Do `npm install`.
+4. Do `npm install -g mysqltomodels`.
 
 ## Usage
 
